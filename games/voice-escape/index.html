@@ -12,42 +12,48 @@
   <link rel="stylesheet" href="style.css">
 
 </head>
+</html>
 
 <body>
 
-<div id="intro">
+<div id="mainMenu" class="menu active">
 
-  <h1>VOICE ESCAPE</h1>
-  <p>Sound is your only weapon.</p>
+  <h1>ΩMEGA GAMEVERSE</h1>
 
-</div>
+  <button onclick="showMenu('gamesMenu')">
+    🎮 Games
+  </button>
 
-<div class="hud">
-
-  <div>ENERGY: <span id="energy">100</span></div>
-
-  <div>SCORE: <span id="score">0</span></div>
-
-</div>
-
-<canvas id="game"></canvas>
-
-<div id="pauseMenu">
-
-  <h2>PAUSED</h2>
-
-  <button onclick="resumeGame()">
-    RESUME
+  <button onclick="showMenu('aiMenu')">
+    🤖 AI
   </button>
 
 </div>
 
-<div id="gameOver">
+<div id="gamesMenu" class="menu">
 
-  <h1>GAME OVER</h1>
+  <h1>🎮 Games</h1>
 
-  <button onclick="restartGame()">
-    RESTART
+  <button>ΩARCADE</button>
+
+  <button>CHAOS MODE</button>
+
+  <button onclick="showMenu('mainMenu')">
+    ⬅ Back
+  </button>
+
+</div>
+
+<div id="aiMenu" class="menu">
+
+  <h1>🤖 AI SYSTEM</h1>
+
+  <button>AI CORE</button>
+
+  <button>SENTIENCE</button>
+
+  <button onclick="showMenu('mainMenu')">
+    ⬅ Back
   </button>
 
 </div>
@@ -55,4 +61,3 @@
 <script src="script.js"></script>
 
 </body>
-</html>

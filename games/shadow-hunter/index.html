@@ -12,19 +12,52 @@
 
 </head>
 
+</html>
+
 <body>
 
-  <canvas id="gameCanvas"></canvas>
+<div id="mainMenu" class="menu active">
 
-  <div id="flashlightText">
+  <h1>ΩMEGA GAMEVERSE</h1>
 
-    POWER: 100%
+  <button onclick="showMenu('gamesMenu')">
+    🎮 Games
+  </button>
 
-  </div>
+  <button onclick="showMenu('aiMenu')">
+    🤖 AI
+  </button>
 
-  <script src="../../shared/engine.js"></script>
+</div>
 
-  <script src="script.js"></script>
+<div id="gamesMenu" class="menu">
+
+  <h1>🎮 Games</h1>
+
+  <button>ΩARCADE</button>
+
+  <button>CHAOS MODE</button>
+
+  <button onclick="showMenu('mainMenu')">
+    ⬅ Back
+  </button>
+
+</div>
+
+<div id="aiMenu" class="menu">
+
+  <h1>🤖 AI SYSTEM</h1>
+
+  <button>AI CORE</button>
+
+  <button>SENTIENCE</button>
+
+  <button onclick="showMenu('mainMenu')">
+    ⬅ Back
+  </button>
+
+</div>
+
+<script src="script.js"></script>
+
 </body>
-
-</html>

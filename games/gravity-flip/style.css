@@ -202,3 +202,56 @@ button:hover {
   }
 
 }
+
+body{
+
+  background:black;
+
+  color:white;
+
+  font-family:Arial;
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
+
+  height:100vh;
+
+}
+
+.menu{
+
+  display:none;
+
+  flex-direction:column;
+
+  gap:20px;
+
+  width:300px;
+
+}
+
+.menu.active{
+
+  display:flex;
+
+}
+
+button{
+
+  padding:20px;
+
+  font-size:20px;
+
+  background:#111;
+
+  color:cyan;
+
+  border:
+  2px solid cyan;
+
+  cursor:pointer;
+
+}
