@@ -1,0 +1,1 @@
+﻿// Scene management logic\n

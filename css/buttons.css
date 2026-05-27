@@ -1,0 +1,41 @@
+button {
+
+  border: none;
+
+  cursor: pointer;
+
+  border-radius:
+  18px;
+
+  padding:
+  14px 20px;
+
+  font-weight: bold;
+
+  color: white;
+
+  background:
+  linear-gradient(
+
+    135deg,
+
+    var(--cyan),
+    var(--magenta)
+
+  );
+
+  transition:
+  var(--transition);
+
+}
+
+button:hover {
+
+  transform:
+  translateY(-4px)
+  scale(1.03);
+
+  animation:
+  pulseGlow 2s infinite;
+
+}

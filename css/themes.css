@@ -1,0 +1,179 @@
+/* =========================
+   DEFAULT THEME
+========================= */
+
+:root {
+
+  --bg-primary:
+  #05070d;
+
+  --panel-bg:
+  rgba(255,255,255,0.05);
+
+  --text-color:
+  white;
+
+  --accent:
+  cyan;
+
+  --secondary:
+  magenta;
+
+}
+
+/* =========================
+   CYBERPUNK
+========================= */
+
+.theme-cyberpunk {
+
+  --bg-primary:
+  #0b0613;
+
+  --panel-bg:
+  rgba(255,0,255,0.08);
+
+  --text-color:
+  #ff9ff3;
+
+  --accent:
+  #00f5ff;
+
+  --secondary:
+  #ff00ff;
+
+}
+
+/* =========================
+   MATRIX
+========================= */
+
+.theme-matrix {
+
+  --bg-primary:
+  black;
+
+  --panel-bg:
+  rgba(0,255,0,0.06);
+
+  --text-color:
+  #00ff66;
+
+  --accent:
+  #00ff66;
+
+  --secondary:
+  lime;
+
+}
+
+/* =========================
+   VOID
+========================= */
+
+.theme-void {
+
+  --bg-primary:
+  #020202;
+
+  --panel-bg:
+  rgba(120,0,255,0.08);
+
+  --text-color:
+  #d6b3ff;
+
+  --accent:
+  #9b5cff;
+
+  --secondary:
+  #4d00ff;
+
+}
+
+/* =========================
+   GOD MODE
+========================= */
+
+.theme-god {
+
+  --bg-primary:
+  #fff7d6;
+
+  --panel-bg:
+  rgba(255,215,0,0.10);
+
+  --text-color:
+  #fff4b3;
+
+  --accent:
+  gold;
+
+  --secondary:
+  orange;
+
+}
+
+/* =========================
+   GLOBAL APPLICATION
+========================= */
+
+body {
+
+  background:
+  var(--bg-primary);
+
+  color:
+  var(--text-color);
+
+}
+
+/* panels */
+
+.panel,
+.window-ui,
+#terminalWindow,
+#multiversePanel,
+#companionPanel,
+#starMapPanel {
+
+  background:
+  var(--panel-bg);
+
+  border:
+  1px solid
+  rgba(255,255,255,0.08);
+
+}
+
+/* buttons */
+
+button {
+
+  background:
+  linear-gradient(
+
+    135deg,
+
+    var(--accent),
+    var(--secondary)
+
+  );
+
+  color:
+  white;
+
+}
+
+/* text */
+
+.neon-text {
+
+  color:
+  var(--accent);
+
+  text-shadow:
+
+    0 0 10px
+    var(--accent);
+
+}

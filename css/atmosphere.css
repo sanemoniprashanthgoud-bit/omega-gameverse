@@ -1,0 +1,292 @@
+/* =========================
+   ATMOSPHERE LAYER
+========================= */
+
+#atmosphereLayer {
+
+  position: fixed;
+
+  inset: 0;
+
+  overflow: hidden;
+
+  pointer-events: none;
+
+  z-index: 5;
+
+}
+
+/* =========================
+   PARTICLES
+========================= */
+
+.particle {
+
+  position: absolute;
+
+  border-radius: 50%;
+
+  opacity: 0.7;
+
+  animation:
+  particleFloat linear forwards;
+
+}
+
+@keyframes particleFloat {
+
+  from {
+
+    transform:
+    translateY(110vh)
+    translateX(0px);
+
+    opacity: 0;
+
+  }
+
+  10% {
+
+    opacity: 1;
+
+  }
+
+  to {
+
+    transform:
+    translateY(-20vh)
+    translateX(120px);
+
+    opacity: 0;
+
+  }
+
+}
+
+/* =========================
+   NEON RAIN
+========================= */
+
+.rain-drop {
+
+  position: absolute;
+
+  width: 2px;
+  height: 120px;
+
+  background:
+  linear-gradient(
+
+    to bottom,
+
+    transparent,
+    cyan,
+    transparent
+
+  );
+
+  opacity: 0.45;
+
+  animation:
+  rainFall linear forwards;
+
+}
+
+@keyframes rainFall {
+
+  from {
+
+    transform:
+    translateY(-150px);
+
+  }
+
+  to {
+
+    transform:
+    translateY(120vh);
+
+  }
+
+}
+
+/* =========================
+   SNOW
+========================= */
+
+.cyber-snow {
+
+  position: absolute;
+
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+
+  background:
+  rgba(255,255,255,0.8);
+
+  box-shadow:
+
+    0 0 10px cyan;
+
+  animation:
+  snowFall linear forwards;
+
+}
+
+@keyframes snowFall {
+
+  from {
+
+    transform:
+    translateY(-20px)
+    translateX(0px);
+
+  }
+
+  to {
+
+    transform:
+    translateY(120vh)
+    translateX(80px);
+
+  }
+
+}
+
+/* =========================
+   METEORS
+========================= */
+
+.meteor {
+
+  position: absolute;
+
+  width: 240px;
+  height: 3px;
+
+  background:
+  linear-gradient(
+
+    90deg,
+
+    white,
+    cyan,
+    transparent
+
+  );
+
+  border-radius: 999px;
+
+  opacity: 0.8;
+
+  transform:
+  rotate(-25deg);
+
+  animation:
+  meteorFly 2s linear forwards;
+
+}
+
+@keyframes meteorFly {
+
+  from {
+
+    transform:
+    translate(-300px,-200px)
+    rotate(-25deg);
+
+  }
+
+  to {
+
+    transform:
+    translate(120vw,120vh)
+    rotate(-25deg);
+
+  }
+
+}
+
+/* =========================
+   FOG
+========================= */
+
+.fog-layer {
+
+  position: fixed;
+
+  inset: 0;
+
+  background:
+  radial-gradient(
+
+    circle,
+
+    rgba(255,255,255,0.03),
+
+    transparent 70%
+
+  );
+
+  opacity: 0.4;
+
+  animation:
+  fogMove 40s linear infinite;
+
+}
+
+@keyframes fogMove {
+
+  from {
+
+    transform:
+    translateX(-10%);
+
+  }
+
+  to {
+
+    transform:
+    translateX(10%);
+
+  }
+
+}
+
+/* =========================
+   LIGHTNING FLASH
+========================= */
+
+.lightning-flash {
+
+  animation:
+  lightningFlash 0.4s;
+
+}
+
+@keyframes lightningFlash {
+
+  0% {
+
+    filter:
+    brightness(1);
+
+  }
+
+  50% {
+
+    filter:
+    brightness(2.5);
+
+  }
+
+  100% {
+
+    filter:
+    brightness(1);
+
+  }
+
+}

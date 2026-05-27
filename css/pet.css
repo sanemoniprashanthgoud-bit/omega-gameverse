@@ -1,0 +1,167 @@
+/* =========================
+   COSMIC PET
+========================= */
+
+#pet {
+
+  position: fixed;
+
+  width: 95px;
+  height: 95px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size: 58px;
+
+  z-index: 99999;
+
+  animation:
+
+    petFloat 3s ease-in-out infinite,
+
+    petGlow 2s infinite alternate,
+
+    petSpin 10s ease-in-out infinite;
+
+}
+
+/* cosmic glow */
+
+@keyframes petGlow {
+
+  from {
+
+    filter:
+
+      drop-shadow(0 0 15px cyan)
+
+      drop-shadow(0 0 25px cyan);
+
+  }
+
+  to {
+
+    filter:
+
+      drop-shadow(0 0 20px magenta)
+
+      drop-shadow(0 0 40px magenta);
+
+  }
+
+}
+
+/* tiny spin */
+
+@keyframes petSpin {
+
+  0% {
+
+    rotate: -4deg;
+
+  }
+
+  50% {
+
+    rotate: 4deg;
+
+  }
+
+  100% {
+
+    rotate: -4deg;
+
+  }
+
+}
+
+/* energy orb */
+
+#pet::before {
+
+  content: "";
+
+  position: absolute;
+
+  inset: -12px;
+
+  border-radius: 50%;
+
+  background:
+  radial-gradient(
+
+    circle,
+
+    rgba(0,255,255,0.15),
+
+    transparent 70%
+
+  );
+
+  animation:
+  orbPulse 3s infinite;
+
+  z-index: -1;
+
+}
+
+@keyframes orbPulse {
+
+  0% {
+
+    transform:
+    scale(0.9);
+
+    opacity: 0.5;
+
+  }
+
+  50% {
+
+    transform:
+    scale(1.15);
+
+    opacity: 1;
+
+  }
+
+  100% {
+
+    transform:
+    scale(0.9);
+
+    opacity: 0.5;
+
+  }
+
+}
+
+#pet {
+
+  position: fixed;
+
+  bottom: 120px;
+  right: 40px;
+
+  width: 90px;
+  height: 90px;
+
+  border-radius: 50%;
+
+  background:
+  radial-gradient(
+
+    circle,
+
+    cyan,
+    magenta
+
+  );
+
+  animation:
+  floating 4s infinite;
+
+}

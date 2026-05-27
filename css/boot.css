@@ -1,0 +1,67 @@
+#bootScreen {
+
+  position: fixed;
+
+  inset: 0;
+
+  background: black;
+
+  color: #00ffea;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  z-index: 999999999;
+
+  font-family: monospace;
+
+}
+
+.boot-logo {
+
+  font-size: 64px;
+
+  margin-bottom: 30px;
+
+  text-shadow:
+  0 0 20px cyan;
+
+  animation:
+  pulse 2s infinite;
+
+}
+
+.boot-text {
+
+  font-size: 20px;
+
+  opacity: 0.8;
+
+}
+
+@keyframes pulse {
+
+  0% {
+
+    transform: scale(1);
+
+  }
+
+  50% {
+
+    transform: scale(1.05);
+
+  }
+
+  100% {
+
+    transform: scale(1);
+
+  }
+
+}

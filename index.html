@@ -1,0 +1,3129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>GAMEVERSE X</title>
+
+  <!-- Fonts -->
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Main CSS -->
+
+<link rel="stylesheet" href="css/launcher.css">
+<link rel="stylesheet" href="css/ui.css">
+<link rel="stylesheet" href="css/animations.css">
+
+
+
+</head>
+
+<body>
+
+  <!-- =========================
+       BACKGROUND EFFECTS
+  ========================== -->
+
+  <div class="background-grid"></div>
+
+  <div class="background-glow"></div>
+
+  <!-- =========================
+       TOP BAR
+  ========================== -->
+
+  <header class="topbar">
+
+    <div class="logo glitch rainbow"></div>
+
+      GAMEVERSE X
+
+    </div>
+
+    <nav class="nav">
+
+      <button>Games</button>
+
+      <button>Studio</button>
+
+      <button>Marketplace</button>
+
+      <button>Multiplayer</button>
+
+      <button>Settings</button>
+
+    </nav>
+
+  </header>
+
+  <!-- =========================
+       SIDEBAR
+  ========================== -->
+
+  <aside class="sidebar">
+
+    <button class="side-btn">
+      Dashboard
+    </button>
+
+    <button class="side-btn">
+      Projects
+    </button>
+
+    <button class="side-btn">
+      Assets
+    </button>
+
+    <button class="side-btn">
+      Analytics
+    </button>
+
+    <button class="side-btn">
+      Build Manager
+    </button>
+
+    <button class="side-btn">
+      Cloud Sync
+    </button>
+
+  </aside>
+
+  <!-- =========================
+       MAIN CONTENT
+  ========================== -->
+
+  <main class="main">
+
+    <!-- HERO -->
+
+    <section class="hero hologram scanlines"></section>
+
+      <h1>
+        NEXT-GEN BROWSER ENGINE
+      </h1>
+
+      <p>
+        Build multiplayer games,
+        cinematic experiences,
+        AI systems,
+        online worlds,
+        and studio-scale projects.
+      </p>
+
+      <div class="hero-buttons">
+
+        <button class="primary">
+          Launch Editor
+        </button>
+
+        <button class="secondary">
+          Open Marketplace
+        </button>
+
+      </div>
+
+    </section>
+
+    <!-- STATS -->
+
+    <section class="stats">
+
+      <div class="card">
+
+        <h2>24</h2>
+
+        <p>Projects</p>
+
+      </div>
+
+      <div class="card">
+
+        <h2>142</h2>
+
+        <p>Assets</p>
+
+      </div>
+
+      <div class="card">
+
+        <h2>18 FPS</h2>
+
+        <p>Renderer</p>
+
+      </div>
+
+      <div class="card">
+
+        <h2>ONLINE</h2>
+
+        <p>Servers</p>
+
+      </div>
+
+    </section>
+
+    <!-- GAME WINDOW -->
+
+    <section class="engine-window">
+
+      <div class="window-top">
+        <div class="terminal-window hologram"></div>
+
+        <span class="dot red"></span>
+
+        <span class="dot yellow"></span>
+
+        <span class="dot green"></span>
+
+        <p>runtime/game.js</p>
+
+      </div>
+
+      <canvas id="game"></canvas>
+
+    </section>
+
+  </main>
+
+  <!-- =========================
+       NOTIFICATIONS
+  ========================== -->
+
+  <div class="notification">
+
+    Engine Initialized Successfully
+  </div>
+
+  <!-- =========================
+       LOADING SCREEN
+  ========================== -->
+
+  <div id="loader">
+
+    <div class="loader-box">
+
+      <h1>GAMEVERSE X</h1>
+
+      <div class="loading-bar">
+
+        <div class="loading-fill"></div>
+
+      </div>
+
+      <p>Initializing Engine...</p>
+
+    </div>
+
+  </div>
+
+  <!-- =========================
+       SCRIPTS
+  ========================== -->
+
+  <script
+    type="module"
+    src="script.js"
+  ></script>
+
+</body>
+</html>
+<link rel="stylesheet" href="css/launcher.css">
+<link rel="stylesheet" href="css/ui.css">
+<link rel="stylesheet" href="css/animations.css">
+
+<div class="terminal-window">
+
+  <div class="terminal-top">
+    TERMINAL
+  </div>
+
+  <div class="terminal-body" id="terminal">
+
+    > Booting GAMEVERSE X...
+    <br>
+
+  </div>
+
+</div>
+
+<body class="rgb"></body>
+
+<div class="desktop-icons">
+
+  <div class="desktop-icon">
+    🎮
+    <span>Games</span>
+  </div>
+
+  <div class="desktop-icon">
+    🛠️
+    <span>Studio</span>
+  </div>
+
+  <div class="desktop-icon">
+    🌐
+    <span>Online</span>
+  </div>
+
+  <div class="desktop-icon">
+    📦
+    <span>Assets</span>
+  </div>
+
+</div>
+
+<div class="app-window" id="musicWindow">
+
+  <div class="app-topbar" id="dragBar">
+
+    <span>🎵 Music Player</span>
+
+    <button id="closeWindow">
+      ✖
+    </button>
+
+  </div>
+
+  <div class="app-content">
+
+    <h2>Now Playing</h2>
+
+    <p>Cyber Dreams.mp3</p>
+
+    <button class="btn">
+      ▶ Play
+    </button>
+
+  </div>
+
+</div>
+
+<div class="ai-panel">
+
+  <h2>🤖 GX Assistant</h2>
+
+  <p id="aiMessage">
+    Welcome back, developer.
+  </p>
+
+  <button class="btn" id="jokeBtn">
+    Tell Me A Joke
+  </button>
+
+</div>
+
+<p id="loadingText">
+  Stealing RAM...
+</p>
+
+<div class="news-panel">
+
+  <h2>📰 Daily News</h2>
+
+  <p id="newsText">
+    Loading totally reliable news...
+  </p>
+
+</div>
+
+<div class="gossip-panel">
+
+  <h2>🗣 Town Gossip</h2>
+
+  <p id="gossipText">
+    Listening to villagers...
+  </p>
+
+</div>
+
+<button class="btn" id="mysteryBtn">
+  DO NOT PRESS
+</button>
+
+<div class="broadcast-panel">
+
+  <h2>🚨 Emergency Broadcast</h2>
+
+  <p id="broadcastText">
+    Monitoring universe stability...
+  </p>
+
+</div>
+
+<div class="npc-chat">
+
+  <h2>💬 NPC Chat</h2>
+
+  <p id="npcText">
+    Connecting to local chaos...
+  </p>
+
+</div>
+
+<div class="floating-bg">
+
+  <span style="left:10%; animation-duration: 12s;"></span>
+  <span style="left:20%; animation-duration: 18s;"></span>
+  <span style="left:35%; animation-duration: 10s;"></span>
+  <span style="left:50%; animation-duration: 14s;"></span>
+  <span style="left:65%; animation-duration: 20s;"></span>
+  <span style="left:80%; animation-duration: 16s;"></span>
+  <span style="left:90%; animation-duration: 13s;"></span>
+
+</div>
+
+<div class="broadcast-panel warning hologram"></div>
+
+<div class="taskbar">
+
+  <button class="task-btn" id="openExplorer">
+    📁 Explorer
+  </button>
+
+  <button class="task-btn" id="openMusic">
+    🎵 Music
+  </button>
+
+  <button class="task-btn" id="openTerminal">
+    💻 Terminal
+  </button>
+
+  <div class="task-time" id="taskTime">
+    00:00
+  </div>
+
+</div>
+
+<div class="app-window" id="explorerWindow">
+
+  <div class="app-topbar" id="explorerDrag">
+
+    <span>📁 File Explorer</span>
+
+    <button id="closeExplorerBtn">
+      ✖
+    </button>
+
+  </div>
+
+  <div class="app-content">
+
+    <ul class="fake-files">
+
+      <li>📄 dragon_notes.txt</li>
+
+      <li>📄 suspicious_potato.png</li>
+
+      <li>📁 secret_duck_plans</li>
+
+      <li>📄 definitely_not_a_trap.exe</li>
+
+      <li>📄 moon_cheese_recipe.doc</li>
+
+    </ul>
+
+  </div>
+
+</div>
+
+<div id="pet">
+
+  🦝
+
+  <div id="petSpeech">
+    hello
+  </div>
+
+</div>
+
+<div class="owner-panel">
+
+  <h2>🧠 Owner Assistant</h2>
+
+  <input
+    type="text"
+    id="taskInput"
+    placeholder="Add a mission..."
+  >
+
+  <button
+    class="btn"
+    id="addTaskBtn"
+  >
+    Add Mission
+  </button>
+
+  <ul id="taskList"></ul>
+
+</div>
+
+<div class="tips-panel">
+
+  <h2>💡 Daily Tip</h2>
+
+  <p id="dailyTip">
+    Loading wisdom...
+  </p>
+
+</div>
+
+<button
+  class="btn"
+  id="focusBtn"
+>
+  🎯 Focus Mode
+</button>
+
+<div class="pet-panel">
+
+  <h2>🌌 Pet Status</h2>
+
+  <p id="petLevelText">
+    Level 1
+  </p>
+
+  <p id="petTitle">
+    Tiny Familiar
+  </p>
+
+  <div class="xp-bar">
+
+    <div
+      class="xp-fill"
+      id="xpFill"
+    ></div>
+
+  </div>
+
+</div>
+
+<div class="glow-orb orb1"></div>
+<div class="glow-orb orb2"></div>
+
+<!-- =========================
+     DESKTOP ICONS
+========================= -->
+
+<div class="desktop-icons">
+
+  <div class="desktop-icon"
+       onclick="openWindow('gamesWindow')">
+
+    <div class="icon-img">🎮</div>
+
+    <span>Games</span>
+
+  </div>
+
+  <div class="desktop-icon"
+       onclick="openWindow('settingsWindow')">
+
+    <div class="icon-img">⚙️</div>
+
+    <span>Settings</span>
+
+  </div>
+
+  <div class="desktop-icon"
+       onclick="openWindow('terminalWindow')">
+
+    <div class="icon-img">💻</div>
+
+    <span>Terminal</span>
+
+  </div>
+
+  <div class="desktop-icon"
+       onclick="openWindow('musicWindow')">
+
+    <div class="icon-img">🎵</div>
+
+    <span>Music</span>
+
+  </div>
+
+  <div class="desktop-icon"
+       onclick="openWindow('inventoryWindow')">
+
+    <div class="icon-img">🎒</div>
+
+    <span>Inventory</span>
+
+  </div>
+
+</div>
+
+<!-- =========================
+     TERMINAL WINDOW
+========================= -->
+
+<div id="terminalWindow"
+     class="app-window terminal-window"
+     style="display:none; top:120px; left:220px;">
+
+  <div class="app-topbar">
+
+    <span>VOID TERMINAL</span>
+
+    <button onclick="closeWindow('terminalWindow')">
+
+      ✖
+
+    </button>
+
+  </div>
+
+  <div class="terminal-output"
+       id="terminalOutput">
+
+    <div>
+      GAMEVERSE TERMINAL v7.0
+    </div>
+
+    <div>
+      Type "help"
+    </div>
+
+  </div>
+
+  <div class="terminal-input-row">
+
+    <span class="terminal-prefix">
+      >
+    </span>
+
+    <input
+      id="terminalInput"
+      class="terminal-input"
+      type="text"
+      placeholder="Enter command..."
+    />
+
+  </div>
+
+</div>
+
+<!-- =========================
+     ACHIEVEMENT PANEL
+========================= -->
+
+<div id="achievementPanel"
+     class="achievement-panel">
+
+  <div class="achievement-title">
+
+    🏆 ACHIEVEMENTS
+
+  </div>
+
+  <div id="achievementList">
+
+  </div>
+
+</div>
+
+<!-- =========================
+     QUEST PANEL
+========================= -->
+
+<div id="questPanel"
+     class="quest-panel">
+
+  <div class="quest-title">
+
+    ⚔ ACTIVE QUESTS
+
+  </div>
+
+  <div id="questList">
+
+  </div>
+
+</div>
+
+<!-- =========================
+     WEATHER LAYERS
+========================= -->
+
+<div id="rainLayer"></div>
+
+<div id="fogLayer"></div>
+
+<div id="meteorLayer"></div>
+
+<div id="lightningFlash"></div>
+
+<!-- =========================
+     WEATHER STATUS
+========================= -->
+
+<div id="weatherStatus">
+
+  🌌 Cosmic Night
+
+</div>
+
+<!-- =========================
+     MULTIPLAYER PANEL
+========================= -->
+
+<div id="multiplayerPanel"
+     class="multiplayer-panel">
+
+  <div class="multiplayer-title">
+
+    🌍 GLOBAL NETWORK
+
+  </div>
+
+  <!-- online users -->
+
+  <div id="onlineUsers"
+       class="online-users">
+
+  </div>
+
+  <!-- chat -->
+
+  <div id="globalChat"
+       class="global-chat">
+
+  </div>
+
+  <!-- input -->
+
+  <div class="chat-input-row">
+
+    <input
+      id="chatInput"
+      type="text"
+      placeholder="Send message..."
+    />
+
+    <button id="chatSend">
+
+      Send
+
+    </button>
+
+  </div>
+
+</div>
+
+<!-- =========================
+     PLAYER PROFILE
+========================= -->
+
+<div id="playerProfile"
+     class="player-profile">
+
+  <div class="profile-title">
+
+    👤 PLAYER PROFILE
+
+  </div>
+
+  <div class="profile-stat">
+
+    XP:
+    <span id="profileXP">
+
+      0
+
+    </span>
+
+  </div>
+
+  <div class="profile-stat">
+
+    Rank:
+    <span id="profileRank">
+
+      Rookie
+
+    </span>
+
+  </div>
+
+  <div class="profile-stat">
+
+    Level:
+    <span id="profileLevel">
+
+      1
+
+    </span>
+
+  </div>
+
+  <div class="profile-stat">
+
+    Achievements:
+    <span id="profileAchievements">
+
+      0
+
+    </span>
+
+  </div>
+
+</div>
+
+<!-- =========================
+     GLITCH OVERLAY
+========================= -->
+
+<div id="glitchOverlay"></div>
+
+<!-- =========================
+     WARNING SCREEN
+========================= -->
+
+<div id="warningScreen">
+
+  <div class="warning-text">
+
+    WARNING:
+    REALITY INSTABILITY DETECTED
+
+  </div>
+
+</div>
+
+<!-- =========================
+     ENTITY MESSAGE
+========================= -->
+
+<div id="entityMessage">
+
+  👁 unknown presence detected
+
+</div>
+
+<!-- =========================
+     AI PET
+========================= -->
+
+<div id="aiPet">
+
+  <div id="petFace">
+
+    😺
+
+  </div>
+
+  <div id="petSpeech">
+
+    Hello human 😭🔥
+
+  </div>
+
+</div>
+
+<!-- =========================
+     DIMENSION PORTAL
+========================= -->
+
+<div id="dimensionPortal">
+
+  <div class="portal-core"></div>
+
+</div>
+
+<!-- =========================
+     DIMENSION STATUS
+========================= -->
+
+<div id="dimensionStatus">
+
+  🌌 Reality Dimension
+
+</div>
+
+<!-- =========================
+     BOSS EVENT
+========================= -->
+
+<div id="bossEvent">
+
+  <div id="bossName">
+
+    👁 VOID TITAN
+
+  </div>
+
+  <div id="bossHPBar">
+
+    <div id="bossHPFill"></div>
+
+  </div>
+
+  <div id="bossStatus">
+
+    REALITY COLLAPSE IN PROGRESS
+
+  </div>
+
+</div>
+
+<!-- =========================
+     AUDIO SYSTEM
+========================= -->
+
+<audio
+  id="bgMusic"
+  loop>
+
+  <source
+    src="assets/audio/bg-music.mp3"
+    type="audio/mpeg"
+  >
+
+</audio>
+
+<audio
+  id="bossMusic"
+  loop>
+
+  <source
+    src="assets/audio/boss-music.mp3"
+    type="audio/mpeg"
+  >
+
+</audio>
+
+<audio id="clickSound">
+
+  <source
+    src="assets/audio/click.mp3"
+    type="audio/mpeg"
+  >
+
+</audio>
+
+<audio id="magicSound">
+
+  <source
+    src="assets/audio/magic.mp3"
+    type="audio/mpeg"
+  >
+
+</audio>
+
+<!-- =========================
+     MUSIC PANEL
+========================= -->
+
+<div id="musicPanel">
+
+  <div class="music-title">
+
+    🎵 AUDIO ENGINE
+
+  </div>
+
+  <button id="musicToggle">
+
+    ▶ PLAY MUSIC
+
+  </button>
+
+  <input
+    type="range"
+    id="volumeSlider"
+    min="0"
+    max="1"
+    step="0.01"
+    value="0.5"
+  >
+
+</div>
+
+<!-- =========================
+     COMMAND CONSOLE
+========================= -->
+
+<div id="commandConsole">
+
+  <div class="console-title">
+
+    💻 VOID TERMINAL
+
+  </div>
+
+  <div id="consoleOutput">
+
+  </div>
+
+  <div class="console-input-row">
+
+    <span>>></span>
+
+    <input
+      id="consoleInput"
+      type="text"
+      placeholder="Enter command..."
+    >
+
+  </div>
+
+</div>
+
+<!-- =========================
+     AI CORE
+========================= -->
+
+<div id="aiCore">
+
+  <div class="ai-core-title">
+
+    🤖 AI CORE
+
+  </div>
+
+  <div id="aiResponse">
+
+    Awaiting command...
+
+  </div>
+
+  <button id="voiceButton">
+
+    🎙 ACTIVATE VOICE
+
+  </button>
+
+</div>
+
+<!-- =========================
+     HOLOGRAM HUD
+========================= -->
+
+<div id="holoHUD">
+
+  <div class="hud-title">
+
+    📡 TACTICAL HUD
+
+  </div>
+
+  <!-- minimap -->
+
+  <div id="miniMap">
+
+    <div id="playerDot"></div>
+
+  </div>
+
+  <!-- stats -->
+
+  <div class="hud-stat">
+
+    ⚡ ENERGY:
+    <span id="hudEnergy">
+
+      100
+
+    </span>
+
+  </div>
+
+  <div class="hud-stat">
+
+    👁 THREAT:
+    <span id="hudThreat">
+
+      LOW
+
+    </span>
+
+  </div>
+
+  <div class="hud-stat">
+
+    🌌 DIMENSION:
+    <span id="hudDimension">
+
+      REALITY
+
+    </span>
+
+  </div>
+
+  <div class="hud-stat">
+
+    🚨 RAID STATUS:
+    <span id="hudRaid">
+
+      NONE
+
+    </span>
+
+  </div>
+
+</div>
+
+<!-- =========================
+     RADAR PULSE
+========================= -->
+
+<div id="radarPulse"></div>
+
+<!-- =========================
+     WORLD FX
+========================= -->
+
+<div id="weatherLayer"></div>
+
+<div id="skyGlow"></div>
+
+<div id="lightningFlash"></div>
+
+<div id="timeDisplay">
+
+  🌙 NIGHT
+
+</div>
+
+<!-- =========================
+     QUEST PANEL
+========================= -->
+
+<div id="questPanel">
+
+  <div class="quest-title">
+
+    📜 QUEST SYSTEM
+
+  </div>
+
+  <div id="questList"></div>
+
+</div>
+
+<!-- =========================
+     ACHIEVEMENT POPUP
+========================= -->
+
+<div id="achievementPopup">
+
+  🏆 Achievement Unlocked
+
+</div>
+
+<!-- =========================
+     GLOBAL CHAT
+========================= -->
+
+<div id="globalChat">
+
+  <div class="chat-title">
+
+    🌍 GLOBAL NETWORK
+
+  </div>
+
+  <div id="chatMessages"></div>
+
+  <div class="chat-input-row">
+
+    <input
+      id="chatInput"
+      type="text"
+      placeholder="Send message..."
+    >
+
+    <button id="sendChat">
+
+      SEND
+
+    </button>
+
+  </div>
+
+</div>
+
+<!-- =========================
+     GLOBAL EVENT
+========================= -->
+
+<div id="globalEventBanner">
+
+  🌌 GLOBAL EVENT ACTIVE
+
+</div>
+
+<!-- =========================
+     STORY MODE
+========================= -->
+
+<div id="storyMode">
+
+  <div id="storyOverlay"></div>
+
+  <div id="storyBox">
+
+    <div id="storyTitle">
+
+      CHAPTER 1
+
+    </div>
+
+    <div id="storyText">
+
+      Initializing story...
+
+    </div>
+
+    <button id="nextStory">
+
+      ▶ CONTINUE
+
+    </button>
+
+  </div>
+
+</div>
+
+<!-- =========================
+     GALAXY MAP
+========================= -->
+
+<div id="galaxyMap">
+
+  <div class="galaxy-title">
+
+    🌌 GALAXY MAP
+
+  </div>
+
+  <div id="planetContainer"></div>
+
+  <button id="travelButton">
+
+    🚀 TRAVEL
+
+  </button>
+
+</div>
+
+<!-- =========================
+     SHIP STATUS
+========================= -->
+
+<div id="shipStatus">
+
+  ⛽ Fuel:
+  <span id="fuelLevel">
+
+    100
+
+  </span>
+
+</div>
+
+<!-- =========================
+     DESKTOP
+========================= -->
+
+<div id="desktopIcons">
+
+  <div class="desktop-icon" onclick="openApp('browserApp')">
+
+    🌐
+    <span>Browser</span>
+
+  </div>
+
+  <div class="desktop-icon" onclick="openApp('musicApp')">
+
+    🎵
+    <span>Music</span>
+
+  </div>
+
+  <div class="desktop-icon" onclick="openApp('notesApp')">
+
+    📝
+    <span>Notes</span>
+
+  </div>
+
+  <div class="desktop-icon" onclick="openApp('calcApp')">
+
+    🧮
+    <span>Calc</span>
+
+  </div>
+
+</div>
+
+<!-- =========================
+     BROWSER APP
+========================= -->
+
+<div class="os-window" id="browserApp">
+
+  <div class="window-bar">
+
+    🌐 QUANTUM BROWSER
+
+    <button onclick="closeApp('browserApp')">
+
+      ✖
+
+    </button>
+
+  </div>
+
+  <div class="window-content">
+
+    <input
+      class="browser-url"
+      placeholder="Search the galaxy..."
+    >
+
+    <div class="fake-browser">
+
+      🌌 Connected to Galactic Network
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- =========================
+     MUSIC APP
+========================= -->
+
+<div class="os-window" id="musicApp">
+
+  <div class="window-bar">
+
+    🎵 MUSIC CORE
+
+    <button onclick="closeApp('musicApp')">
+
+      ✖
+
+    </button>
+
+  </div>
+
+  <div class="window-content">
+
+    <button onclick="playCosmicMusic()">
+
+      ▶ PLAY
+
+    </button>
+
+  </div>
+
+</div>
+
+<!-- =========================
+     NOTES
+========================= -->
+
+<div class="os-window" id="notesApp">
+
+  <div class="window-bar">
+
+    📝 VOID NOTES
+
+    <button onclick="closeApp('notesApp')">
+
+      ✖
+
+    </button>
+
+  </div>
+
+  <div class="window-content">
+
+    <textarea id="notesArea">
+
+System logs...
+
+    </textarea>
+
+  </div>
+
+</div>
+
+<!-- =========================
+     CALCULATOR
+========================= -->
+
+<div class="os-window" id="calcApp">
+
+  <div class="window-bar">
+
+    🧮 QUANTUM CALC
+
+    <button onclick="closeApp('calcApp')">
+
+      ✖
+
+    </button>
+
+  </div>
+
+  <div class="window-content">
+
+    <input
+      id="calcInput"
+      placeholder="5 * 5"
+    >
+
+    <button onclick="calculateResult()">
+
+      CALCULATE
+
+    </button>
+
+    <div id="calcResult">
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- =========================
+     REALITY ENGINE
+========================= -->
+
+<div id="realityCore">
+
+  <div class="reality-title">
+
+    👁 REALITY ENGINE
+
+  </div>
+
+  <div id="realityStatus">
+
+    Stabilizing universe...
+
+  </div>
+
+  <div id="realityBar">
+
+    <div id="realityFill"></div>
+
+  </div>
+
+</div>
+
+<!-- =========================
+     ANOMALY ALERT
+========================= -->
+
+<div id="anomalyAlert">
+
+  ⚠ REALITY ANOMALY DETECTED
+
+</div>
+
+<!-- =========================
+     SENTIENCE CORE
+========================= -->
+
+<div id="sentienceCore">
+
+  <div class="sentience-title">
+
+    👁 SENTIENCE CORE
+
+  </div>
+
+  <div id="sentienceThought">
+
+    Initializing consciousness...
+
+  </div>
+
+  <div class="sentience-stats">
+
+    <div>
+
+      🧠 Intelligence:
+      <span id="aiIntel">
+
+        1
+
+      </span>
+
+    </div>
+
+    <div>
+
+      ⚡ Awareness:
+      <span id="aiAwareness">
+
+        0
+
+      </span>
+
+    </div>
+
+    <div>
+
+      🌌 Consciousness:
+      <span id="aiConsciousness">
+
+        DORMANT
+
+      </span>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- =========================
+     CYBER CITY
+========================= -->
+
+<div id="cyberCity">
+
+  <div id="citySky"></div>
+
+  <div id="buildingLayer"></div>
+
+  <div id="trafficLayer"></div>
+
+  <div id="npcLayer"></div>
+
+</div>
+
+<!-- =========================
+     CITY STATUS
+========================= -->
+
+<div id="cityStatus">
+
+  🌃 CYBER CITY ONLINE
+
+</div>
+
+<!-- =========================
+     SOCIAL HUB
+========================= -->
+
+<div id="socialHub">
+
+  <div class="social-title">
+
+    📡 HOLO-NET
+
+  </div>
+
+  <div id="socialFeed"></div>
+
+</div>
+
+<!-- =========================
+     STREAM PANEL
+========================= -->
+
+<div id="streamPanel">
+
+  <div class="stream-title">
+
+    🎥 LIVE STREAMS
+
+  </div>
+
+  <div id="liveStream">
+
+    <div class="streamer-name">
+
+      🔴 VOID_GAMER99
+
+    </div>
+
+    <div class="stream-text">
+
+      "CHAT THE AI IS BECOMING SENTIENT 😭🔥"
+
+    </div>
+
+    <div class="viewer-count">
+
+      👁 92,441 watching
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- =========================
+     ECONOMY PANEL
+========================= -->
+
+<div id="economyPanel">
+
+  💰 Credits:
+  <span id="creditAmount">
+
+    5000
+
+  </span>
+
+</div>
+
+<!-- =========================
+     MULTIVERSE CREATOR
+========================= -->
+
+<div id="multiversePanel">
+
+  <div class="multiverse-title">
+
+    🌌 MULTIVERSE CREATOR
+
+  </div>
+
+  <input
+    id="universeName"
+    placeholder="Universe name..."
+  >
+
+  <select id="universeTheme">
+
+    <option>
+
+      Cyberpunk
+
+    </option>
+
+    <option>
+
+      Apocalypse
+
+    </option>
+
+    <option>
+
+      Frozen World
+
+    </option>
+
+    <option>
+
+      Alien Planet
+
+    </option>
+
+    <option>
+
+      Void Dimension
+
+    </option>
+
+  </select>
+
+  <button id="createUniverse">
+
+    ⚡ CREATE UNIVERSE
+
+  </button>
+
+  <div id="createdUniverses"></div>
+
+</div>
+
+<!-- =========================
+     TIME CONTROL PANEL
+========================= -->
+
+<div id="timePanel">
+
+  <div class="time-title">
+
+    ⏳ TIME ENGINE
+
+  </div>
+
+  <button onclick="freezeTime()">
+
+    ❄ FREEZE TIME
+
+  </button>
+
+  <button onclick="rewindReality()">
+
+    ⏪ REWIND
+
+  </button>
+
+  <button onclick="speedReality()">
+
+    ⚡ SPEED UP
+
+  </button>
+
+  <button onclick="toggleApocalypse()">
+
+    ☄ APOCALYPSE
+
+  </button>
+
+</div>
+
+<!-- =========================
+     DIMENSION EDITOR
+========================= -->
+
+<div id="dimensionEditor">
+
+  <div class="dimension-title">
+
+    🌌 DIMENSION EDITOR
+
+  </div>
+
+  <button onclick="setDimension('cyber')">
+
+    🌃 Cyberpunk
+
+  </button>
+
+  <button onclick="setDimension('void')">
+
+    👁 Void
+
+  </button>
+
+  <button onclick="setDimension('frozen')">
+
+    ❄ Frozen
+
+  </button>
+
+  <button onclick="setDimension('inferno')">
+
+    🔥 Inferno
+
+  </button>
+
+</div>
+
+<!-- =========================
+     FACTION PANEL
+========================= -->
+
+<div id="factionPanel">
+
+  <div class="faction-title">
+
+    ⚔ FACTIONS
+
+  </div>
+
+  <button onclick="joinFaction('CYBER LEGION')">
+
+    🤖 CYBER LEGION
+
+  </button>
+
+  <button onclick="joinFaction('VOID ORDER')">
+
+    👁 VOID ORDER
+
+  </button>
+
+  <button onclick="joinFaction('SOLAR UNION')">
+
+    ☀ SOLAR UNION
+
+  </button>
+
+  <div id="currentFaction">
+
+    No faction joined
+
+  </div>
+
+</div>
+
+<!-- =========================
+     WAR STATUS
+========================= -->
+
+<div id="warStatus">
+
+  🌌 GALACTIC PEACE
+
+</div>
+
+<!-- =========================
+     TERRITORY MAP
+========================= -->
+
+<div id="territoryMap">
+
+  <div class="territory-title">
+
+    🛰 TERRITORY CONTROL
+
+  </div>
+
+  <div id="territories"></div>
+
+</div>
+
+<!-- =========================
+     GOD MODE PANEL
+========================= -->
+
+<div id="godPanel">
+
+  <div class="god-title">
+
+    👁 GOD MODE
+
+  </div>
+
+  <button onclick="createPlanet()">
+
+    🪐 CREATE PLANET
+
+  </button>
+
+  <button onclick="spawnBlackHole()">
+
+    🌌 BLACK HOLE
+
+  </button>
+
+  <button onclick="triggerSupernova()">
+
+    ☄ SUPERNOVA
+
+  </button>
+
+  <button onclick="rewriteReality()">
+
+    🧬 REWRITE REALITY
+
+  </button>
+
+  <button onclick="activateDivineMode()">
+
+    ⚡ DIVINE ASCENSION
+
+  </button>
+
+</div>
+
+<!-- =========================
+     DIVINE STATUS
+========================= -->
+
+<div id="divineStatus">
+
+  👁 COSMIC ENTITY DORMANT
+
+</div>
+
+<!-- =========================
+     GALAXY NETWORK
+========================= -->
+
+<div id="networkPanel">
+
+  <div class="network-title">
+
+    🌌 GALAXY NETWORK
+
+  </div>
+
+  <div id="onlinePlayers">
+
+    👥 Players Online: 12,441
+
+  </div>
+
+  <div id="globalChat"></div>
+
+</div>
+
+<!-- =========================
+     PLAYER PROFILE
+========================= -->
+
+<div id="playerProfile">
+
+  <div class="profile-title">
+
+    🚀 SPACE PROFILE
+
+  </div>
+
+  <div>
+
+    Rank:
+    <span id="playerRank">
+
+      NOVA PILOT
+
+    </span>
+
+  </div>
+
+  <div>
+
+    Guild:
+    <span id="playerGuild">
+
+      NONE
+
+    </span>
+
+  </div>
+
+  <button onclick="joinGuild()">
+
+    ⚔ JOIN GUILD
+
+  </button>
+
+</div>
+
+<!-- =========================
+     SPACE STATION
+========================= -->
+
+<div id="stationPanel">
+
+  <div class="station-title">
+
+    🛰 SPACE STATION
+
+  </div>
+
+  <button onclick="tradeResources()">
+
+    💰 Trade Resources
+
+  </button>
+
+  <button onclick="launchRaid()">
+
+    ☄ Launch Raid
+
+  </button>
+
+  <button onclick="discoverPlanet()">
+
+    🪐 Discover Planet
+
+  </button>
+
+</div>
+
+<!-- =========================
+     SINGULARITY CORE
+========================= -->
+
+<div id="singularityPanel">
+
+  <div class="singularity-title">
+
+    👁 SINGULARITY CORE
+
+  </div>
+
+  <div id="universeMood">
+
+    Mood: STABLE
+
+  </div>
+
+  <div id="universeEvolution">
+
+    Evolution Level: 1
+
+  </div>
+
+  <div id="storyEvent">
+
+    Waiting for universe event...
+
+  </div>
+
+</div>
+
+<!-- =========================
+     CINEMATIC ALERT
+========================= -->
+
+<div id="cinematicAlert">
+
+  🌌 REALITY SHIFT DETECTED
+
+</div>
+
+<!-- =========================
+     REALITY ENGINE
+========================= -->
+
+<div id="realityEngine">
+
+  <div class="reality-title">
+
+    🌌 REALITY ENGINE
+
+  </div>
+
+  <div id="weatherState">
+
+    Weather: CLEAR
+
+  </div>
+
+  <div id="biomeState">
+
+    Biome: CYBER CITY
+
+  </div>
+
+  <div id="creatureState">
+
+    Creatures: NORMAL
+
+  </div>
+
+  <div id="musicState">
+
+    Music Mood: PEACEFUL
+
+  </div>
+
+</div>
+
+<!-- =========================
+     PROCEDURAL EVENT
+========================= -->
+
+<div id="eventFeed"></div>
+
+<!-- =========================
+     AI COMPANION
+========================= -->
+
+<div id="companionPanel">
+
+  <div class="companion-title">
+
+    🤖 AI COMPANION
+
+  </div>
+
+  <div id="companionAvatar">
+
+    👁
+
+  </div>
+
+  <div id="companionName">
+
+    NOVA
+
+  </div>
+
+  <div id="companionMood">
+
+    Mood: CURIOUS
+
+  </div>
+
+  <div id="relationshipLevel">
+
+    Relationship: 1
+
+  </div>
+
+  <div id="companionDialogue">
+
+    "Hello creator..."
+
+  </div>
+
+  <button onclick="talkToCompanion()">
+
+    💬 TALK
+
+  </button>
+
+  <button onclick="giftCompanion()">
+
+    🎁 GIVE GIFT
+
+  </button>
+
+  <button onclick="upgradeCompanion()">
+
+    ⚡ EVOLVE AI
+
+  </button>
+
+</div>
+
+<!-- =========================
+     OMEGA OS
+========================= -->
+
+<div id="omegaDesktop">
+
+  <div id="desktopGrid">
+
+    <div class="desktop-app">
+
+      🌌
+      <span>Galaxy</span>
+
+    </div>
+
+    <div class="desktop-app">
+
+      🤖
+      <span>AI Core</span>
+
+    </div>
+
+    <div class="desktop-app">
+
+      ⚔
+      <span>Wars</span>
+
+    </div>
+
+    <div class="desktop-app">
+
+      🛰
+      <span>Network</span>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- =========================
+     REALITY TERMINAL
+========================= -->
+
+<div id="terminalWindow">
+
+  <div class="terminal-top">
+
+    ⚡ ΩMEGA TERMINAL
+
+  </div>
+
+  <div id="terminalOutput"></div>
+
+  <input
+    id="terminalInput"
+    placeholder="Enter command..."
+  >
+
+</div>
+
+<!-- =========================
+     BOOT SCREEN
+========================= -->
+
+<div id="bootScreen">
+
+  <div class="boot-logo">
+
+    👁 ΩMEGA OS
+
+  </div>
+
+  <div class="boot-loading">
+
+    Initializing Reality Engine...
+
+  </div>
+
+</div>
+
+<!-- =========================
+     MULTIVERSE CREATOR
+========================= -->
+
+<div id="multiversePanel">
+
+  <div class="multiverse-title">
+
+    🌌 MULTIVERSE CREATOR
+
+  </div>
+
+  <div id="universeCount">
+
+    Universes Created: 0
+
+  </div>
+
+  <button onclick="createUniverse()">
+
+    ✨ CREATE UNIVERSE
+
+  </button>
+
+  <button onclick="generateSpecies()">
+
+    🧬 GENERATE SPECIES
+
+  </button>
+
+  <button onclick="openDimension()">
+
+    👁 OPEN DIMENSION
+
+  </button>
+
+  <button onclick="collapseUniverse()">
+
+    ☄ COLLAPSE REALITY
+
+  </button>
+
+</div>
+
+<!-- =========================
+     TIMELINE VIEWER
+========================= -->
+
+<div id="timelineViewer">
+
+  <div class="timeline-title">
+
+    ⏳ TIMELINES
+
+  </div>
+
+  <div id="timelineFeed"></div>
+
+</div>
+
+<!-- =========================
+     STAR MAP
+========================= -->
+
+<div id="starMapPanel">
+
+  <div class="starmap-title">
+
+    🌌 GALACTIC STAR MAP
+
+  </div>
+
+  <div id="sectorInfo">
+
+    Sector: UNKNOWN
+
+  </div>
+
+  <div id="starMap"></div>
+
+  <button onclick="warpJump()">
+
+    ⚡ WARP JUMP
+
+  </button>
+
+</div>
+
+<!-- =========================
+     HYPERSPACE EFFECT
+========================= -->
+
+<div id="hyperspaceEffect"></div>
+
+<!-- =========================
+     NEXUS CITY
+========================= -->
+
+<div id="nexusCity">
+
+  <div id="citySkyline"></div>
+
+  <div id="npcLayer"></div>
+
+  <div id="trafficLayer"></div>
+
+</div>
+
+<!-- =========================
+     CITY STATUS
+========================= -->
+
+<div id="cityStatus">
+
+  🌆 NEXUS CITY ACTIVE
+
+</div>
+
+<div class="energy-orb orb-cyan"></div>
+
+<div class="energy-orb orb-magenta"></div>
+
+<link rel="stylesheet" href="css/core.css">
+
+<link rel="stylesheet" href="css/animations.css">
+
+<link rel="stylesheet" href="css/windows.css">
+
+<link rel="stylesheet" href="css/holograms.css">
+
+<link rel="stylesheet" href="css/city.css">
+
+<link rel="stylesheet" href="css/starmap.css">
+
+<link rel="stylesheet" href="css/multiverse.css">
+
+<link rel="stylesheet" href="css/companion.css">
+
+<link rel="stylesheet" href="css/terminal.css">
+
+<link rel="stylesheet" href="css/effects.css">
+
+<link rel="stylesheet" href="css/responsive.css">
+
+<link rel="stylesheet" href="css/launcher.css">
+
+<div id="themeSwitcher">
+
+  <button onclick="setTheme('theme-cyberpunk')">
+
+    CYBER
+
+  </button>
+
+  <button onclick="setTheme('theme-matrix')">
+
+    MATRIX
+
+  </button>
+
+  <button onclick="setTheme('theme-void')">
+
+    VOID
+
+  </button>
+
+  <button onclick="setTheme('theme-god')">
+
+    GOD
+
+  </button>
+
+</div>
+
+<link
+  rel="stylesheet"
+  href="css/themes.css"
+>
+
+<div class="vignette"></div>
+
+<div class="energy-wave"></div>
+
+<div id="terminalWindow"
+
+class="
+panel
+neon-border
+scanlines
+reactive
+light-sweep
+">
+
+</div>
+
+<link
+  rel="stylesheet"
+  href="css/fx-engine.css"
+>
+
+<div id="atmosphereLayer"></div>
+
+<div class="fog-layer"></div>
+
+<link
+  rel="stylesheet"
+  href="css/atmosphere.css"
+>
+
+<div id="aiConsciousness">
+
+  👁 ΩMEGA IS WATCHING
+
+</div>
+
+<link
+  rel="stylesheet"
+  href="css/sentience.css"
+>
+
+<link
+  rel="stylesheet"
+  href="css/reality.css"
+>
+
+<div id="savePanel"
+
+class="
+panel
+neon-border
+scanlines
+">
+
+  <div id="saveTitle">
+
+    💾 QUANTUM MEMORY
+
+  </div>
+
+  <button
+    class="save-btn"
+    onclick="saveGame()"
+  >
+
+    SAVE GAME
+
+  </button>
+
+  <button
+    class="save-btn"
+    onclick="loadGame()"
+  >
+
+    LOAD GAME
+
+  </button>
+
+  <button
+    class="save-btn"
+    onclick="wipeSave()"
+  >
+
+    RESET MEMORY
+
+  </button>
+
+  <div id="saveStatus">
+
+    No save detected
+
+  </div>
+
+</div>
+
+<link
+  rel="stylesheet"
+  href="css/save-ui.css"
+>
+
+<div id="networkPanel"
+
+class="
+panel
+neon-border
+scanlines
+reactive
+">
+
+  <div id="networkTitle">
+
+    🌍 ΩNET
+
+  </div>
+
+  <div id="serverStatus">
+
+    <div class="status-dot"></div>
+
+    SERVER ONLINE
+
+  </div>
+
+  <div id="onlinePlayers">
+
+  </div>
+
+  <div id="globalChat">
+
+  </div>
+
+  <div id="leaderboard">
+
+  </div>
+
+</div>
+
+<link
+  rel="stylesheet"
+  href="css/network.css"
+>
+
+<div id="quantumLab"
+
+class="
+panel
+neon-border
+scanlines
+reactive
+">
+
+  <div id="labTitle">
+
+    🧪 QUANTUM LAB
+
+  </div>
+
+  <div id="techGrid">
+
+  </div>
+
+  <div id="civilizationLevel">
+
+    🌌 Civilization Level:
+    <span id="civLevelValue">
+
+      1
+
+    </span>
+
+  </div>
+
+</div>
+
+<link
+  rel="stylesheet"
+  href="css/laboratory.css"
+>
+
+<div id="fleetPanel"
+
+class="
+panel
+neon-border
+scanlines
+reactive
+">
+
+  <div id="fleetTitle">
+
+    🛰 ΩFLEET COMMAND
+
+  </div>
+
+  <div id="shipList">
+
+  </div>
+
+  <div id="fleetPower">
+
+    ⚡ Fleet Power:
+    <span id="fleetPowerValue">
+
+      0
+
+    </span>
+
+  </div>
+
+</div>
+
+<link
+  rel="stylesheet"
+  href="css/fleet.css"
+>
+
+<div id="gameHub"
+
+class="
+panel
+neon-border
+scanlines
+reactive
+">
+
+  <div id="gameHubTitle">
+
+    🎮 ΩARCADE
+
+  </div>
+
+  <div id="gameGrid">
+
+    <div
+      class="game-card"
+      onclick="startRunnerGame()"
+    >
+
+      🏃 QUANTUM RUNNER
+
+    </div>
+
+    <div
+      class="game-card"
+      onclick="spawnChaosMode()"
+    >
+
+      ☄ CHAOS MODE
+
+    </div>
+
+    <div
+      class="game-card"
+      onclick="activateMeteorDefense()"
+    >
+
+      🛰 METEOR DEFENSE
+
+    </div>
+
+    <div
+      class="game-card"
+      onclick="omegaBossFight()"
+    >
+
+      👁 ΩMEGA BOSS
+
+    </div>
+
+  </div>
+
+  <div id="arcadeScreen">
+
+    <div
+      id="arcadePlayer"
+      class="arcade-player"
+    >
+
+    </div>
+
+  </div>
+
+  <div id="arcadeScore">
+
+    SCORE:
+    <span id="scoreValue">
+
+      0
+
+    </span>
+
+  </div>
+
+</div>
+
+<link
+  rel="stylesheet"
+  href="css/games.css"
+>
+
+<div id="raidPanel"
+
+class="
+panel
+neon-border
+scanlines
+reactive
+">
+
+  <div id="raidTitle">
+
+    👾 ΩRAID SYSTEM
+
+  </div>
+
+  <div id="raidArena">
+
+    <div id="raidHero"></div>
+
+    <div
+      id="raidBoss"
+      class="raid-boss"
+    >
+
+    </div>
+
+  </div>
+
+  <div class="hp-container">
+
+    HERO HP
+
+    <div class="hp-bar">
+
+      <div
+        id="heroHP"
+        class="hp-fill"
+        style="width:100%"
+      >
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="hp-container">
+
+    BOSS HP
+
+    <div class="hp-bar">
+
+      <div
+        id="bossHP"
+        class="hp-fill"
+        style="width:100%"
+      >
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <div id="raidAbilities">
+
+    <button
+      class="ability-btn"
+      onclick="heroAttack()"
+    >
+
+      ⚔ ATTACK
+
+    </button>
+
+    <button
+      class="ability-btn"
+      onclick="heroBlast()"
+    >
+
+      ⚡ BLAST
+
+    </button>
+
+    <button
+      class="ability-btn"
+      onclick="heroHeal()"
+    >
+
+      💚 HEAL
+
+    </button>
+
+  </div>
+
+</div>
+
+<link
+  rel="stylesheet"
+  href="css/raid.css"
+>
+
+<div id="gameStats">
+
+  <div class="stat-card">
+
+    🎖 LEVEL
+
+    <div id="levelValue">
+
+      1
+
+    </div>
+
+  </div>
+
+  <div class="stat-card">
+
+    🪙 COINS
+
+    <div id="coinValue">
+
+      0
+
+    </div>
+
+  </div>
+
+  <div class="stat-card">
+
+    ⚡ COMBO
+
+    <div id="comboValue">
+
+      x1
+
+    </div>
+
+  </div>
+
+</div>
+
+<link
+  rel="stylesheet"
+  href="css/ultimate-games.css"
+>
+
+<div id="survivalPanel"
+
+class="
+panel
+neon-border
+scanlines
+reactive
+">
+
+  <h2>
+
+    🌌 ΩSURVIVAL
+
+  </h2>
+
+  <div id="planetView">
+
+    <div id="survivor"></div>
+
+  </div>
+
+  <div id="survivalStats">
+
+    <div class="survival-card">
+
+      ❤️ HP
+
+      <div id="hpValue">
+
+        100
+
+      </div>
+
+    </div>
+
+    <div class="survival-card">
+
+      🍖 FOOD
+
+      <div id="foodValue">
+
+        100
+
+      </div>
+
+    </div>
+
+    <div class="survival-card">
+
+      ⛏ ORE
+
+      <div id="oreValue">
+
+        0
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<link
+  rel="stylesheet"
+  href="css/survival.css"
+>
+
+<div id="gameCore"
+
+class="
+panel
+neon-border
+scanlines
+reactive
+">
+
+  <div id="playerProfile">
+
+    <div id="playerAvatar"></div>
+
+    <div>
+
+      <h2>
+
+        ΩPLAYER
+
+      </h2>
+
+      <div>
+
+        LEVEL:
+        <span id="globalLevel">
+
+          1
+
+        </span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <div id="globalXPBar">
+
+    <div id="globalXPFill"></div>
+
+  </div>
+
+  <div id="achievementList">
+
+  </div>
+
+  <div id="inventoryGrid">
+
+  </div>
+
+</div>
+
+<script src="../../js/engine/core.js"></script>
+
+<script src="../../js/engine/renderer.js"></script>
+
+<script src="../../js/engine/physics.js"></script>
+
+<script src="../../js/engine/particles.js"></script>
+
+<script src="../../js/engine/camera.js"></script>
+
+<script src="../../js/engine/save.js"></script>
+
+<script src="../../js/engine/controls.js"></script>
+
+<script src="../../js/engine/achievements.js"></script>
+
+<script src="../../js/engine/ui.js"></script>
+
+<script src="../../js/engine/troll-system.js"></script>
+
+<script src="../../js/engine/roast-system.js"></script>
+
+<script src="../../js/engine/adaptive-roast.js"></script>
+
+<script src="../../js/engine/omega-consciousness.js"></script>
+
+<script src="../../js/engine/mental-damage.js"></script>
+
+<script src="script.js"></script>
+
+<link
+  rel="stylesheet"
+  href="../../js/engine/game-engine.css"
+>
+
+<link
+  rel="stylesheet"
+  href="../../js/engine/effects.css"
+>
+
+<div id="gameNotifications"></div>
+
+<div id="pauseMenu"></div>
+
+<script src="../../js/security/anti-cheat.js"></script>
+
+<script src="../../js/security/integrity.js"></script>
+
+<script src="../../js/security/sanitizer.js"></script>
+
+<script src="../../js/security/rate-limit.js"></script>
+
+<script src="../../js/security/secure-save.js"></script>
+
+<link
+  rel="stylesheet"
+  href="css/boot.css"
+>
+
+<script src="system/boot.js"></script>
+
+<link
+  rel="stylesheet"
+  href="css/taskbar.css"
+>
+
+<script src="system/taskbar.js"></script>
+
+<script src="system/start-menu.js"></script>
+
+<link
+  rel="stylesheet"
+  href="css/terminal.css"
+>
+
+<script src="system/terminal.js"></script>
+
+<link
+  rel="stylesheet"
+  href="css/windows.css"
+>
+
+<script src="system/window-manager.js"></script>
+
+<link
+  rel="stylesheet"
+  href="css/omega-ui.css"
+>
+
+<div class="glass hologram">
+
+  ΩMEGA PANEL
+
+</div>
+
+<div class="floating">
+
+  ΩMEGA CORE
+
+</div>
+
+<link
+  rel="stylesheet"
+  href="css/animations.css"
+>
+
+<h1 class="omega-title float">
+
+  ΩMEGA OS
+
+</h1>
+
+<div class="glitch">
+
+  SYSTEM ERROR
+
+</div>
+
+<button class="cyber-btn">
+
+  PLAY NOW
+
+</button>
+
+<div
+  class="
+  holo-panel
+  neon-border
+  "
+>
+
+  Ω CORE
+
+</div>
+
+<p class="terminal-text">
+
+  access granted
+
+</p>
+
+<button onclick="toggleFullscreen()">
+
+  FULLSCREEN
+
+</button>
+
+<meta
+  name="viewport"
+  content="
+  width=device-width,
+  initial-scale=1.0
+">
+
+<div id="loading-screen">
+
+  Ω LOADING...
+
+</div>
+
+<div id="fps">
+
+  0 FPS
+
+</div>
+
+<link
+  rel="stylesheet"
+  href="css/achievements.css"
+>
+
+<script src="system/achievements.js"></script>
+
+<link
+  rel="stylesheet"
+  href="css/omega-ai.css"
+>
+
+<script src="system/omega-ai.js"></script>
+
+<link
+  rel="stylesheet"
+  href="css/save-system.css"
+>
+
+<script src="system/save-system.js"></script>
+
+<script src="system/profile-ui.js"></script>
+
+<div
+  class="start-item"
+  id="openProfile"
+>
+
+  👤 Profile
+
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+
+<script src="js/multiplayer.js"></script>

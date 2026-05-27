@@ -1,0 +1,775 @@
+/* =========================
+   GAME UI ROOT
+========================= */
+
+.game-ui {
+
+  position: fixed;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  font-family:
+  "Segoe UI", sans-serif;
+
+  color: white;
+
+  z-index: 999;
+
+}
+
+/* =========================
+   PLAYER HUD
+========================= */
+
+.hud {
+
+  position: fixed;
+
+  top: 20px;
+  left: 20px;
+
+  width: 340px;
+
+  padding: 24px;
+
+  border-radius: 28px;
+
+  background:
+  rgba(15,23,42,0.72);
+
+  backdrop-filter:
+  blur(25px);
+
+  border:
+  1px solid
+  rgba(255,255,255,0.08);
+
+  box-shadow:
+
+    0 20px 60px
+    rgba(0,0,0,0.45),
+
+    0 0 35px
+    rgba(0,255,255,0.08);
+
+  overflow: hidden;
+
+}
+
+/* animated glow border */
+
+.hud::before {
+
+  content: "";
+
+  position: absolute;
+
+  inset: -2px;
+
+  border-radius: 30px;
+
+  background:
+  linear-gradient(
+
+    135deg,
+
+    cyan,
+    #8b5cf6,
+    magenta,
+    cyan
+
+  );
+
+  background-size:
+  300% 300%;
+
+  animation:
+  hudBorder 8s linear infinite;
+
+  z-index: -2;
+
+  opacity: 0.7;
+
+  filter:
+  blur(12px);
+
+}
+
+@keyframes hudBorder {
+
+  0% {
+
+    background-position:
+    0% 50%;
+
+  }
+
+  100% {
+
+    background-position:
+    100% 50%;
+
+  }
+
+}
+
+/* =========================
+   PLAYER NAME
+========================= */
+
+.player-name {
+
+  font-size: 24px;
+
+  font-weight: bold;
+
+  margin-bottom: 18px;
+
+  color: cyan;
+
+  text-shadow:
+  0 0 15px cyan;
+
+}
+
+/* =========================
+   HEALTH BAR
+========================= */
+
+.health-bar {
+
+  width: 100%;
+
+  height: 24px;
+
+  border-radius: 999px;
+
+  overflow: hidden;
+
+  background:
+  rgba(255,255,255,0.06);
+
+  margin-bottom: 14px;
+
+  position: relative;
+
+}
+
+.health-fill {
+
+  width: 100%;
+  height: 100%;
+
+  background:
+  linear-gradient(
+
+    90deg,
+
+    #ff3b3b,
+    #ff7b7b
+
+  );
+
+  box-shadow:
+
+    0 0 25px red;
+
+  transition:
+  width 0.3s;
+
+}
+
+/* animated shine */
+
+.health-fill::after {
+
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+  linear-gradient(
+
+    120deg,
+
+    transparent,
+
+    rgba(255,255,255,0.35),
+
+    transparent
+
+  );
+
+  animation:
+  healthShine 3s linear infinite;
+
+}
+
+@keyframes healthShine {
+
+  from {
+
+    transform:
+    translateX(-100%);
+
+  }
+
+  to {
+
+    transform:
+    translateX(100%);
+
+  }
+
+}
+
+/* =========================
+   STAMINA BAR
+========================= */
+
+.stamina-bar {
+
+  width: 100%;
+
+  height: 14px;
+
+  border-radius: 999px;
+
+  overflow: hidden;
+
+  background:
+  rgba(255,255,255,0.05);
+
+  margin-bottom: 14px;
+
+}
+
+.stamina-fill {
+
+  width: 80%;
+  height: 100%;
+
+  background:
+  linear-gradient(
+
+    90deg,
+
+    lime,
+    cyan
+
+  );
+
+  box-shadow:
+  0 0 20px cyan;
+
+}
+
+/* =========================
+   XP BAR
+========================= */
+
+.xp-bar {
+
+  width: 100%;
+
+  height: 14px;
+
+  border-radius: 999px;
+
+  overflow: hidden;
+
+  background:
+  rgba(255,255,255,0.05);
+
+}
+
+.xp-fill {
+
+  width: 45%;
+  height: 100%;
+
+  background:
+  linear-gradient(
+
+    90deg,
+
+    cyan,
+    #8b5cf6
+
+  );
+
+  box-shadow:
+  0 0 20px cyan;
+
+}
+
+/* =========================
+   SKILL SLOTS
+========================= */
+
+.skill-bar {
+
+  position: fixed;
+
+  bottom: 20px;
+
+  left: 50%;
+
+  transform:
+  translateX(-50%);
+
+  display: flex;
+
+  gap: 14px;
+
+}
+
+.skill-slot {
+
+  width: 78px;
+  height: 78px;
+
+  border-radius: 22px;
+
+  background:
+  rgba(15,23,42,0.82);
+
+  backdrop-filter:
+  blur(15px);
+
+  border:
+  1px solid
+  rgba(255,255,255,0.08);
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size: 30px;
+
+  box-shadow:
+  0 0 25px
+  rgba(0,255,255,0.08);
+
+  transition: 0.3s;
+
+}
+
+.skill-slot:hover {
+
+  transform:
+  translateY(-6px)
+  scale(1.05);
+
+  box-shadow:
+  0 0 40px cyan;
+
+}
+
+/* =========================
+   INVENTORY
+========================= */
+
+.inventory {
+
+  position: fixed;
+
+  bottom: 20px;
+  left: 20px;
+
+  display: grid;
+
+  grid-template-columns:
+  repeat(5, 80px);
+
+  gap: 14px;
+
+}
+
+.inventory-slot {
+
+  width: 80px;
+  height: 80px;
+
+  border-radius: 22px;
+
+  background:
+  rgba(15,23,42,0.78);
+
+  backdrop-filter:
+  blur(14px);
+
+  border:
+  1px solid
+  rgba(255,255,255,0.08);
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size: 30px;
+
+  transition: 0.3s;
+
+}
+
+.inventory-slot:hover {
+
+  transform:
+  scale(1.08);
+
+  box-shadow:
+  0 0 35px cyan;
+
+}
+
+/* =========================
+   ITEM RARITIES
+========================= */
+
+.common {
+
+  border-color:
+  rgba(255,255,255,0.15);
+
+}
+
+.rare {
+
+  border-color: cyan;
+
+  box-shadow:
+  0 0 20px cyan;
+
+}
+
+.epic {
+
+  border-color: magenta;
+
+  box-shadow:
+  0 0 20px magenta;
+
+}
+
+.legendary {
+
+  border-color: gold;
+
+  box-shadow:
+  0 0 30px gold;
+
+  animation:
+  legendaryPulse 2s infinite;
+
+}
+
+@keyframes legendaryPulse {
+
+  0% {
+
+    transform:
+    scale(1);
+
+  }
+
+  50% {
+
+    transform:
+    scale(1.03);
+
+  }
+
+  100% {
+
+    transform:
+    scale(1);
+
+  }
+
+}
+
+/* =========================
+   DAMAGE NUMBERS
+========================= */
+
+.damage-number {
+
+  position: absolute;
+
+  font-size: 34px;
+
+  font-weight: bold;
+
+  color: red;
+
+  text-shadow:
+  0 0 15px red;
+
+  animation:
+  damageFloat 1s forwards;
+
+}
+
+.critical {
+
+  color: gold;
+
+  font-size: 48px;
+
+  text-shadow:
+  0 0 20px gold;
+
+}
+
+@keyframes damageFloat {
+
+  from {
+
+    opacity: 1;
+
+    transform:
+    translateY(0)
+    scale(1);
+
+  }
+
+  to {
+
+    opacity: 0;
+
+    transform:
+    translateY(-80px)
+    scale(1.4);
+
+  }
+
+}
+
+/* =========================
+   BOSS UI
+========================= */
+
+.boss-ui {
+
+  position: fixed;
+
+  top: 20px;
+  left: 50%;
+
+  transform:
+  translateX(-50%);
+
+  width: 700px;
+
+}
+
+.boss-name {
+
+  text-align: center;
+
+  margin-bottom: 12px;
+
+  font-size: 28px;
+
+  color: orange;
+
+  text-shadow:
+  0 0 15px orange;
+
+}
+
+.boss-bar {
+
+  width: 100%;
+
+  height: 34px;
+
+  border-radius: 999px;
+
+  overflow: hidden;
+
+  background:
+  rgba(255,255,255,0.06);
+
+}
+
+.boss-fill {
+
+  width: 100%;
+  height: 100%;
+
+  background:
+  linear-gradient(
+
+    90deg,
+
+    orange,
+    red
+
+  );
+
+  box-shadow:
+  0 0 30px orange;
+
+}
+
+/* =========================
+   MINIMAP
+========================= */
+
+.minimap {
+
+  position: fixed;
+
+  top: 20px;
+  right: 20px;
+
+  width: 220px;
+  height: 220px;
+
+  border-radius: 24px;
+
+  background:
+  rgba(15,23,42,0.75);
+
+  backdrop-filter:
+  blur(18px);
+
+  border:
+  1px solid
+  rgba(255,255,255,0.08);
+
+  overflow: hidden;
+
+  box-shadow:
+  0 0 35px
+  rgba(0,255,255,0.08);
+
+}
+
+/* =========================
+   COMBO COUNTER
+========================= */
+
+.combo-counter {
+
+  position: fixed;
+
+  right: 40px;
+  bottom: 220px;
+
+  font-size: 42px;
+
+  font-weight: bold;
+
+  color: gold;
+
+  text-shadow:
+  0 0 20px gold;
+
+  animation:
+  comboPulse 1s infinite;
+
+}
+
+@keyframes comboPulse {
+
+  0% {
+
+    transform:
+    scale(1);
+
+  }
+
+  50% {
+
+    transform:
+    scale(1.08);
+
+  }
+
+  100% {
+
+    transform:
+    scale(1);
+
+  }
+
+}
+
+/* =========================
+   LOOT POPUP
+========================= */
+
+.loot-popup {
+
+  position: fixed;
+
+  right: 20px;
+  bottom: 120px;
+
+  padding:
+  20px 26px;
+
+  border-radius: 22px;
+
+  background:
+  rgba(15,23,42,0.88);
+
+  backdrop-filter:
+  blur(18px);
+
+  border:
+  1px solid gold;
+
+  color: gold;
+
+  animation:
+  lootSlide 0.5s ease;
+
+}
+
+@keyframes lootSlide {
+
+  from {
+
+    opacity: 0;
+
+    transform:
+    translateX(120px);
+
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform:
+    translateX(0);
+
+  }
+
+}
+
+#gameUI {
+
+  position: fixed;
+
+  inset: 0;
+
+  pointer-events: none;
+
+}
+
+.ui-card {
+
+  pointer-events: auto;
+
+}

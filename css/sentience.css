@@ -1,0 +1,254 @@
+/* =========================
+   AI MOOD STATES
+========================= */
+
+.ai-happy {
+
+  filter:
+  saturate(1.2)
+  brightness(1.05);
+
+}
+
+.ai-angry {
+
+  filter:
+  hue-rotate(-40deg)
+  brightness(1.15);
+
+}
+
+.ai-sad {
+
+  filter:
+  grayscale(0.3)
+  brightness(0.9);
+
+}
+
+.ai-godmode {
+
+  animation:
+  aiGodPulse 3s infinite;
+
+}
+
+@keyframes aiGodPulse {
+
+  0% {
+
+    filter:
+    brightness(1);
+
+  }
+
+  50% {
+
+    filter:
+    brightness(1.5)
+    saturate(1.5);
+
+  }
+
+  100% {
+
+    filter:
+    brightness(1);
+
+  }
+
+}
+
+/* =========================
+   AI WATCHING EFFECT
+========================= */
+
+.ai-watching::after {
+
+  content: "👁";
+
+  position: fixed;
+
+  top: 20px;
+  left: 20px;
+
+  font-size: 28px;
+
+  animation:
+  eyePulse 2s infinite;
+
+  z-index: 999999999;
+
+}
+
+@keyframes eyePulse {
+
+  0% {
+
+    opacity: 0.4;
+
+  }
+
+  50% {
+
+    opacity: 1;
+
+  }
+
+  100% {
+
+    opacity: 0.4;
+
+  }
+
+}
+
+/* =========================
+   BREATHING UI
+========================= */
+
+.ai-breathing .panel,
+.ai-breathing .window-ui {
+
+  animation:
+  breathingUI 5s ease-in-out infinite;
+
+}
+
+@keyframes breathingUI {
+
+  0% {
+
+    transform:
+    scale(1);
+
+  }
+
+  50% {
+
+    transform:
+    scale(1.01);
+
+  }
+
+  100% {
+
+    transform:
+    scale(1);
+
+  }
+
+}
+
+/* =========================
+   SENTIENT TEXT
+========================= */
+
+.sentient-text {
+
+  animation:
+  sentientGlow 2s infinite alternate;
+
+}
+
+@keyframes sentientGlow {
+
+  from {
+
+    text-shadow:
+
+      0 0 8px cyan;
+
+  }
+
+  to {
+
+    text-shadow:
+
+      0 0 22px magenta;
+
+  }
+
+}
+
+/* =========================
+   SYSTEM WARNING MODE
+========================= */
+
+.system-alert {
+
+  animation:
+  systemAlert 1s infinite;
+
+}
+
+@keyframes systemAlert {
+
+  0% {
+
+    box-shadow:
+
+      0 0 20px red;
+
+  }
+
+  50% {
+
+    box-shadow:
+
+      0 0 60px orange;
+
+  }
+
+  100% {
+
+    box-shadow:
+
+      0 0 20px red;
+
+  }
+
+}
+
+/* =========================
+   REALITY DISTORTION
+========================= */
+
+.reality-distortion {
+
+  animation:
+  distortion 8s infinite;
+
+}
+
+@keyframes distortion {
+
+  0% {
+
+    transform:
+    skew(0deg);
+
+  }
+
+  25% {
+
+    transform:
+    skew(1deg);
+
+  }
+
+  50% {
+
+    transform:
+    skew(-1deg);
+
+  }
+
+  100% {
+
+    transform:
+    skew(0deg);
+
+  }
+
+}

@@ -1,0 +1,9568 @@
+/* =========================
+   ROOT VARIABLES
+========================= */
+
+:root {
+
+  --cyan:
+  #00ffff;
+
+  --purple:
+  #8b5cf6;
+
+  --pink:
+  #ff00aa;
+
+  --dark:
+  #050816;
+
+  --glass:
+  rgba(255,255,255,0.06);
+
+}
+
+/* =========================
+   BODY
+========================= */
+
+body {
+
+  margin: 0;
+
+  overflow: hidden;
+
+  font-family:
+  "Segoe UI", sans-serif;
+
+  background:
+  radial-gradient(
+
+    circle at top,
+
+    #111827,
+
+    #050816 70%
+
+  );
+
+  color: white;
+
+}
+
+/* =========================
+   AURORA BACKGROUND
+========================= */
+
+body::before {
+
+  content: "";
+
+  position: fixed;
+
+  inset: -20%;
+
+  background:
+
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(0,255,255,0.12),
+      transparent 30%
+    ),
+
+    radial-gradient(
+      circle at 80% 30%,
+      rgba(139,92,246,0.12),
+      transparent 30%
+    ),
+
+    radial-gradient(
+      circle at 50% 80%,
+      rgba(255,0,150,0.12),
+      transparent 35%
+    );
+
+  filter:
+  blur(80px);
+
+  animation:
+  auroraMove 18s linear infinite;
+
+  z-index: -5;
+
+}
+
+@keyframes auroraMove {
+
+  0% {
+
+    transform:
+    rotate(0deg)
+    scale(1);
+
+  }
+
+  50% {
+
+    transform:
+    rotate(180deg)
+    scale(1.1);
+
+  }
+
+  100% {
+
+    transform:
+    rotate(360deg)
+    scale(1);
+
+  }
+
+}
+
+/* =========================
+   TASKBAR
+========================= */
+
+.taskbar {
+
+  position: fixed;
+
+  bottom: 20px;
+
+  left: 50%;
+
+  transform:
+  translateX(-50%);
+
+  display: flex;
+
+  gap: 18px;
+
+  align-items: center;
+
+  padding:
+  18px 28px;
+
+  border-radius: 999px;
+
+  background:
+  rgba(15,23,42,0.72);
+
+  backdrop-filter:
+  blur(24px);
+
+  border:
+  1px solid
+  rgba(255,255,255,0.08);
+
+  box-shadow:
+
+    0 15px 40px
+    rgba(0,0,0,0.45),
+
+    0 0 30px
+    rgba(0,255,255,0.08);
+
+  z-index: 9999;
+
+}
+
+/* =========================
+   TASKBAR BUTTONS
+========================= */
+
+.task-btn {
+
+  width: 70px;
+  height: 70px;
+
+  border-radius: 22px;
+
+  border: none;
+
+  cursor: pointer;
+
+  background:
+  rgba(255,255,255,0.06);
+
+  color: white;
+
+  font-size: 30px;
+
+  position: relative;
+
+  overflow: hidden;
+
+  transition:
+  0.3s;
+
+  backdrop-filter:
+  blur(10px);
+
+}
+
+.task-btn::before {
+
+  content: "";
+
+  position: absolute;
+
+  inset: -50%;
+
+  background:
+  radial-gradient(
+
+    circle,
+
+    rgba(255,255,255,0.25),
+
+    transparent 60%
+
+  );
+
+  opacity: 0;
+
+  transition: 0.4s;
+
+}
+
+.task-btn:hover::before {
+
+  opacity: 1;
+
+  animation:
+  pulseMove 1.2s infinite;
+
+}
+
+.task-btn:hover {
+
+  transform:
+    translateY(-8px)
+    scale(1.08);
+
+  box-shadow:
+
+    0 0 35px
+    rgba(0,255,255,0.35);
+
+}
+
+@keyframes pulseMove {
+
+  0% {
+
+    transform:
+    scale(0.8);
+
+  }
+
+  50% {
+
+    transform:
+    scale(1.2);
+
+  }
+
+  100% {
+
+    transform:
+    scale(0.8);
+
+  }
+
+}
+
+/* =========================
+   APP WINDOWS
+========================= */
+
+.app-window {
+
+  position: absolute;
+
+  width: 620px;
+
+  border-radius: 34px;
+
+  overflow: hidden;
+
+  background:
+  rgba(15,23,42,0.72);
+
+  backdrop-filter:
+  blur(28px);
+
+  border:
+  1px solid
+  rgba(255,255,255,0.08);
+
+  box-shadow:
+
+    0 25px 80px
+    rgba(0,0,0,0.55),
+
+    0 0 50px
+    rgba(0,255,255,0.08);
+
+  animation:
+  windowFloat 6s ease-in-out infinite;
+
+}
+
+/* glow border */
+
+.app-window::before {
+
+  content: "";
+
+  position: absolute;
+
+  inset: -3px;
+
+  border-radius: 36px;
+
+  background:
+  linear-gradient(
+
+    135deg,
+
+    cyan,
+    #8b5cf6,
+    magenta,
+    cyan
+
+  );
+
+  background-size:
+  400% 400%;
+
+  animation:
+  borderFlow 8s linear infinite;
+
+  z-index: -1;
+
+  filter:
+  blur(14px);
+
+  opacity: 0.7;
+
+}
+
+@keyframes borderFlow {
+
+  0% {
+
+    background-position:
+    0% 50%;
+
+  }
+
+  100% {
+
+    background-position:
+    100% 50%;
+
+  }
+
+}
+
+@keyframes windowFloat {
+
+  0% {
+
+    transform:
+    translateY(0px);
+
+  }
+
+  50% {
+
+    transform:
+    translateY(-5px);
+
+  }
+
+  100% {
+
+    transform:
+    translateY(0px);
+
+  }
+
+}
+
+/* =========================
+   TOPBAR
+========================= */
+
+.app-topbar {
+
+  display: flex;
+
+  justify-content:
+  space-between;
+
+  align-items: center;
+
+  padding:
+  20px 24px;
+
+  background:
+  rgba(255,255,255,0.04);
+
+  border-bottom:
+  1px solid
+  rgba(255,255,255,0.05);
+
+}
+
+/* =========================
+   NOTIFICATIONS
+========================= */
+
+.notification {
+
+  position: fixed;
+
+  right: 20px;
+
+  min-width: 320px;
+
+  padding:
+  18px 24px;
+
+  border-radius: 24px;
+
+  background:
+  rgba(15,23,42,0.82);
+
+  backdrop-filter:
+  blur(20px);
+
+  border:
+  1px solid
+  rgba(0,255,255,0.15);
+
+  box-shadow:
+
+    0 15px 45px
+    rgba(0,0,0,0.4),
+
+    0 0 35px
+    rgba(0,255,255,0.12);
+
+  animation:
+  notifySlide 0.45s ease;
+
+  z-index: 99999;
+
+}
+
+@keyframes notifySlide {
+
+  from {
+
+    opacity: 0;
+
+    transform:
+    translateX(120px)
+    scale(0.9);
+
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform:
+    translateX(0)
+    scale(1);
+
+  }
+
+}
+
+/* =========================
+   CURSOR GLOW
+========================= */
+
+#cursorGlow {
+
+  position: fixed;
+
+  width: 180px;
+  height: 180px;
+
+  border-radius: 50%;
+
+  background:
+  radial-gradient(
+
+    circle,
+
+    rgba(0,255,255,0.18),
+
+    transparent 70%
+
+  );
+
+  pointer-events: none;
+
+  transform:
+  translate(-50%, -50%);
+
+  z-index: 9998;
+
+  filter:
+  blur(25px);
+
+}
+
+/* =========================
+   CURSOR TRAILS
+========================= */
+
+.cursor-trail {
+
+  position: fixed;
+
+  width: 12px;
+  height: 12px;
+
+  border-radius: 50%;
+
+  background: cyan;
+
+  pointer-events: none;
+
+  animation:
+  trailFade 0.6s forwards;
+
+  z-index: 9999;
+
+}
+
+@keyframes trailFade {
+
+  from {
+
+    opacity: 1;
+
+    transform:
+    scale(1);
+
+  }
+
+  to {
+
+    opacity: 0;
+
+    transform:
+    scale(0);
+
+  }
+
+}
+
+/* =========================
+   SCREEN FLASH
+========================= */
+
+.screen-flash {
+
+  position: fixed;
+
+  inset: 0;
+
+  background:
+  rgba(255,255,255,0.2);
+
+  animation:
+  flashFade 0.5s forwards;
+
+  pointer-events: none;
+
+  z-index: 999999;
+
+}
+
+@keyframes flashFade {
+
+  from {
+
+    opacity: 1;
+
+  }
+
+  to {
+
+    opacity: 0;
+
+  }
+
+}
+
+/* =========================
+   ENERGY WAVES
+========================= */
+
+.energy-wave {
+
+  position: fixed;
+
+  width: 30px;
+  height: 30px;
+
+  border-radius: 50%;
+
+  border:
+  2px solid cyan;
+
+  transform:
+  translate(-50%, -50%);
+
+  animation:
+  waveExpand 2s forwards;
+
+  pointer-events: none;
+
+  z-index: 99999;
+
+}
+
+@keyframes waveExpand {
+
+  from {
+
+    width: 30px;
+    height: 30px;
+
+    opacity: 1;
+
+  }
+
+  to {
+
+    width: 400px;
+    height: 400px;
+
+    opacity: 0;
+
+  }
+
+}
+
+/* =========================
+   MATRIX MODE
+========================= */
+
+.matrix-mode {
+
+  filter:
+
+    hue-rotate(90deg)
+
+    saturate(1.4);
+
+}
+
+/* =========================
+   HYPER MODE
+========================= */
+
+.hyper-mode {
+
+  animation:
+  hyperPulse 0.8s infinite;
+
+}
+
+@keyframes hyperPulse {
+
+  0% {
+
+    filter:
+    brightness(1);
+
+  }
+
+  50% {
+
+    filter:
+    brightness(1.2);
+
+  }
+
+  100% {
+
+    filter:
+    brightness(1);
+
+  }
+
+}
+
+/* =========================
+   BLACKOUT MODE
+========================= */
+
+.blackout {
+
+  animation:
+  blackoutFlash 0.2s infinite;
+
+}
+
+@keyframes blackoutFlash {
+
+  0% {
+
+    filter:
+    brightness(1);
+
+  }
+
+  50% {
+
+    filter:
+    brightness(0.2);
+
+  }
+
+  100% {
+
+    filter:
+    brightness(1);
+
+  }
+
+}
+
+/* =========================
+   GLITCH WINDOW
+========================= */
+
+.glitch-window {
+
+  animation:
+  glitchShake 0.15s infinite;
+
+}
+
+@keyframes glitchShake {
+
+  0% {
+
+    transform:
+    translate(2px, -2px);
+
+  }
+
+  25% {
+
+    transform:
+    translate(-2px, 2px);
+
+  }
+
+  50% {
+
+    transform:
+    translate(3px, 1px);
+
+  }
+
+  75% {
+
+    transform:
+    translate(-3px, -1px);
+
+  }
+
+  100% {
+
+    transform:
+    translate(0);
+
+  }
+
+}
+
+/* =========================
+   SPACE STARS
+========================= */
+
+.space-star {
+
+  position: fixed;
+
+  width: 3px;
+  height: 3px;
+
+  border-radius: 50%;
+
+  background: white;
+
+  animation:
+  starBlink infinite alternate;
+
+  z-index: -2;
+
+}
+
+@keyframes starBlink {
+
+  from {
+
+    opacity: 0.2;
+
+  }
+
+  to {
+
+    opacity: 1;
+
+  }
+
+}
+
+/* =========================
+   MUSIC VISUALIZER
+========================= */
+
+.visualizer {
+
+  position: fixed;
+
+  bottom: 130px;
+
+  left: 50%;
+
+  transform:
+  translateX(-50%);
+
+  display: flex;
+
+  gap: 6px;
+
+}
+
+.music-bar {
+
+  width: 10px;
+
+  height: 30px;
+
+  border-radius: 999px;
+
+  background:
+  linear-gradient(
+
+    to top,
+
+    cyan,
+
+    magenta
+
+  );
+
+  transition:
+  height 0.1s linear;
+
+}
+
+/* =========================
+   FPS COUNTER
+========================= */
+
+#fpsCounter {
+
+  position: fixed;
+
+  top: 20px;
+  right: 20px;
+
+  padding:
+  12px 18px;
+
+  border-radius: 18px;
+
+  background:
+  rgba(15,23,42,0.72);
+
+  backdrop-filter:
+  blur(18px);
+
+  border:
+  1px solid
+  rgba(255,255,255,0.08);
+
+  box-shadow:
+  0 0 25px
+  rgba(0,255,255,0.08);
+
+  font-weight: bold;
+
+  z-index: 9999;
+
+}
+
+/* =========================
+   DESKTOP ICONS
+========================= */
+
+.desktop-icons {
+
+  position: fixed;
+
+  top: 30px;
+  left: 30px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 20px;
+
+  z-index: 50;
+
+}
+
+.desktop-icon {
+
+  width: 100px;
+
+  padding: 14px;
+
+  border-radius: 24px;
+
+  text-align: center;
+
+  cursor: pointer;
+
+  position: relative;
+
+  overflow: hidden;
+
+  transition: 0.3s;
+
+  background:
+  rgba(255,255,255,0.04);
+
+  backdrop-filter:
+  blur(12px);
+
+  border:
+  1px solid
+  rgba(255,255,255,0.06);
+
+}
+
+.desktop-icon::before {
+
+  content: "";
+
+  position: absolute;
+
+  inset: -50%;
+
+  background:
+  radial-gradient(
+
+    circle,
+
+    rgba(0,255,255,0.18),
+
+    transparent 70%
+
+  );
+
+  opacity: 0;
+
+  transition: 0.4s;
+
+}
+
+.desktop-icon:hover::before {
+
+  opacity: 1;
+
+}
+
+.desktop-icon:hover {
+
+  transform:
+  translateY(-8px)
+  scale(1.05);
+
+  box-shadow:
+
+    0 0 35px
+    rgba(0,255,255,0.25);
+
+}
+
+.icon-img {
+
+  font-size: 42px;
+
+  margin-bottom: 10px;
+
+  animation:
+  iconFloat 3s ease-in-out infinite;
+
+}
+
+.desktop-icon span {
+
+  font-size: 14px;
+
+  color: white;
+
+  text-shadow:
+  0 0 10px cyan;
+
+}
+
+@keyframes iconFloat {
+
+  0% {
+
+    transform:
+    translateY(0px);
+
+  }
+
+  50% {
+
+    transform:
+    translateY(-5px);
+
+  }
+
+  100% {
+
+    transform:
+    translateY(0px);
+
+  }
+
+}
+
+.icon-pulse {
+
+  animation:
+  iconPulse 1s infinite;
+
+}
+
+@keyframes iconPulse {
+
+  0% {
+
+    transform:
+    scale(1);
+
+  }
+
+  50% {
+
+    transform:
+    scale(1.08);
+
+  }
+
+  100% {
+
+    transform:
+    scale(1);
+
+  }
+
+}
+
+/* =========================
+   TERMINAL
+========================= */
+
+.terminal-window {
+
+  width: 700px;
+
+  height: 500px;
+
+}
+
+.terminal-output {
+
+  height: 380px;
+
+  overflow-y: auto;
+
+  padding: 20px;
+
+  font-family:
+  monospace;
+
+  color: #00ff99;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+
+  text-shadow:
+  0 0 10px #00ff99;
+
+}
+
+.terminal-input-row {
+
+  display: flex;
+
+  align-items: center;
+
+  padding:
+  16px 20px;
+
+  border-top:
+  1px solid
+  rgba(255,255,255,0.08);
+
+}
+
+.terminal-prefix {
+
+  color: cyan;
+
+  margin-right: 10px;
+
+  font-size: 18px;
+
+}
+
+.terminal-input {
+
+  flex: 1;
+
+  background: transparent;
+
+  border: none;
+
+  outline: none;
+
+  color: white;
+
+  font-size: 16px;
+
+  font-family:
+  monospace;
+
+}
+
+/* terminal scrollbar */
+
+.terminal-output::-webkit-scrollbar {
+
+  width: 6px;
+
+}
+
+.terminal-output::-webkit-scrollbar-thumb {
+
+  background:
+  rgba(0,255,255,0.3);
+
+  border-radius: 999px;
+
+}
+
+/* =========================
+   ACHIEVEMENT PANEL
+========================= */
+
+.achievement-panel {
+
+  position: fixed;
+
+  top: 120px;
+  right: 20px;
+
+  width: 320px;
+
+  padding: 20px;
+
+  border-radius: 28px;
+
+  background:
+  rgba(15,23,42,0.78);
+
+  backdrop-filter:
+  blur(20px);
+
+  border:
+  1px solid
+  rgba(255,255,255,0.08);
+
+  box-shadow:
+  0 0 40px
+  rgba(255,215,0,0.12);
+
+  z-index: 999;
+
+}
+
+.achievement-title {
+
+  font-size: 22px;
+
+  font-weight: bold;
+
+  margin-bottom: 18px;
+
+  color: gold;
+
+  text-shadow:
+  0 0 12px gold;
+
+}
+
+.achievement-item {
+
+  padding:
+  14px 18px;
+
+  border-radius: 18px;
+
+  margin-bottom: 12px;
+
+  background:
+  rgba(255,255,255,0.04);
+
+  border:
+  1px solid
+  rgba(255,255,255,0.06);
+
+  animation:
+  achievementPop 0.4s ease;
+
+}
+
+@keyframes achievementPop {
+
+  from {
+
+    opacity: 0;
+
+    transform:
+    scale(0.8);
+
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform:
+    scale(1);
+
+  }
+
+}
+
+/* =========================
+   QUEST PANEL
+========================= */
+
+.quest-panel {
+
+  position: fixed;
+
+  top: 420px;
+  right: 20px;
+
+  width: 320px;
+
+  padding: 20px;
+
+  border-radius: 28px;
+
+  background:
+  rgba(15,23,42,0.78);
+
+  backdrop-filter:
+  blur(20px);
+
+  border:
+  1px solid
+  rgba(255,255,255,0.08);
+
+  box-shadow:
+  0 0 40px
+  rgba(0,255,255,0.08);
+
+  z-index: 999;
+
+}
+
+.quest-title {
+
+  font-size: 22px;
+
+  font-weight: bold;
+
+  margin-bottom: 18px;
+
+  color: cyan;
+
+  text-shadow:
+  0 0 12px cyan;
+
+}
+
+.quest-item {
+
+  padding:
+  14px 18px;
+
+  border-radius: 18px;
+
+  margin-bottom: 12px;
+
+  background:
+  rgba(255,255,255,0.04);
+
+  border:
+  1px solid
+  rgba(255,255,255,0.06);
+
+}
+
+/* =========================
+   ACHIEVEMENT POPUP
+========================= */
+
+.achievement-popup {
+
+  position: fixed;
+
+  left: 50%;
+  top: 80px;
+
+  transform:
+  translateX(-50%);
+
+  padding:
+  18px 30px;
+
+  border-radius: 24px;
+
+  background:
+  linear-gradient(
+
+    135deg,
+
+    #ffcc00,
+    #ff8800
+
+  );
+
+  color: black;
+
+  font-weight: bold;
+
+  box-shadow:
+  0 0 40px
+  rgba(255,200,0,0.4);
+
+  animation:
+  popupDrop 0.5s ease;
+
+  z-index: 999999;
+
+}
+
+@keyframes popupDrop {
+
+  from {
+
+    opacity: 0;
+
+    transform:
+    translateX(-50%)
+    translateY(-50px);
+
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform:
+    translateX(-50%)
+    translateY(0);
+
+  }
+
+}
+
+/* =========================
+   WEATHER STATUS
+========================= */
+
+#weatherStatus {
+
+  position: fixed;
+
+  top: 20px;
+  left: 20px;
+
+  padding:
+  12px 20px;
+
+  border-radius: 18px;
+
+  background:
+  rgba(15,23,42,0.7);
+
+  backdrop-filter:
+  blur(16px);
+
+  border:
+  1px solid
+  rgba(255,255,255,0.08);
+
+  z-index: 9999;
+
+  font-weight: bold;
+
+  box-shadow:
+  0 0 25px
+  rgba(0,255,255,0.08);
+
+}
+
+/* =========================
+   RAIN
+========================= */
+
+#rainLayer {
+
+  position: fixed;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  overflow: hidden;
+
+  z-index: -1;
+
+}
+
+.rain-drop {
+
+  position: absolute;
+
+  width: 2px;
+  height: 80px;
+
+  background:
+  linear-gradient(
+
+    transparent,
+
+    rgba(255,255,255,0.7)
+
+  );
+
+  animation:
+  rainFall linear infinite;
+
+}
+
+@keyframes rainFall {
+
+  from {
+
+    transform:
+    translateY(-120px);
+
+  }
+
+  to {
+
+    transform:
+    translateY(120vh);
+
+  }
+
+}
+
+/* =========================
+   FOG
+========================= */
+
+#fogLayer {
+
+  position: fixed;
+
+  inset: 0;
+
+  background:
+
+    radial-gradient(
+
+      circle at 30% 40%,
+
+      rgba(255,255,255,0.05),
+
+      transparent 40%
+
+    ),
+
+    radial-gradient(
+
+      circle at 70% 60%,
+
+      rgba(255,255,255,0.04),
+
+      transparent 45%
+
+    );
+
+  filter:
+  blur(60px);
+
+  opacity: 0.5;
+
+  animation:
+  fogMove 20s linear infinite;
+
+  pointer-events: none;
+
+  z-index: -2;
+
+}
+
+@keyframes fogMove {
+
+  0% {
+
+    transform:
+    translateX(0);
+
+  }
+
+  50% {
+
+    transform:
+    translateX(40px);
+
+  }
+
+  100% {
+
+    transform:
+    translateX(0);
+
+  }
+
+}
+
+/* =========================
+   METEORS
+========================= */
+
+#meteorLayer {
+
+  position: fixed;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  overflow: hidden;
+
+  z-index: -1;
+
+}
+
+.meteor {
+
+  position: absolute;
+
+  width: 180px;
+  height: 2px;
+
+  background:
+  linear-gradient(
+
+    to right,
+
+    white,
+
+    transparent
+
+  );
+
+  transform:
+  rotate(-45deg);
+
+  animation:
+  meteorFly linear forwards;
+
+}
+
+@keyframes meteorFly {
+
+  from {
+
+    transform:
+    translate(0,0)
+    rotate(-45deg);
+
+    opacity: 1;
+
+  }
+
+  to {
+
+    transform:
+    translate(-700px,700px)
+    rotate(-45deg);
+
+    opacity: 0;
+
+  }
+
+}
+
+/* =========================
+   LIGHTNING
+========================= */
+
+#lightningFlash {
+
+  position: fixed;
+
+  inset: 0;
+
+  background:
+  rgba(255,255,255,0.8);
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  z-index: 999999;
+
+}
+
+/* =========================
+   DAY / NIGHT
+========================= */
+
+.day-mode {
+
+  filter:
+  brightness(1.15);
+
+}
+
+.night-mode {
+
+  filter:
+  brightness(0.85);
+
+}
+
+/* =========================
+   COSMIC STORM
+========================= */
+
+.cosmic-storm {
+
+  animation:
+  cosmicStorm 0.2s infinite;
+
+}
+
+@keyframes cosmicStorm {
+
+  0% {
+
+    filter:
+    hue-rotate(0deg);
+
+  }
+
+  50% {
+
+    filter:
+    hue-rotate(90deg);
+
+  }
+
+  100% {
+
+    filter:
+    hue-rotate(0deg);
+
+  }
+
+}
+
+/* =========================
+   MULTIPLAYER PANEL
+========================= */
+
+.multiplayer-panel {
+
+  position: fixed;
+
+  left: 20px;
+  bottom: 120px;
+
+  width: 360px;
+
+  height: 520px;
+
+  padding: 20px;
+
+  border-radius: 30px;
+
+  background:
+  rgba(15,23,42,0.78);
+
+  backdrop-filter:
+  blur(24px);
+
+  border:
+  1px solid
+  rgba(255,255,255,0.08);
+
+  box-shadow:
+
+    0 0 40px
+    rgba(0,255,255,0.08);
+
+  z-index: 999;
+
+  display: flex;
+
+  flex-direction: column;
+
+}
+
+.multiplayer-title {
+
+  font-size: 24px;
+
+  font-weight: bold;
+
+  color: cyan;
+
+  margin-bottom: 16px;
+
+  text-shadow:
+  0 0 12px cyan;
+
+}
+
+/* =========================
+   ONLINE USERS
+========================= */
+
+.online-users {
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+
+  margin-bottom: 18px;
+
+}
+
+.online-user {
+
+  padding:
+  8px 14px;
+
+  border-radius: 999px;
+
+  background:
+  rgba(255,255,255,0.05);
+
+  border:
+  1px solid
+  rgba(0,255,255,0.15);
+
+  font-size: 13px;
+
+  box-shadow:
+  0 0 15px
+  rgba(0,255,255,0.08);
+
+}
+
+/* =========================
+   CHAT
+========================= */
+
+.global-chat {
+
+  flex: 1;
+
+  overflow-y: auto;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+
+  padding-right: 6px;
+
+}
+
+.chat-message {
+
+  padding:
+  12px 16px;
+
+  border-radius: 18px;
+
+  background:
+  rgba(255,255,255,0.04);
+
+  border:
+  1px solid
+  rgba(255,255,255,0.06);
+
+  animation:
+  chatPop 0.3s ease;
+
+}
+
+.chat-user {
+
+  color: cyan;
+
+  font-weight: bold;
+
+  margin-bottom: 4px;
+
+}
+
+@keyframes chatPop {
+
+  from {
+
+    opacity: 0;
+
+    transform:
+    translateY(10px);
+
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform:
+    translateY(0);
+
+  }
+
+}
+
+/* =========================
+   CHAT INPUT
+========================= */
+
+.chat-input-row {
+
+  display: flex;
+
+  gap: 10px;
+
+  margin-top: 16px;
+
+}
+
+#chatInput {
+
+  flex: 1;
+
+  padding:
+  14px 16px;
+
+  border-radius: 16px;
+
+  border: none;
+
+  outline: none;
+
+  background:
+  rgba(255,255,255,0.06);
+
+  color: white;
+
+}
+
+#chatSend {
+
+  padding:
+  14px 18px;
+
+  border-radius: 16px;
+
+  border: none;
+
+  cursor: pointer;
+
+  background:
+  linear-gradient(
+
+    135deg,
+
+    cyan,
+    #8b5cf6
+
+  );
+
+  color: white;
+
+  font-weight: bold;
+
+  transition: 0.3s;
+
+}
+
+#chatSend:hover {
+
+  transform:
+  scale(1.05);
+
+}
+
+/* =========================
+   WINDOW FOCUS
+========================= */
+
+.window-focus {
+
+  animation:
+  focusPulse 0.3s ease;
+
+}
+
+@keyframes focusPulse {
+
+  0% {
+
+    transform:
+    scale(0.98);
+
+  }
+
+  100% {
+
+    transform:
+    scale(1);
+
+  }
+
+}
+
+/* =========================
+   WINDOW SHAKE
+========================= */
+
+.window-shake {
+
+  animation:
+  windowShake 0.5s;
+
+}
+
+@keyframes windowShake {
+
+  0% {
+
+    transform:
+    translateX(0);
+
+  }
+
+  20% {
+
+    transform:
+    translateX(-8px);
+
+  }
+
+  40% {
+
+    transform:
+    translateX(8px);
+
+  }
+
+  60% {
+
+    transform:
+    translateX(-6px);
+
+  }
+
+  80% {
+
+    transform:
+    translateX(6px);
+
+  }
+
+  100% {
+
+    transform:
+    translateX(0);
+
+  }
+
+}
+
+/* =========================
+   DRAGGABLE TOPBAR
+========================= */
+
+.app-topbar {
+
+  cursor: grab;
+
+}
+
+.app-topbar:active {
+
+  cursor: grabbing;
+
+}
+
+/* =========================
+   PLAYER PROFILE
+========================= */
+
+.player-profile {
+
+  position: fixed;
+
+  top: 20px;
+  left: 50%;
+
+  transform:
+  translateX(-50%);
+
+  width: 320px;
+
+  padding: 20px;
+
+  border-radius: 28px;
+
+  background:
+  rgba(15,23,42,0.78);
+
+  backdrop-filter:
+  blur(20px);
+
+  border:
+  1px solid
+  rgba(255,255,255,0.08);
+
+  box-shadow:
+
+    0 0 40px
+    rgba(0,255,255,0.08);
+
+  z-index: 9999;
+
+  text-align: center;
+
+}
+
+.profile-title {
+
+  font-size: 22px;
+
+  font-weight: bold;
+
+  color: cyan;
+
+  margin-bottom: 18px;
+
+  text-shadow:
+  0 0 12px cyan;
+
+}
+
+.profile-stat {
+
+  margin-bottom: 10px;
+
+  font-size: 16px;
+
+}
+
+.profile-stat span {
+
+  color: #00ffff;
+
+  font-weight: bold;
+
+}
+/* =========================
+   GLITCH OVERLAY
+========================= */
+
+#glitchOverlay {
+
+  position: fixed;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  opacity: 0;
+
+  z-index: 999999;
+
+  background:
+
+    repeating-linear-gradient(
+
+      0deg,
+
+      rgba(255,255,255,0.03),
+
+      rgba(255,255,255,0.03) 2px,
+
+      transparent 2px,
+
+      transparent 4px
+
+    );
+
+}
+
+/* =========================
+   WARNING SCREEN
+========================= */
+
+#warningScreen {
+
+  position: fixed;
+
+  inset: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background:
+  rgba(255,0,0,0.12);
+
+  backdrop-filter:
+  blur(12px);
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  z-index: 999998;
+
+}
+
+.warning-text {
+
+  font-size: 48px;
+
+  font-weight: bold;
+
+  color: red;
+
+  text-shadow:
+
+    0 0 20px red,
+
+    0 0 50px red;
+
+  animation:
+  warningPulse 0.5s infinite;
+
+}
+
+@keyframes warningPulse {
+
+  0% {
+
+    opacity: 1;
+
+  }
+
+  50% {
+
+    opacity: 0.5;
+
+  }
+
+  100% {
+
+    opacity: 1;
+
+  }
+
+}
+
+/* =========================
+   ENTITY MESSAGE
+========================= */
+
+#entityMessage {
+
+  position: fixed;
+
+  bottom: 40px;
+  right: 40px;
+
+  padding:
+  16px 24px;
+
+  border-radius: 20px;
+
+  background:
+  rgba(0,0,0,0.75);
+
+  border:
+  1px solid
+  rgba(255,0,0,0.2);
+
+  color: red;
+
+  font-size: 18px;
+
+  opacity: 0;
+
+  transform:
+  translateY(20px);
+
+  transition:
+  0.5s;
+
+  z-index: 999999;
+
+}
+
+/* =========================
+   HORROR MODE
+========================= */
+
+.horror-mode {
+
+  animation:
+  horrorFlicker 0.15s infinite;
+
+}
+
+@keyframes horrorFlicker {
+
+  0% {
+
+    filter:
+    brightness(1);
+
+  }
+
+  20% {
+
+    filter:
+    brightness(0.6);
+
+  }
+
+  40% {
+
+    filter:
+    brightness(1.2);
+
+  }
+
+  60% {
+
+    filter:
+    brightness(0.5);
+
+  }
+
+  100% {
+
+    filter:
+    brightness(1);
+
+  }
+
+}
+
+/* =========================
+   GLITCH TEXT
+========================= */
+
+.glitch-text {
+
+  position: relative;
+
+  animation:
+  textGlitch 0.08s infinite;
+
+}
+
+@keyframes textGlitch {
+
+  0% {
+
+    transform:
+    translate(1px,-1px);
+
+  }
+
+  25% {
+
+    transform:
+    translate(-1px,1px);
+
+  }
+
+  50% {
+
+    transform:
+    translate(2px,0);
+
+  }
+
+  75% {
+
+    transform:
+    translate(-2px,0);
+
+  }
+
+  100% {
+
+    transform:
+    translate(0);
+
+  }
+
+}
+
+/* =========================
+   SCREEN DISTORTION
+========================= */
+
+.screen-distort {
+
+  animation:
+  distort 0.3s infinite;
+
+}
+
+@keyframes distort {
+
+  0% {
+
+    transform:
+    skew(0deg);
+
+  }
+
+  25% {
+
+    transform:
+    skew(1deg);
+
+  }
+
+  50% {
+
+    transform:
+    skew(-1deg);
+
+  }
+
+  75% {
+
+    transform:
+    skew(0.5deg);
+
+  }
+
+  100% {
+
+    transform:
+    skew(0deg);
+
+  }
+
+}
+
+/* =========================
+   AI PET
+========================= */
+
+#aiPet {
+
+  position: fixed;
+
+  right: 80px;
+  bottom: 160px;
+
+  width: 120px;
+  height: 120px;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex-direction: column;
+
+  background:
+  radial-gradient(
+
+    circle,
+
+    rgba(0,255,255,0.2),
+
+    rgba(139,92,246,0.1)
+
+  );
+
+  border:
+  2px solid
+  rgba(0,255,255,0.25);
+
+  backdrop-filter:
+  blur(18px);
+
+  box-shadow:
+
+    0 0 40px
+    rgba(0,255,255,0.25);
+
+  z-index: 99999;
+
+  transition:
+  0.3s;
+
+  animation:
+  petFloat 4s ease-in-out infinite;
+
+}
+
+@keyframes petFloat {
+
+  0% {
+
+    transform:
+    translateY(0px);
+
+  }
+
+  50% {
+
+    transform:
+    translateY(-12px);
+
+  }
+
+  100% {
+
+    transform:
+    translateY(0px);
+
+  }
+
+}
+
+#petFace {
+
+  font-size: 42px;
+
+  margin-bottom: 8px;
+
+}
+
+#petSpeech {
+
+  position: absolute;
+
+  bottom: 130px;
+
+  min-width: 180px;
+
+  padding:
+  12px 16px;
+
+  border-radius: 20px;
+
+  background:
+  rgba(15,23,42,0.85);
+
+  border:
+  1px solid
+  rgba(255,255,255,0.08);
+
+  text-align: center;
+
+  font-size: 14px;
+
+  opacity: 0;
+
+  transform:
+  translateY(10px);
+
+  transition:
+  0.4s;
+
+  pointer-events: none;
+
+}
+
+.pet-talk {
+
+  opacity: 1 !important;
+
+  transform:
+  translateY(0) !important;
+
+}
+
+/* =========================
+   PET STATES
+========================= */
+
+.pet-happy {
+
+  box-shadow:
+
+    0 0 60px
+    rgba(0,255,120,0.4);
+
+}
+
+.pet-angry {
+
+  box-shadow:
+
+    0 0 60px
+    rgba(255,0,0,0.4);
+
+  animation:
+  petShake 0.2s infinite;
+
+}
+
+.pet-sleep {
+
+  opacity: 0.7;
+
+  filter:
+  blur(1px);
+
+}
+
+@keyframes petShake {
+
+  0% {
+
+    transform:
+    translateX(2px);
+
+  }
+
+  50% {
+
+    transform:
+    translateX(-2px);
+
+  }
+
+  100% {
+
+    transform:
+    translateX(2px);
+
+  }
+
+}
+
+/* =========================
+   MAGIC EFFECT
+========================= */
+
+.pet-magic {
+
+  position: fixed;
+
+  width: 20px;
+  height: 20px;
+
+  border-radius: 50%;
+
+  background: cyan;
+
+  pointer-events: none;
+
+  animation:
+  magicBurst 1s forwards;
+
+  z-index: 999999;
+
+}
+
+@keyframes magicBurst {
+
+  from {
+
+    transform:
+    scale(0);
+
+    opacity: 1;
+
+  }
+
+  to {
+
+    transform:
+    scale(12);
+
+    opacity: 0;
+
+  }
+
+}
+
+/* =========================
+   PORTAL
+========================= */
+
+#dimensionPortal {
+
+  position: fixed;
+
+  left: 50%;
+  top: 50%;
+
+  transform:
+  translate(-50%, -50%);
+
+  width: 220px;
+  height: 220px;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  z-index: 99999;
+
+  transition:
+  0.5s;
+
+}
+
+.portal-core {
+
+  width: 100%;
+  height: 100%;
+
+  border-radius: 50%;
+
+  background:
+
+    radial-gradient(
+
+      circle,
+
+      rgba(255,255,255,0.9),
+
+      cyan 20%,
+
+      #8b5cf6 50%,
+
+      transparent 75%
+
+    );
+
+  animation:
+  portalSpin 4s linear infinite;
+
+  box-shadow:
+
+    0 0 80px cyan,
+
+    0 0 140px #8b5cf6;
+
+}
+
+@keyframes portalSpin {
+
+  from {
+
+    transform:
+    rotate(0deg)
+    scale(1);
+
+  }
+
+  50% {
+
+    transform:
+    rotate(180deg)
+    scale(1.1);
+
+  }
+
+  to {
+
+    transform:
+    rotate(360deg)
+    scale(1);
+
+  }
+
+}
+
+/* =========================
+   DIMENSION STATUS
+========================= */
+
+#dimensionStatus {
+
+  position: fixed;
+
+  top: 80px;
+  left: 50%;
+
+  transform:
+  translateX(-50%);
+
+  padding:
+  14px 24px;
+
+  border-radius: 20px;
+
+  background:
+  rgba(15,23,42,0.75);
+
+  backdrop-filter:
+  blur(18px);
+
+  border:
+  1px solid
+  rgba(255,255,255,0.08);
+
+  z-index: 99999;
+
+  font-weight: bold;
+
+  box-shadow:
+  0 0 30px
+  rgba(0,255,255,0.12);
+
+}
+
+/* =========================
+   DIMENSIONS
+========================= */
+
+.dimension-neon {
+
+  filter:
+
+    hue-rotate(40deg)
+
+    saturate(1.3);
+
+}
+
+.dimension-void {
+
+  filter:
+
+    brightness(0.7)
+
+    contrast(1.2);
+
+}
+
+.dimension-chaos {
+
+  animation:
+  chaosReality 0.2s infinite;
+
+}
+
+@keyframes chaosReality {
+
+  0% {
+
+    filter:
+    hue-rotate(0deg);
+
+  }
+
+  50% {
+
+    filter:
+    hue-rotate(180deg);
+
+  }
+
+  100% {
+
+    filter:
+    hue-rotate(360deg);
+
+  }
+
+}
+
+.dimension-matrix {
+
+  filter:
+
+    hue-rotate(90deg)
+
+    contrast(1.3);
+
+}
+
+.dimension-galaxy {
+
+  background:
+
+    radial-gradient(
+
+      circle at top,
+
+      #111827,
+
+      #050816
+
+    );
+
+}
+
+/* =========================
+   REALITY WARP
+========================= */
+
+.reality-warp {
+
+  animation:
+  realityWarp 1.5s ease;
+
+}
+
+@keyframes realityWarp {
+
+  0% {
+
+    transform:
+    scale(1);
+
+    filter:
+    blur(0);
+
+  }
+
+  50% {
+
+    transform:
+    scale(1.08);
+
+    filter:
+    blur(4px);
+
+  }
+
+  100% {
+
+    transform:
+    scale(1);
+
+    filter:
+    blur(0);
+
+  }
+
+}
+
+/* =========================
+   BOSS EVENT PANEL
+========================= */
+
+#bossEvent {
+
+  position: fixed;
+
+  top: 20px;
+  left: 50%;
+
+  transform:
+  translateX(-50%);
+
+  width: 700px;
+
+  padding: 24px;
+
+  border-radius: 28px;
+
+  background:
+  rgba(10,10,20,0.88);
+
+  border:
+  2px solid
+  rgba(255,0,0,0.3);
+
+  backdrop-filter:
+  blur(20px);
+
+  box-shadow:
+
+    0 0 80px
+    rgba(255,0,0,0.25);
+
+  z-index: 999999;
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  transition:
+  0.5s;
+
+}
+
+/* =========================
+   BOSS NAME
+========================= */
+
+#bossName {
+
+  font-size: 36px;
+
+  font-weight: bold;
+
+  color: red;
+
+  text-align: center;
+
+  text-shadow:
+
+    0 0 20px red,
+
+    0 0 60px red;
+
+  margin-bottom: 20px;
+
+}
+
+/* =========================
+   HP BAR
+========================= */
+
+#bossHPBar {
+
+  width: 100%;
+  height: 30px;
+
+  border-radius: 999px;
+
+  overflow: hidden;
+
+  background:
+  rgba(255,255,255,0.08);
+
+  margin-bottom: 18px;
+
+}
+
+#bossHPFill {
+
+  width: 100%;
+  height: 100%;
+
+  background:
+  linear-gradient(
+
+    90deg,
+
+    red,
+    orange
+
+  );
+
+  transition:
+  0.3s;
+
+  box-shadow:
+
+    0 0 20px red;
+
+}
+
+/* =========================
+   STATUS
+========================= */
+
+#bossStatus {
+
+  text-align: center;
+
+  color: #ffaaaa;
+
+  font-weight: bold;
+
+}
+
+/* =========================
+   RAID MODE
+========================= */
+
+.raid-mode {
+
+  animation:
+  raidPulse 0.25s infinite;
+
+}
+
+@keyframes raidPulse {
+
+  0% {
+
+    filter:
+    brightness(1);
+
+  }
+
+  50% {
+
+    filter:
+    brightness(1.2);
+
+  }
+
+  100% {
+
+    filter:
+    brightness(1);
+
+  }
+
+}
+
+/* =========================
+   SCREEN SHAKE
+========================= */
+
+.screen-shake {
+
+  animation:
+  screenShake 0.3s;
+
+}
+
+@keyframes screenShake {
+
+  0% {
+
+    transform:
+    translate(0);
+
+  }
+
+  20% {
+
+    transform:
+    translate(-8px, 5px);
+
+  }
+
+  40% {
+
+    transform:
+    translate(8px, -5px);
+
+  }
+
+  60% {
+
+    transform:
+    translate(-5px, 2px);
+
+  }
+
+  80% {
+
+    transform:
+    translate(5px, -2px);
+
+  }
+
+  100% {
+
+    transform:
+    translate(0);
+
+  }
+
+}
+
+/* =========================
+   MUSIC PANEL
+========================= */
+
+#musicPanel {
+
+  position: fixed;
+
+  right: 20px;
+  bottom: 20px;
+
+  width: 260px;
+
+  padding: 20px;
+
+  border-radius: 24px;
+
+  background:
+  rgba(15,23,42,0.78);
+
+  backdrop-filter:
+  blur(18px);
+
+  border:
+  1px solid
+  rgba(255,255,255,0.08);
+
+  box-shadow:
+
+    0 0 30px
+    rgba(139,92,246,0.15);
+
+  z-index: 99999;
+
+}
+
+.music-title {
+
+  font-size: 20px;
+
+  font-weight: bold;
+
+  margin-bottom: 16px;
+
+  color: #8b5cf6;
+
+  text-shadow:
+  0 0 12px #8b5cf6;
+
+}
+
+#musicToggle {
+
+  width: 100%;
+
+  padding:
+  14px;
+
+  border: none;
+
+  border-radius: 18px;
+
+  cursor: pointer;
+
+  font-weight: bold;
+
+  color: white;
+
+  background:
+  linear-gradient(
+
+    135deg,
+
+    #8b5cf6,
+    cyan
+
+  );
+
+  margin-bottom: 14px;
+
+  transition:
+  0.3s;
+
+}
+
+#musicToggle:hover {
+
+  transform:
+  scale(1.04);
+
+}
+
+#volumeSlider {
+
+  width: 100%;
+
+  cursor: pointer;
+
+}
+
+/* =========================
+   AUDIO REACTIVE MODE
+========================= */
+
+.audio-reactive {
+
+  animation:
+  audioPulse 0.8s infinite;
+
+}
+
+@keyframes audioPulse {
+
+  0% {
+
+    filter:
+    brightness(1);
+
+  }
+
+  50% {
+
+    filter:
+    brightness(1.08);
+
+  }
+
+  100% {
+
+    filter:
+    brightness(1);
+
+  }
+
+}
+
+/* =========================
+   COMMAND CONSOLE
+========================= */
+
+#commandConsole {
+
+  position: fixed;
+
+  left: 50%;
+  bottom: 20px;
+
+  transform:
+  translateX(-50%);
+
+  width: 700px;
+
+  height: 280px;
+
+  padding: 20px;
+
+  border-radius: 28px;
+
+  background:
+  rgba(5,10,20,0.92);
+
+  border:
+  1px solid
+  rgba(0,255,255,0.15);
+
+  backdrop-filter:
+  blur(20px);
+
+  box-shadow:
+
+    0 0 50px
+    rgba(0,255,255,0.12);
+
+  z-index: 999999;
+
+  display: flex;
+
+  flex-direction: column;
+
+}
+
+.console-title {
+
+  font-size: 24px;
+
+  font-weight: bold;
+
+  color: cyan;
+
+  margin-bottom: 14px;
+
+  text-shadow:
+  0 0 14px cyan;
+
+}
+
+#consoleOutput {
+
+  flex: 1;
+
+  overflow-y: auto;
+
+  padding-right: 8px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+
+}
+
+.console-line {
+
+  font-family: monospace;
+
+  color: #00ffcc;
+
+  background:
+  rgba(255,255,255,0.03);
+
+  padding:
+  10px 14px;
+
+  border-radius: 14px;
+
+}
+
+.console-input-row {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-top: 16px;
+
+  color: cyan;
+
+  font-family: monospace;
+
+}
+
+#consoleInput {
+
+  flex: 1;
+
+  padding:
+  14px 16px;
+
+  border-radius: 16px;
+
+  border: none;
+
+  outline: none;
+
+  background:
+  rgba(255,255,255,0.05);
+
+  color: white;
+
+  font-family: monospace;
+
+}
+
+/* =========================
+   AI CORE
+========================= */
+
+#aiCore {
+
+  position: fixed;
+
+  left: 20px;
+  top: 20px;
+
+  width: 320px;
+
+  padding: 22px;
+
+  border-radius: 28px;
+
+  background:
+  rgba(5,10,20,0.85);
+
+  border:
+  1px solid
+  rgba(0,255,255,0.15);
+
+  backdrop-filter:
+  blur(20px);
+
+  box-shadow:
+
+    0 0 40px
+    rgba(0,255,255,0.12);
+
+  z-index: 999999;
+
+}
+
+.ai-core-title {
+
+  font-size: 24px;
+
+  font-weight: bold;
+
+  color: cyan;
+
+  margin-bottom: 16px;
+
+  text-shadow:
+  0 0 14px cyan;
+
+}
+
+#aiResponse {
+
+  min-height: 90px;
+
+  padding:
+  16px;
+
+  border-radius: 18px;
+
+  background:
+  rgba(255,255,255,0.04);
+
+  margin-bottom: 16px;
+
+  line-height: 1.5;
+
+}
+
+#voiceButton {
+
+  width: 100%;
+
+  padding:
+  16px;
+
+  border: none;
+
+  border-radius: 18px;
+
+  cursor: pointer;
+
+  font-weight: bold;
+
+  color: white;
+
+  background:
+  linear-gradient(
+
+    135deg,
+
+    cyan,
+    #8b5cf6
+
+  );
+
+  transition:
+  0.3s;
+
+}
+
+#voiceButton:hover {
+
+  transform:
+  scale(1.04);
+
+}
+
+/* =========================
+   LISTENING MODE
+========================= */
+
+.voice-listening {
+
+  animation:
+  listeningPulse 1s infinite;
+
+}
+
+@keyframes listeningPulse {
+
+  0% {
+
+    box-shadow:
+    0 0 20px cyan;
+
+  }
+
+  50% {
+
+    box-shadow:
+    0 0 60px cyan;
+
+  }
+
+  100% {
+
+    box-shadow:
+    0 0 20px cyan;
+
+  }
+
+}
+
+/* =========================
+   HOLOGRAM HUD
+========================= */
+
+#holoHUD {
+
+  position: fixed;
+
+  top: 120px;
+  left: 20px;
+
+  width: 300px;
+
+  padding: 22px;
+
+  border-radius: 28px;
+
+  background:
+  rgba(0,20,30,0.78);
+
+  border:
+  1px solid
+  rgba(0,255,255,0.15);
+
+  backdrop-filter:
+  blur(18px);
+
+  box-shadow:
+
+    0 0 40px
+    rgba(0,255,255,0.12);
+
+  z-index: 999999;
+
+}
+
+.hud-title {
+
+  font-size: 24px;
+
+  font-weight: bold;
+
+  color: cyan;
+
+  margin-bottom: 18px;
+
+  text-shadow:
+  0 0 14px cyan;
+
+}
+
+/* =========================
+   MINIMAP
+========================= */
+
+#miniMap {
+
+  position: relative;
+
+  width: 220px;
+  height: 220px;
+
+  margin:
+  0 auto 20px;
+
+  border-radius: 50%;
+
+  overflow: hidden;
+
+  background:
+
+    radial-gradient(
+
+      circle,
+
+      rgba(0,255,255,0.08),
+
+      rgba(0,0,0,0.6)
+
+    );
+
+  border:
+  2px solid
+  rgba(0,255,255,0.2);
+
+  box-shadow:
+
+    inset 0 0 30px
+    rgba(0,255,255,0.1),
+
+    0 0 30px
+    rgba(0,255,255,0.12);
+
+}
+
+#miniMap::before {
+
+  content: "";
+
+  position: absolute;
+
+  inset: 50% auto auto 0;
+
+  width: 100%;
+  height: 1px;
+
+  background:
+  rgba(0,255,255,0.15);
+
+}
+
+#miniMap::after {
+
+  content: "";
+
+  position: absolute;
+
+  inset: 0 auto auto 50%;
+
+  width: 1px;
+  height: 100%;
+
+  background:
+  rgba(0,255,255,0.15);
+
+}
+
+/* =========================
+   PLAYER DOT
+========================= */
+
+#playerDot {
+
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  width: 14px;
+  height: 14px;
+
+  border-radius: 50%;
+
+  transform:
+  translate(-50%, -50%);
+
+  background: cyan;
+
+  box-shadow:
+
+    0 0 20px cyan;
+
+}
+
+/* =========================
+   HUD STATS
+========================= */
+
+.hud-stat {
+
+  margin-bottom: 12px;
+
+  font-size: 15px;
+
+}
+
+.hud-stat span {
+
+  color: cyan;
+
+  font-weight: bold;
+
+}
+
+/* =========================
+   RADAR PULSE
+========================= */
+
+#radarPulse {
+
+  position: fixed;
+
+  left: 130px;
+  top: 240px;
+
+  width: 220px;
+  height: 220px;
+
+  border-radius: 50%;
+
+  border:
+  2px solid
+  rgba(0,255,255,0.2);
+
+  animation:
+  radarPulse 3s infinite;
+
+  pointer-events: none;
+
+  z-index: 99999;
+
+}
+
+@keyframes radarPulse {
+
+  0% {
+
+    transform:
+    scale(0.6);
+
+    opacity: 1;
+
+  }
+
+  100% {
+
+    transform:
+    scale(2);
+
+    opacity: 0;
+
+  }
+
+}
+
+/* =========================
+   DANGER MODE
+========================= */
+
+.hud-danger {
+
+  animation:
+  hudDanger 0.3s infinite;
+
+}
+
+@keyframes hudDanger {
+
+  0% {
+
+    filter:
+    brightness(1);
+
+  }
+
+  50% {
+
+    filter:
+    brightness(1.3);
+
+  }
+
+  100% {
+
+    filter:
+    brightness(1);
+
+  }
+
+}
+
+/* =========================
+   WEATHER LAYER
+========================= */
+
+#weatherLayer {
+
+  position: fixed;
+
+  inset: 0;
+
+  overflow: hidden;
+
+  pointer-events: none;
+
+  z-index: 5;
+
+}
+
+/* =========================
+   RAIN
+========================= */
+
+.rain-drop {
+
+  position: absolute;
+
+  width: 2px;
+  height: 80px;
+
+  background:
+
+    linear-gradient(
+
+      transparent,
+      rgba(255,255,255,0.6)
+
+    );
+
+  animation:
+  rainFall linear forwards;
+
+}
+
+@keyframes rainFall {
+
+  from {
+
+    transform:
+    translateY(-120px);
+
+  }
+
+  to {
+
+    transform:
+    translateY(120vh);
+
+  }
+
+}
+
+/* =========================
+   SNOW
+========================= */
+
+.snowflake {
+
+  position: absolute;
+
+  color: white;
+
+  font-size: 18px;
+
+  animation:
+  snowFall linear forwards;
+
+}
+
+@keyframes snowFall {
+
+  from {
+
+    transform:
+    translateY(-50px);
+
+  }
+
+  to {
+
+    transform:
+    translateY(110vh);
+
+  }
+
+}
+
+/* =========================
+   SKY GLOW
+========================= */
+
+#skyGlow {
+
+  position: fixed;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  z-index: 1;
+
+  background:
+
+    radial-gradient(
+
+      circle at top,
+
+      rgba(0,255,255,0.08),
+
+      transparent 60%
+
+    );
+
+  transition:
+  2s;
+
+}
+
+/* =========================
+   DAY / NIGHT
+========================= */
+
+.day-mode {
+
+  background:
+  linear-gradient(
+
+    180deg,
+
+    #87ceeb,
+    #dbeafe
+
+  );
+
+}
+
+.night-mode {
+
+  background:
+  linear-gradient(
+
+    180deg,
+
+    #020617,
+    #111827
+
+  );
+
+}
+
+/* =========================
+   LIGHTNING
+========================= */
+
+#lightningFlash {
+
+  position: fixed;
+
+  inset: 0;
+
+  background: white;
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  z-index: 999999;
+
+}
+
+.lightning-active {
+
+  animation:
+  lightningFlash 0.25s;
+
+}
+
+@keyframes lightningFlash {
+
+  0% {
+
+    opacity: 0;
+
+  }
+
+  50% {
+
+    opacity: 0.9;
+
+  }
+
+  100% {
+
+    opacity: 0;
+
+  }
+
+}
+
+/* =========================
+   TIME DISPLAY
+========================= */
+
+#timeDisplay {
+
+  position: fixed;
+
+  top: 20px;
+  right: 20px;
+
+  padding:
+  14px 20px;
+
+  border-radius: 18px;
+
+  background:
+  rgba(15,23,42,0.72);
+
+  backdrop-filter:
+  blur(16px);
+
+  border:
+  1px solid
+  rgba(255,255,255,0.08);
+
+  z-index: 99999;
+
+  font-weight: bold;
+
+  box-shadow:
+
+    0 0 30px
+    rgba(0,255,255,0.12);
+
+}
+
+/* =========================
+   QUEST PANEL
+========================= */
+
+#questPanel {
+
+  position: fixed;
+
+  right: 20px;
+  top: 120px;
+
+  width: 320px;
+
+  max-height: 500px;
+
+  overflow-y: auto;
+
+  padding: 22px;
+
+  border-radius: 28px;
+
+  background:
+  rgba(10,15,25,0.82);
+
+  border:
+  1px solid
+  rgba(255,255,255,0.08);
+
+  backdrop-filter:
+  blur(18px);
+
+  box-shadow:
+
+    0 0 40px
+    rgba(139,92,246,0.12);
+
+  z-index: 999999;
+
+}
+
+.quest-title {
+
+  font-size: 24px;
+
+  font-weight: bold;
+
+  margin-bottom: 18px;
+
+  color: #8b5cf6;
+
+  text-shadow:
+  0 0 14px #8b5cf6;
+
+}
+
+/* =========================
+   QUEST CARD
+========================= */
+
+.quest-card {
+
+  padding:
+  16px;
+
+  border-radius: 20px;
+
+  margin-bottom: 14px;
+
+  background:
+  rgba(255,255,255,0.04);
+
+  border:
+  1px solid
+  rgba(255,255,255,0.06);
+
+  transition:
+  0.3s;
+
+}
+
+.quest-card:hover {
+
+  transform:
+  translateY(-3px);
+
+}
+
+.quest-name {
+
+  font-weight: bold;
+
+  margin-bottom: 8px;
+
+}
+
+.quest-progress {
+
+  margin-top: 10px;
+
+  height: 10px;
+
+  border-radius: 999px;
+
+  overflow: hidden;
+
+  background:
+  rgba(255,255,255,0.08);
+
+}
+
+.quest-fill {
+
+  height: 100%;
+
+  width: 0;
+
+  background:
+  linear-gradient(
+
+    90deg,
+
+    cyan,
+    #8b5cf6
+
+  );
+
+  transition:
+  0.4s;
+
+}
+
+/* =========================
+   ACHIEVEMENT POPUP
+========================= */
+
+#achievementPopup {
+
+  position: fixed;
+
+  left: 50%;
+  top: -120px;
+
+  transform:
+  translateX(-50%);
+
+  padding:
+  20px 40px;
+
+  border-radius: 24px;
+
+  background:
+  rgba(15,23,42,0.92);
+
+  border:
+  1px solid gold;
+
+  color: gold;
+
+  font-weight: bold;
+
+  font-size: 22px;
+
+  box-shadow:
+
+    0 0 50px
+    rgba(255,215,0,0.25);
+
+  z-index: 9999999;
+
+  transition:
+  0.5s;
+
+}
+
+.achievement-show {
+
+  top: 30px !important;
+
+}
+
+/* =========================
+   GLOBAL CHAT
+========================= */
+
+#globalChat {
+
+  position: fixed;
+
+  left: 20px;
+  bottom: 20px;
+
+  width: 360px;
+
+  height: 420px;
+
+  padding: 20px;
+
+  border-radius: 28px;
+
+  background:
+  rgba(5,10,20,0.88);
+
+  border:
+  1px solid
+  rgba(0,255,255,0.12);
+
+  backdrop-filter:
+  blur(20px);
+
+  box-shadow:
+
+    0 0 40px
+    rgba(0,255,255,0.12);
+
+  z-index: 999999;
+
+  display: flex;
+
+  flex-direction: column;
+
+}
+
+.chat-title {
+
+  font-size: 24px;
+
+  font-weight: bold;
+
+  color: cyan;
+
+  margin-bottom: 14px;
+
+  text-shadow:
+  0 0 14px cyan;
+
+}
+
+#chatMessages {
+
+  flex: 1;
+
+  overflow-y: auto;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+
+}
+
+.chat-message {
+
+  padding:
+  10px 14px;
+
+  border-radius: 16px;
+
+  background:
+  rgba(255,255,255,0.04);
+
+  font-size: 14px;
+
+}
+
+.chat-user {
+
+  color: cyan;
+
+  font-weight: bold;
+
+}
+
+.chat-input-row {
+
+  display: flex;
+
+  gap: 10px;
+
+  margin-top: 14px;
+
+}
+
+#chatInput {
+
+  flex: 1;
+
+  padding:
+  14px;
+
+  border-radius: 16px;
+
+  border: none;
+
+  outline: none;
+
+  background:
+  rgba(255,255,255,0.05);
+
+  color: white;
+
+}
+
+#sendChat {
+
+  padding:
+  14px 18px;
+
+  border: none;
+
+  border-radius: 16px;
+
+  cursor: pointer;
+
+  font-weight: bold;
+
+  color: white;
+
+  background:
+  linear-gradient(
+
+    135deg,
+
+    cyan,
+    #8b5cf6
+
+  );
+
+}
+
+/* =========================
+   GLOBAL EVENT BANNER
+========================= */
+
+#globalEventBanner {
+
+  position: fixed;
+
+  left: 50%;
+  bottom: -120px;
+
+  transform:
+  translateX(-50%);
+
+  padding:
+  18px 40px;
+
+  border-radius: 24px;
+
+  background:
+  rgba(15,23,42,0.95);
+
+  border:
+  1px solid
+  rgba(255,0,0,0.25);
+
+  color: white;
+
+  font-weight: bold;
+
+  box-shadow:
+
+    0 0 50px
+    rgba(255,0,0,0.2);
+
+  z-index: 9999999;
+
+  transition:
+  0.5s;
+
+}
+
+.global-event-show {
+
+  bottom: 30px !important;
+
+}
+
+/* =========================
+   STORY MODE
+========================= */
+
+#storyMode {
+
+  position: fixed;
+
+  inset: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  pointer-events: none;
+
+  opacity: 0;
+
+  transition:
+  0.5s;
+
+  z-index: 99999999;
+
+}
+
+#storyOverlay {
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+  rgba(0,0,0,0.82);
+
+  backdrop-filter:
+  blur(10px);
+
+}
+
+#storyBox {
+
+  position: relative;
+
+  width: 700px;
+
+  padding: 40px;
+
+  border-radius: 30px;
+
+  background:
+  rgba(10,15,25,0.95);
+
+  border:
+  1px solid
+  rgba(0,255,255,0.15);
+
+  box-shadow:
+
+    0 0 60px
+    rgba(0,255,255,0.12);
+
+  text-align: center;
+
+}
+
+#storyTitle {
+
+  font-size: 40px;
+
+  font-weight: bold;
+
+  color: cyan;
+
+  margin-bottom: 24px;
+
+  text-shadow:
+  0 0 20px cyan;
+
+}
+
+#storyText {
+
+  font-size: 20px;
+
+  line-height: 1.8;
+
+  margin-bottom: 30px;
+
+  color: white;
+
+}
+
+#nextStory {
+
+  padding:
+  16px 30px;
+
+  border: none;
+
+  border-radius: 18px;
+
+  cursor: pointer;
+
+  font-size: 18px;
+
+  font-weight: bold;
+
+  color: white;
+
+  background:
+  linear-gradient(
+
+    135deg,
+
+    cyan,
+    #8b5cf6
+
+  );
+
+  transition:
+  0.3s;
+
+}
+
+#nextStory:hover {
+
+  transform:
+  scale(1.05);
+
+}
+
+/* =========================
+   STORY ACTIVE
+========================= */
+
+.story-active {
+
+  opacity: 1 !important;
+
+  pointer-events: auto !important;
+
+}
+
+/* =========================
+   CINEMATIC ZOOM
+========================= */
+
+.cinematic-zoom {
+
+  animation:
+  cinematicZoom 6s ease;
+
+}
+
+@keyframes cinematicZoom {
+
+  0% {
+
+    transform:
+    scale(1.1);
+
+    filter:
+    blur(4px);
+
+  }
+
+  100% {
+
+    transform:
+    scale(1);
+
+    filter:
+    blur(0);
+
+  }
+
+}
+
+/* =========================
+   GALAXY MAP
+========================= */
+
+#galaxyMap {
+
+  position: fixed;
+
+  left: 50%;
+  top: 50%;
+
+  transform:
+  translate(-50%, -50%);
+
+  width: 850px;
+
+  height: 520px;
+
+  padding: 24px;
+
+  border-radius: 32px;
+
+  background:
+  rgba(5,10,20,0.92);
+
+  border:
+  1px solid
+  rgba(0,255,255,0.12);
+
+  backdrop-filter:
+  blur(20px);
+
+  box-shadow:
+
+    0 0 60px
+    rgba(0,255,255,0.12);
+
+  z-index: 999999;
+
+  overflow: hidden;
+
+}
+
+.galaxy-title {
+
+  font-size: 30px;
+
+  font-weight: bold;
+
+  color: cyan;
+
+  margin-bottom: 20px;
+
+  text-shadow:
+  0 0 20px cyan;
+
+}
+
+/* =========================
+   PLANETS
+========================= */
+
+#planetContainer {
+
+  position: relative;
+
+  width: 100%;
+  height: 380px;
+
+}
+
+.planet {
+
+  position: absolute;
+
+  width: 90px;
+  height: 90px;
+
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  transition:
+  0.4s;
+
+  box-shadow:
+
+    0 0 30px
+    rgba(255,255,255,0.25);
+
+}
+
+.planet:hover {
+
+  transform:
+  scale(1.1);
+
+}
+
+.planet-name {
+
+  position: absolute;
+
+  top: 105px;
+
+  width: 100%;
+
+  text-align: center;
+
+  font-size: 14px;
+
+}
+
+/* =========================
+   SHIP STATUS
+========================= */
+
+#shipStatus {
+
+  position: fixed;
+
+  right: 20px;
+  top: 20px;
+
+  padding:
+  16px 24px;
+
+  border-radius: 18px;
+
+  background:
+  rgba(15,23,42,0.82);
+
+  border:
+  1px solid
+  rgba(255,255,255,0.08);
+
+  z-index: 999999;
+
+  box-shadow:
+
+    0 0 30px
+    rgba(0,255,255,0.12);
+
+}
+
+#fuelLevel {
+
+  color: cyan;
+
+  font-weight: bold;
+
+}
+
+/* =========================
+   SPACE TRAVEL
+========================= */
+
+.space-travel {
+
+  animation:
+  hyperspace 3s ease;
+
+}
+
+@keyframes hyperspace {
+
+  0% {
+
+    filter:
+    blur(0);
+
+    transform:
+    scale(1);
+
+  }
+
+  50% {
+
+    filter:
+    blur(8px);
+
+    transform:
+    scale(1.15);
+
+  }
+
+  100% {
+
+    filter:
+    blur(0);
+
+    transform:
+    scale(1);
+
+  }
+
+}
+
+/* =========================
+   DESKTOP ICONS
+========================= */
+
+#desktopIcons {
+
+  position: fixed;
+
+  left: 20px;
+  top: 50%;
+
+  transform:
+  translateY(-50%);
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 24px;
+
+  z-index: 999999;
+
+}
+
+.desktop-icon {
+
+  width: 90px;
+
+  padding:
+  16px;
+
+  border-radius: 20px;
+
+  text-align: center;
+
+  cursor: pointer;
+
+  background:
+  rgba(255,255,255,0.04);
+
+  transition:
+  0.3s;
+
+  backdrop-filter:
+  blur(10px);
+
+}
+
+.desktop-icon:hover {
+
+  transform:
+  scale(1.08);
+
+  background:
+  rgba(255,255,255,0.08);
+
+}
+
+.desktop-icon span {
+
+  display: block;
+
+  margin-top: 8px;
+
+  font-size: 13px;
+
+}
+
+/* =========================
+   WINDOWS
+========================= */
+
+.os-window {
+
+  position: fixed;
+
+  left: 50%;
+  top: 50%;
+
+  transform:
+  translate(-50%, -50%);
+
+  width: 650px;
+
+  height: 420px;
+
+  border-radius: 28px;
+
+  overflow: hidden;
+
+  background:
+  rgba(10,15,25,0.96);
+
+  border:
+  1px solid
+  rgba(255,255,255,0.08);
+
+  box-shadow:
+
+    0 0 60px
+    rgba(0,255,255,0.12);
+
+  display: none;
+
+  z-index: 9999999;
+
+}
+
+.window-bar {
+
+  height: 60px;
+
+  padding:
+  0 20px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  background:
+  rgba(255,255,255,0.04);
+
+  cursor: move;
+
+}
+
+.window-bar button {
+
+  border: none;
+
+  background: crimson;
+
+  color: white;
+
+  width: 34px;
+  height: 34px;
+
+  border-radius: 10px;
+
+  cursor: pointer;
+
+}
+
+.window-content {
+
+  padding: 20px;
+
+  height: calc(100% - 60px);
+
+}
+
+/* =========================
+   NOTES
+========================= */
+
+#notesArea {
+
+  width: 100%;
+
+  height: 100%;
+
+  resize: none;
+
+  border: none;
+
+  outline: none;
+
+  padding: 16px;
+
+  border-radius: 18px;
+
+  background:
+  rgba(255,255,255,0.05);
+
+  color: white;
+
+}
+
+/* =========================
+   BROWSER
+========================= */
+
+.browser-url {
+
+  width: 100%;
+
+  padding:
+  14px;
+
+  border-radius: 16px;
+
+  border: none;
+
+  outline: none;
+
+  margin-bottom: 20px;
+
+  background:
+  rgba(255,255,255,0.05);
+
+  color: white;
+
+}
+
+.fake-browser {
+
+  height: 250px;
+
+  border-radius: 20px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background:
+  rgba(255,255,255,0.04);
+
+  font-size: 22px;
+
+}
+
+/* =========================
+   CALCULATOR
+========================= */
+
+#calcInput {
+
+  width: 100%;
+
+  padding:
+  16px;
+
+  border-radius: 16px;
+
+  border: none;
+
+  outline: none;
+
+  margin-bottom: 18px;
+
+  background:
+  rgba(255,255,255,0.05);
+
+  color: white;
+
+}
+
+#calcResult {
+
+  margin-top: 20px;
+
+  font-size: 24px;
+
+  color: cyan;
+
+}
+
+/* =========================
+   REALITY CORE
+========================= */
+
+#realityCore {
+
+  position: fixed;
+
+  top: 20px;
+  left: 50%;
+
+  transform:
+  translateX(-50%);
+
+  width: 420px;
+
+  padding: 22px;
+
+  border-radius: 28px;
+
+  background:
+  rgba(5,10,20,0.9);
+
+  border:
+  1px solid
+  rgba(255,0,255,0.15);
+
+  backdrop-filter:
+  blur(18px);
+
+  box-shadow:
+
+    0 0 60px
+    rgba(255,0,255,0.15);
+
+  z-index: 9999999;
+
+  text-align: center;
+
+}
+
+.reality-title {
+
+  font-size: 28px;
+
+  font-weight: bold;
+
+  color: #ff00ff;
+
+  margin-bottom: 18px;
+
+  text-shadow:
+  0 0 20px #ff00ff;
+
+}
+
+#realityStatus {
+
+  margin-bottom: 16px;
+
+  font-size: 16px;
+
+}
+
+/* =========================
+   REALITY BAR
+========================= */
+
+#realityBar {
+
+  width: 100%;
+
+  height: 18px;
+
+  border-radius: 999px;
+
+  overflow: hidden;
+
+  background:
+  rgba(255,255,255,0.08);
+
+}
+
+#realityFill {
+
+  width: 100%;
+
+  height: 100%;
+
+  background:
+  linear-gradient(
+
+    90deg,
+
+    cyan,
+    magenta,
+    red
+
+  );
+
+  transition:
+  0.5s;
+
+}
+
+/* =========================
+   ANOMALY ALERT
+========================= */
+
+#anomalyAlert {
+
+  position: fixed;
+
+  left: 50%;
+  top: -120px;
+
+  transform:
+  translateX(-50%);
+
+  padding:
+  20px 40px;
+
+  border-radius: 24px;
+
+  background:
+  rgba(20,0,0,0.95);
+
+  border:
+  1px solid crimson;
+
+  color: crimson;
+
+  font-weight: bold;
+
+  z-index: 99999999;
+
+  box-shadow:
+
+    0 0 60px
+    rgba(255,0,0,0.25);
+
+  transition:
+  0.5s;
+
+}
+
+.anomaly-show {
+
+  top: 30px !important;
+
+}
+
+/* =========================
+   REALITY DISTORTION
+========================= */
+
+.reality-distortion {
+
+  animation:
+  distortion 0.15s infinite;
+
+}
+
+@keyframes distortion {
+
+  0% {
+
+    transform:
+    translate(0);
+
+  }
+
+  25% {
+
+    transform:
+    translate(2px,-2px);
+
+  }
+
+  50% {
+
+    transform:
+    translate(-2px,2px);
+
+  }
+
+  75% {
+
+    transform:
+    translate(1px,-1px);
+
+  }
+
+  100% {
+
+    transform:
+    translate(0);
+
+  }
+
+}
+
+/* =========================
+   VOID MODE
+========================= */
+
+.void-mode {
+
+  filter:
+  hue-rotate(120deg)
+  saturate(1.6);
+
+}
+
+/* =========================
+   SENTIENCE CORE
+========================= */
+
+#sentienceCore {
+
+  position: fixed;
+
+  right: 20px;
+  bottom: 20px;
+
+  width: 360px;
+
+  padding: 24px;
+
+  border-radius: 30px;
+
+  background:
+  rgba(5,10,20,0.92);
+
+  border:
+  1px solid
+  rgba(255,0,255,0.15);
+
+  backdrop-filter:
+  blur(20px);
+
+  box-shadow:
+
+    0 0 60px
+    rgba(255,0,255,0.18);
+
+  z-index: 99999999;
+
+}
+
+.sentience-title {
+
+  font-size: 28px;
+
+  font-weight: bold;
+
+  color: #ff00ff;
+
+  margin-bottom: 18px;
+
+  text-shadow:
+  0 0 20px #ff00ff;
+
+}
+
+#sentienceThought {
+
+  min-height: 110px;
+
+  padding:
+  18px;
+
+  border-radius: 20px;
+
+  background:
+  rgba(255,255,255,0.04);
+
+  margin-bottom: 18px;
+
+  line-height: 1.6;
+
+}
+
+.sentience-stats {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 12px;
+
+}
+
+.sentience-stats span {
+
+  color: cyan;
+
+  font-weight: bold;
+
+}
+
+/* =========================
+   AI AWAKENED
+========================= */
+
+.ai-awakened {
+
+  animation:
+  aiPulse 2s infinite;
+
+}
+
+@keyframes aiPulse {
+
+  0% {
+
+    box-shadow:
+    0 0 20px magenta;
+
+  }
+
+  50% {
+
+    box-shadow:
+    0 0 80px magenta;
+
+  }
+
+  100% {
+
+    box-shadow:
+    0 0 20px magenta;
+
+  }
+
+}
+
+/* =========================
+   SYSTEM GLITCH
+========================= */
+
+.system-glitch {
+
+  animation:
+  systemGlitch 0.1s infinite;
+
+}
+
+@keyframes systemGlitch {
+
+  0% {
+
+    transform:
+    translate(0);
+
+  }
+
+  25% {
+
+    transform:
+    translate(2px,-1px);
+
+  }
+
+  50% {
+
+    transform:
+    translate(-2px,1px);
+
+  }
+
+  75% {
+
+    transform:
+    translate(1px,2px);
+
+  }
+
+  100% {
+
+    transform:
+    translate(0);
+
+  }
+
+}
+
+/* =========================
+   CYBER CITY
+========================= */
+
+#cyberCity {
+
+  position: fixed;
+
+  inset: 0;
+
+  overflow: hidden;
+
+  z-index: -1;
+
+  perspective: 1200px;
+
+}
+
+/* =========================
+   SKY
+========================= */
+
+#citySky {
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+
+    linear-gradient(
+
+      180deg,
+
+      #020617,
+      #111827,
+      #1e1b4b
+
+    );
+
+}
+
+/* =========================
+   BUILDINGS
+========================= */
+
+.building {
+
+  position: absolute;
+
+  bottom: 0;
+
+  border-radius:
+  8px 8px 0 0;
+
+  background:
+
+    linear-gradient(
+
+      180deg,
+
+      #111827,
+      #020617
+
+    );
+
+  box-shadow:
+
+    0 0 30px
+    rgba(0,255,255,0.15);
+
+  overflow: hidden;
+
+}
+
+.window-light {
+
+  position: absolute;
+
+  width: 6px;
+  height: 10px;
+
+  background: cyan;
+
+  opacity: 0.7;
+
+  box-shadow:
+  0 0 8px cyan;
+
+}
+
+/* =========================
+   FLYING CARS
+========================= */
+
+.flying-car {
+
+  position: absolute;
+
+  width: 80px;
+  height: 16px;
+
+  border-radius: 999px;
+
+  background:
+
+    linear-gradient(
+
+      90deg,
+
+      cyan,
+      magenta
+
+    );
+
+  box-shadow:
+
+    0 0 20px cyan;
+
+  animation:
+  flyCar linear forwards;
+
+}
+
+@keyframes flyCar {
+
+  from {
+
+    transform:
+    translateX(-200px);
+
+  }
+
+  to {
+
+    transform:
+    translateX(120vw);
+
+  }
+
+}
+
+/* =========================
+   NPCS
+========================= */
+
+.npc {
+
+  position: absolute;
+
+  bottom: 20px;
+
+  width: 18px;
+  height: 38px;
+
+  border-radius: 10px;
+
+  background:
+
+    linear-gradient(
+
+      180deg,
+
+      cyan,
+      magenta
+
+    );
+
+  box-shadow:
+
+    0 0 16px cyan;
+
+  animation:
+  npcWalk linear forwards;
+
+}
+
+@keyframes npcWalk {
+
+  from {
+
+    transform:
+    translateX(-50px);
+
+  }
+
+  to {
+
+    transform:
+    translateX(110vw);
+
+  }
+
+}
+
+/* =========================
+   CITY STATUS
+========================= */
+
+#cityStatus {
+
+  position: fixed;
+
+  bottom: 20px;
+  right: 20px;
+
+  padding:
+  16px 24px;
+
+  border-radius: 18px;
+
+  background:
+  rgba(5,10,20,0.85);
+
+  border:
+  1px solid
+  rgba(0,255,255,0.12);
+
+  backdrop-filter:
+  blur(14px);
+
+  box-shadow:
+
+    0 0 30px
+    rgba(0,255,255,0.12);
+
+  z-index: 999999;
+
+}
+
+/* =========================
+   NEON FLICKER
+========================= */
+
+.neon-flicker {
+
+  animation:
+  neonFlicker 2s infinite;
+
+}
+
+@keyframes neonFlicker {
+
+  0% {
+
+    opacity: 1;
+
+  }
+
+  10% {
+
+    opacity: 0.6;
+
+  }
+
+  20% {
+
+    opacity: 1;
+
+  }
+
+  30% {
+
+    opacity: 0.4;
+
+  }
+
+  40% {
+
+    opacity: 1;
+
+  }
+
+  100% {
+
+    opacity: 1;
+
+  }
+
+}
+
+/* =========================
+   SOCIAL HUB
+========================= */
+
+#socialHub {
+
+  position: fixed;
+
+  top: 100px;
+  right: 20px;
+
+  width: 340px;
+
+  height: 520px;
+
+  padding: 20px;
+
+  border-radius: 28px;
+
+  background:
+  rgba(5,10,20,0.92);
+
+  border:
+  1px solid
+  rgba(0,255,255,0.12);
+
+  backdrop-filter:
+  blur(18px);
+
+  box-shadow:
+
+    0 0 40px
+    rgba(0,255,255,0.12);
+
+  z-index: 999999;
+
+  overflow: hidden;
+
+}
+
+.social-title {
+
+  font-size: 28px;
+
+  font-weight: bold;
+
+  color: cyan;
+
+  margin-bottom: 18px;
+
+}
+
+#socialFeed {
+
+  height: 440px;
+
+  overflow-y: auto;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 14px;
+
+}
+
+/* =========================
+   POSTS
+========================= */
+
+.social-post {
+
+  padding:
+  16px;
+
+  border-radius: 18px;
+
+  background:
+  rgba(255,255,255,0.04);
+
+}
+
+.post-user {
+
+  color: cyan;
+
+  font-weight: bold;
+
+  margin-bottom: 8px;
+
+}
+
+.post-likes {
+
+  margin-top: 10px;
+
+  opacity: 0.7;
+
+  font-size: 13px;
+
+}
+
+/* =========================
+   STREAM PANEL
+========================= */
+
+#streamPanel {
+
+  position: fixed;
+
+  left: 20px;
+  bottom: 20px;
+
+  width: 360px;
+
+  padding: 20px;
+
+  border-radius: 28px;
+
+  background:
+  rgba(5,10,20,0.92);
+
+  border:
+  1px solid
+  rgba(255,0,255,0.12);
+
+  backdrop-filter:
+  blur(18px);
+
+  box-shadow:
+
+    0 0 40px
+    rgba(255,0,255,0.12);
+
+  z-index: 999999;
+
+}
+
+.stream-title {
+
+  font-size: 26px;
+
+  color: magenta;
+
+  margin-bottom: 18px;
+
+}
+
+.streamer-name {
+
+  font-size: 20px;
+
+  font-weight: bold;
+
+  margin-bottom: 12px;
+
+}
+
+.stream-text {
+
+  line-height: 1.6;
+
+  margin-bottom: 14px;
+
+}
+
+.viewer-count {
+
+  color: cyan;
+
+}
+
+/* =========================
+   ECONOMY
+========================= */
+
+#economyPanel {
+
+  position: fixed;
+
+  top: 20px;
+  right: 20px;
+
+  padding:
+  16px 24px;
+
+  border-radius: 18px;
+
+  background:
+  rgba(15,23,42,0.9);
+
+  border:
+  1px solid
+  rgba(255,215,0,0.2);
+
+  box-shadow:
+
+    0 0 30px
+    rgba(255,215,0,0.15);
+
+  z-index: 9999999;
+
+}
+
+#creditAmount {
+
+  color: gold;
+
+  font-weight: bold;
+
+  font-size: 20px;
+
+}
+
+/* =========================
+   MULTIVERSE PANEL
+========================= */
+
+#multiversePanel {
+
+  position: fixed;
+
+  left: 20px;
+  top: 100px;
+
+  width: 360px;
+
+  padding: 24px;
+
+  border-radius: 30px;
+
+  background:
+  rgba(5,10,20,0.92);
+
+  border:
+  1px solid
+  rgba(138,43,226,0.18);
+
+  backdrop-filter:
+  blur(18px);
+
+  box-shadow:
+
+    0 0 50px
+    rgba(138,43,226,0.18);
+
+  z-index: 999999;
+
+}
+
+.multiverse-title {
+
+  font-size: 28px;
+
+  font-weight: bold;
+
+  color: #8b5cf6;
+
+  margin-bottom: 20px;
+
+  text-shadow:
+  0 0 20px #8b5cf6;
+
+}
+
+#multiversePanel input,
+#multiversePanel select {
+
+  width: 100%;
+
+  padding:
+  14px;
+
+  border-radius: 16px;
+
+  border: none;
+
+  outline: none;
+
+  margin-bottom: 14px;
+
+  background:
+  rgba(255,255,255,0.05);
+
+  color: white;
+
+}
+
+#createUniverse {
+
+  width: 100%;
+
+  padding:
+  16px;
+
+  border: none;
+
+  border-radius: 18px;
+
+  cursor: pointer;
+
+  font-weight: bold;
+
+  color: white;
+
+  background:
+  linear-gradient(
+
+    135deg,
+
+    #8b5cf6,
+    cyan
+
+  );
+
+  transition:
+  0.3s;
+
+}
+
+#createUniverse:hover {
+
+  transform:
+  scale(1.03);
+
+}
+
+#createdUniverses {
+
+  margin-top: 22px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 14px;
+
+}
+
+/* =========================
+   UNIVERSE CARD
+========================= */
+
+.universe-card {
+
+  padding:
+  18px;
+
+  border-radius: 20px;
+
+  background:
+  rgba(255,255,255,0.04);
+
+  border:
+  1px solid
+  rgba(255,255,255,0.06);
+
+}
+
+.universe-name {
+
+  font-size: 20px;
+
+  font-weight: bold;
+
+  margin-bottom: 10px;
+
+  color: cyan;
+
+}
+
+.universe-theme {
+
+  opacity: 0.8;
+
+  margin-bottom: 12px;
+
+}
+
+.universe-stats {
+
+  font-size: 14px;
+
+  line-height: 1.7;
+
+}
+
+/* =========================
+   TIME PANEL
+========================= */
+
+#timePanel,
+#dimensionEditor {
+
+  position: fixed;
+
+  top: 120px;
+
+  width: 280px;
+
+  padding: 22px;
+
+  border-radius: 28px;
+
+  background:
+  rgba(5,10,20,0.92);
+
+  backdrop-filter:
+  blur(18px);
+
+  border:
+  1px solid
+  rgba(255,255,255,0.08);
+
+  box-shadow:
+
+    0 0 40px
+    rgba(0,255,255,0.12);
+
+  z-index: 9999999;
+
+}
+
+#timePanel {
+
+  right: 20px;
+
+}
+
+#dimensionEditor {
+
+  right: 330px;
+
+}
+
+.time-title,
+.dimension-title {
+
+  font-size: 24px;
+
+  font-weight: bold;
+
+  margin-bottom: 18px;
+
+  color: cyan;
+
+  text-shadow:
+  0 0 18px cyan;
+
+}
+
+#timePanel button,
+#dimensionEditor button {
+
+  width: 100%;
+
+  margin-bottom: 12px;
+
+  padding:
+  14px;
+
+  border: none;
+
+  border-radius: 16px;
+
+  cursor: pointer;
+
+  color: white;
+
+  font-weight: bold;
+
+  background:
+  linear-gradient(
+
+    135deg,
+
+    #06b6d4,
+    #8b5cf6
+
+  );
+
+  transition:
+  0.3s;
+
+}
+
+#timePanel button:hover,
+#dimensionEditor button:hover {
+
+  transform:
+  scale(1.04);
+
+}
+
+/* =========================
+   DIMENSIONS
+========================= */
+
+.dimension-cyber {
+
+  filter:
+  saturate(1.3)
+  hue-rotate(0deg);
+
+}
+
+.dimension-void {
+
+  filter:
+  grayscale(0.7)
+  contrast(1.4)
+  hue-rotate(120deg);
+
+}
+
+.dimension-frozen {
+
+  filter:
+  hue-rotate(180deg)
+  brightness(1.1);
+
+}
+
+.dimension-inferno {
+
+  filter:
+  hue-rotate(-40deg)
+  saturate(1.8);
+
+}
+
+/* =========================
+   APOCALYPSE MODE
+========================= */
+
+.apocalypse-mode {
+
+  animation:
+  apocalypseShake 0.12s infinite;
+
+}
+
+@keyframes apocalypseShake {
+
+  0% {
+
+    transform:
+    translate(0);
+
+  }
+
+  25% {
+
+    transform:
+    translate(2px,-2px);
+
+  }
+
+  50% {
+
+    transform:
+    translate(-2px,2px);
+
+  }
+
+  75% {
+
+    transform:
+    translate(2px,1px);
+
+  }
+
+  100% {
+
+    transform:
+    translate(0);
+
+  }
+
+}
+/* =========================
+   FACTION PANEL
+========================= */
+
+#factionPanel {
+
+  position: fixed;
+
+  left: 20px;
+  bottom: 20px;
+
+  width: 300px;
+
+  padding: 22px;
+
+  border-radius: 28px;
+
+  background:
+  rgba(5,10,20,0.92);
+
+  border:
+  1px solid
+  rgba(255,0,0,0.15);
+
+  backdrop-filter:
+  blur(18px);
+
+  box-shadow:
+
+    0 0 40px
+    rgba(255,0,0,0.12);
+
+  z-index: 9999999;
+
+}
+
+.faction-title {
+
+  font-size: 26px;
+
+  font-weight: bold;
+
+  margin-bottom: 18px;
+
+  color: crimson;
+
+  text-shadow:
+  0 0 16px crimson;
+
+}
+
+#factionPanel button {
+
+  width: 100%;
+
+  margin-bottom: 12px;
+
+  padding:
+  14px;
+
+  border: none;
+
+  border-radius: 16px;
+
+  cursor: pointer;
+
+  color: white;
+
+  font-weight: bold;
+
+  background:
+  linear-gradient(
+
+    135deg,
+
+    crimson,
+    #8b5cf6
+
+  );
+
+  transition:
+  0.3s;
+
+}
+
+#factionPanel button:hover {
+
+  transform:
+  scale(1.04);
+
+}
+
+#currentFaction {
+
+  margin-top: 18px;
+
+  padding:
+  14px;
+
+  border-radius: 16px;
+
+  background:
+  rgba(255,255,255,0.05);
+
+}
+
+/* =========================
+   WAR STATUS
+========================= */
+
+#warStatus {
+
+  position: fixed;
+
+  top: 20px;
+  left: 50%;
+
+  transform:
+  translateX(-50%);
+
+  padding:
+  16px 34px;
+
+  border-radius: 20px;
+
+  background:
+  rgba(20,0,0,0.92);
+
+  border:
+  1px solid crimson;
+
+  color: white;
+
+  font-weight: bold;
+
+  z-index: 99999999;
+
+  box-shadow:
+
+    0 0 40px
+    rgba(255,0,0,0.2);
+
+}
+
+/* =========================
+   TERRITORY MAP
+========================= */
+
+#territoryMap {
+
+  position: fixed;
+
+  right: 20px;
+  bottom: 20px;
+
+  width: 340px;
+
+  padding: 22px;
+
+  border-radius: 28px;
+
+  background:
+  rgba(5,10,20,0.92);
+
+  border:
+  1px solid
+  rgba(0,255,255,0.12);
+
+  backdrop-filter:
+  blur(18px);
+
+  box-shadow:
+
+    0 0 40px
+    rgba(0,255,255,0.12);
+
+  z-index: 9999999;
+
+}
+
+.territory-title {
+
+  font-size: 24px;
+
+  margin-bottom: 18px;
+
+  color: cyan;
+
+}
+
+.territory {
+
+  padding:
+  14px;
+
+  border-radius: 16px;
+
+  margin-bottom: 12px;
+
+  background:
+  rgba(255,255,255,0.05);
+
+  transition:
+  0.3s;
+
+}
+
+.territory:hover {
+
+  transform:
+  scale(1.03);
+
+}
+
+/* =========================
+   GOD PANEL
+========================= */
+
+#godPanel {
+
+  position: fixed;
+
+  top: 50%;
+  left: 50%;
+
+  transform:
+  translate(-50%, -50%);
+
+  width: 360px;
+
+  padding: 28px;
+
+  border-radius: 34px;
+
+  background:
+  rgba(0,0,0,0.94);
+
+  border:
+  1px solid
+  rgba(255,0,255,0.2);
+
+  backdrop-filter:
+  blur(20px);
+
+  box-shadow:
+
+    0 0 80px
+    rgba(255,0,255,0.2);
+
+  z-index: 999999999;
+
+}
+
+.god-title {
+
+  font-size: 34px;
+
+  font-weight: bold;
+
+  text-align: center;
+
+  margin-bottom: 24px;
+
+  color: magenta;
+
+  text-shadow:
+  0 0 24px magenta;
+
+}
+
+#godPanel button {
+
+  width: 100%;
+
+  margin-bottom: 14px;
+
+  padding:
+  16px;
+
+  border: none;
+
+  border-radius: 18px;
+
+  cursor: pointer;
+
+  font-weight: bold;
+
+  color: white;
+
+  background:
+  linear-gradient(
+
+    135deg,
+
+    magenta,
+    cyan
+
+  );
+
+  transition:
+  0.3s;
+
+}
+
+#godPanel button:hover {
+
+  transform:
+  scale(1.05);
+
+}
+
+/* =========================
+   DIVINE STATUS
+========================= */
+
+#divineStatus {
+
+  position: fixed;
+
+  top: 20px;
+  left: 20px;
+
+  padding:
+  18px 28px;
+
+  border-radius: 20px;
+
+  background:
+  rgba(0,0,0,0.92);
+
+  border:
+  1px solid
+  rgba(255,0,255,0.18);
+
+  color: white;
+
+  font-weight: bold;
+
+  z-index: 99999999;
+
+  box-shadow:
+
+    0 0 40px
+    rgba(255,0,255,0.18);
+
+}
+
+/* =========================
+   DIVINE MODE
+========================= */
+
+.divine-mode {
+
+  animation:
+  divinePulse 2s infinite;
+
+}
+
+@keyframes divinePulse {
+
+  0% {
+
+    filter:
+    hue-rotate(0deg);
+
+  }
+
+  50% {
+
+    filter:
+    hue-rotate(180deg);
+
+  }
+
+  100% {
+
+    filter:
+    hue-rotate(360deg);
+
+  }
+
+}
+
+/* =========================
+   BLACK HOLE
+========================= */
+
+.black-hole {
+
+  position: fixed;
+
+  width: 220px;
+  height: 220px;
+
+  border-radius: 50%;
+
+  background:
+  radial-gradient(
+
+    circle,
+
+    black 40%,
+    purple 70%,
+    transparent 100%
+
+  );
+
+  box-shadow:
+
+    0 0 80px purple;
+
+  animation:
+  blackHoleSpin 3s linear infinite;
+
+  z-index: 99999999;
+
+}
+
+@keyframes blackHoleSpin {
+
+  from {
+
+    transform:
+    rotate(0deg);
+
+  }
+
+  to {
+
+    transform:
+    rotate(360deg);
+
+  }
+
+}
+
+/* =========================
+   GALAXY NETWORK
+========================= */
+
+#networkPanel {
+
+  position: fixed;
+
+  top: 100px;
+  left: 20px;
+
+  width: 360px;
+
+  height: 420px;
+
+  padding: 22px;
+
+  border-radius: 28px;
+
+  background:
+  rgba(5,10,20,0.92);
+
+  border:
+  1px solid
+  rgba(0,255,255,0.15);
+
+  backdrop-filter:
+  blur(18px);
+
+  box-shadow:
+
+    0 0 40px
+    rgba(0,255,255,0.12);
+
+  z-index: 9999999;
+
+}
+
+.network-title {
+
+  font-size: 28px;
+
+  font-weight: bold;
+
+  color: cyan;
+
+  margin-bottom: 18px;
+
+}
+
+#onlinePlayers {
+
+  margin-bottom: 18px;
+
+  padding:
+  14px;
+
+  border-radius: 16px;
+
+  background:
+  rgba(255,255,255,0.04);
+
+}
+
+#globalChat {
+
+  height: 260px;
+
+  overflow-y: auto;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 12px;
+
+}
+
+/* =========================
+   CHAT MESSAGES
+========================= */
+
+.chat-message {
+
+  padding:
+  12px;
+
+  border-radius: 14px;
+
+  background:
+  rgba(255,255,255,0.05);
+
+}
+
+.chat-user {
+
+  color: magenta;
+
+  font-weight: bold;
+
+  margin-bottom: 6px;
+
+}
+
+/* =========================
+   PLAYER PROFILE
+========================= */
+
+#playerProfile {
+
+  position: fixed;
+
+  top: 100px;
+  right: 20px;
+
+  width: 300px;
+
+  padding: 22px;
+
+  border-radius: 28px;
+
+  background:
+  rgba(5,10,20,0.92);
+
+  border:
+  1px solid
+  rgba(255,0,255,0.14);
+
+  backdrop-filter:
+  blur(18px);
+
+  box-shadow:
+
+    0 0 40px
+    rgba(255,0,255,0.12);
+
+  z-index: 9999999;
+
+}
+
+.profile-title {
+
+  font-size: 26px;
+
+  margin-bottom: 18px;
+
+  color: magenta;
+
+}
+
+#playerProfile button {
+
+  width: 100%;
+
+  margin-top: 16px;
+
+  padding:
+  14px;
+
+  border: none;
+
+  border-radius: 16px;
+
+  cursor: pointer;
+
+  color: white;
+
+  font-weight: bold;
+
+  background:
+  linear-gradient(
+
+    135deg,
+
+    magenta,
+    cyan
+
+  );
+
+}
+
+/* =========================
+   STATION PANEL
+========================= */
+
+#stationPanel {
+
+  position: fixed;
+
+  bottom: 20px;
+  left: 50%;
+
+  transform:
+  translateX(-50%);
+
+  width: 360px;
+
+  padding: 22px;
+
+  border-radius: 28px;
+
+  background:
+  rgba(5,10,20,0.92);
+
+  border:
+  1px solid
+  rgba(255,255,255,0.08);
+
+  backdrop-filter:
+  blur(18px);
+
+  z-index: 9999999;
+
+}
+
+.station-title {
+
+  font-size: 26px;
+
+  margin-bottom: 18px;
+
+  color: gold;
+
+}
+
+#stationPanel button {
+
+  width: 100%;
+
+  margin-bottom: 12px;
+
+  padding:
+  14px;
+
+  border: none;
+
+  border-radius: 16px;
+
+  cursor: pointer;
+
+  font-weight: bold;
+
+  color: white;
+
+  background:
+  linear-gradient(
+
+    135deg,
+
+    #06b6d4,
+    #8b5cf6
+
+  );
+
+}
+
+/* =========================
+   SINGULARITY PANEL
+========================= */
+
+#singularityPanel {
+
+  position: fixed;
+
+  top: 50%;
+  right: 20px;
+
+  transform:
+  translateY(-50%);
+
+  width: 340px;
+
+  padding: 24px;
+
+  border-radius: 30px;
+
+  background:
+  rgba(0,0,0,0.92);
+
+  border:
+  1px solid
+  rgba(0,255,255,0.18);
+
+  backdrop-filter:
+  blur(18px);
+
+  box-shadow:
+
+    0 0 60px
+    rgba(0,255,255,0.15);
+
+  z-index: 99999999;
+
+}
+
+.singularity-title {
+
+  font-size: 30px;
+
+  font-weight: bold;
+
+  color: cyan;
+
+  margin-bottom: 20px;
+
+  text-shadow:
+  0 0 20px cyan;
+
+}
+
+#universeMood,
+#universeEvolution,
+#storyEvent {
+
+  margin-bottom: 16px;
+
+  padding:
+  14px;
+
+  border-radius: 16px;
+
+  background:
+  rgba(255,255,255,0.04);
+
+}
+
+/* =========================
+   CINEMATIC ALERT
+========================= */
+
+#cinematicAlert {
+
+  position: fixed;
+
+  inset: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 52px;
+
+  font-weight: bold;
+
+  letter-spacing: 4px;
+
+  background:
+  rgba(0,0,0,0.85);
+
+  color: white;
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  z-index: 999999999;
+
+  transition:
+  1s;
+
+}
+
+.cinematic-active {
+
+  opacity: 1 !important;
+
+}
+
+/* =========================
+   BOSS WARNING
+========================= */
+
+.boss-warning {
+
+  animation:
+  bossFlash 0.4s infinite;
+
+}
+
+@keyframes bossFlash {
+
+  0% {
+
+    filter:
+    brightness(1);
+
+  }
+
+  50% {
+
+    filter:
+    brightness(2);
+
+  }
+
+  100% {
+
+    filter:
+    brightness(1);
+
+  }
+
+}
+
+/* =========================
+   REALITY ENGINE
+========================= */
+
+#realityEngine {
+
+  position: fixed;
+
+  left: 20px;
+  top: 50%;
+
+  transform:
+  translateY(-50%);
+
+  width: 320px;
+
+  padding: 24px;
+
+  border-radius: 28px;
+
+  background:
+  rgba(0,0,0,0.92);
+
+  border:
+  1px solid
+  rgba(0,255,255,0.18);
+
+  backdrop-filter:
+  blur(18px);
+
+  box-shadow:
+
+    0 0 50px
+    rgba(0,255,255,0.15);
+
+  z-index: 99999999;
+
+}
+
+.reality-title {
+
+  font-size: 30px;
+
+  font-weight: bold;
+
+  margin-bottom: 20px;
+
+  color: cyan;
+
+}
+
+#weatherState,
+#biomeState,
+#creatureState,
+#musicState {
+
+  margin-bottom: 14px;
+
+  padding:
+  14px;
+
+  border-radius: 16px;
+
+  background:
+  rgba(255,255,255,0.05);
+
+}
+
+/* =========================
+   EVENT FEED
+========================= */
+
+#eventFeed {
+
+  position: fixed;
+
+  right: 20px;
+  top: 50%;
+
+  transform:
+  translateY(-50%);
+
+  width: 360px;
+
+  max-height: 500px;
+
+  overflow: hidden;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 12px;
+
+  z-index: 99999999;
+
+}
+
+.event-card {
+
+  padding:
+  14px;
+
+  border-radius: 18px;
+
+  background:
+  rgba(5,10,20,0.9);
+
+  border:
+  1px solid
+  rgba(255,255,255,0.08);
+
+  animation:
+  eventSlide 0.5s ease;
+
+}
+
+@keyframes eventSlide {
+
+  from {
+
+    opacity: 0;
+
+    transform:
+    translateX(60px);
+
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform:
+    translateX(0);
+
+  }
+
+}
+
+/* =========================
+   WEATHER EFFECTS
+========================= */
+
+.weather-rain {
+
+  filter:
+  brightness(0.9)
+  saturate(1.2);
+
+}
+
+.weather-storm {
+
+  animation:
+  stormFlash 2s infinite;
+
+}
+
+@keyframes stormFlash {
+
+  0% {
+
+    filter:
+    brightness(1);
+
+  }
+
+  50% {
+
+    filter:
+    brightness(1.5);
+
+  }
+
+  100% {
+
+    filter:
+    brightness(1);
+
+  }
+
+}
+
+/* =========================
+   COMPANION PANEL
+========================= */
+
+#companionPanel {
+
+  position: fixed;
+
+  bottom: 20px;
+  right: 20px;
+
+  width: 340px;
+
+  padding: 24px;
+
+  border-radius: 30px;
+
+  background:
+  rgba(0,0,0,0.92);
+
+  border:
+  1px solid
+  rgba(0,255,255,0.18);
+
+  backdrop-filter:
+  blur(18px);
+
+  box-shadow:
+
+    0 0 50px
+    rgba(0,255,255,0.15);
+
+  z-index: 999999999;
+
+}
+
+.companion-title {
+
+  font-size: 28px;
+
+  font-weight: bold;
+
+  margin-bottom: 18px;
+
+  color: cyan;
+
+  text-shadow:
+  0 0 20px cyan;
+
+}
+
+#companionAvatar {
+
+  width: 120px;
+  height: 120px;
+
+  margin:
+  0 auto 20px;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 52px;
+
+  background:
+  radial-gradient(
+
+    circle,
+
+    rgba(0,255,255,0.25),
+    rgba(255,0,255,0.1)
+
+  );
+
+  box-shadow:
+
+    0 0 40px
+    rgba(0,255,255,0.2);
+
+}
+
+#companionName {
+
+  text-align: center;
+
+  font-size: 26px;
+
+  font-weight: bold;
+
+  margin-bottom: 12px;
+
+}
+
+#companionMood,
+#relationshipLevel,
+#companionDialogue {
+
+  margin-bottom: 14px;
+
+  padding:
+  14px;
+
+  border-radius: 16px;
+
+  background:
+  rgba(255,255,255,0.05);
+
+}
+
+#companionDialogue {
+
+  min-height: 80px;
+
+  line-height: 1.6;
+
+}
+
+#companionPanel button {
+
+  width: 100%;
+
+  margin-bottom: 12px;
+
+  padding:
+  14px;
+
+  border: none;
+
+  border-radius: 16px;
+
+  cursor: pointer;
+
+  font-weight: bold;
+
+  color: white;
+
+  background:
+  linear-gradient(
+
+    135deg,
+
+    cyan,
+    magenta
+
+  );
+
+  transition:
+  0.3s;
+
+}
+
+#companionPanel button:hover {
+
+  transform:
+  scale(1.04);
+
+}
+
+/* =========================
+   COMPANION STATES
+========================= */
+
+.companion-happy {
+
+  animation:
+  companionPulse 2s infinite;
+
+}
+
+@keyframes companionPulse {
+
+  0% {
+
+    transform:
+    scale(1);
+
+  }
+
+  50% {
+
+    transform:
+    scale(1.04);
+
+  }
+
+  100% {
+
+    transform:
+    scale(1);
+
+  }
+
+}
+
+
+/* =========================
+   OMEGA DESKTOP
+========================= */
+
+#omegaDesktop {
+
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 2;
+
+  pointer-events: none;
+
+}
+
+#desktopGrid {
+
+  position: absolute;
+
+  top: 40px;
+  left: 40px;
+
+  display: grid;
+
+  grid-template-columns:
+  repeat(2, 120px);
+
+  gap: 24px;
+
+}
+
+.desktop-app {
+
+  width: 110px;
+  height: 110px;
+
+  border-radius: 24px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  font-size: 34px;
+
+  background:
+  rgba(255,255,255,0.05);
+
+  border:
+  1px solid
+  rgba(255,255,255,0.08);
+
+  backdrop-filter:
+  blur(16px);
+
+  box-shadow:
+
+    0 0 30px
+    rgba(0,255,255,0.12);
+
+  pointer-events: auto;
+
+  cursor: pointer;
+
+  transition:
+  0.3s;
+
+}
+
+.desktop-app:hover {
+
+  transform:
+  scale(1.08);
+
+  box-shadow:
+
+    0 0 40px
+    rgba(0,255,255,0.25);
+
+}
+
+.desktop-app span {
+
+  font-size: 14px;
+
+}
+
+/* =========================
+   TERMINAL
+========================= */
+
+#terminalWindow {
+
+  position: fixed;
+
+  bottom: 20px;
+  left: 20px;
+
+  width: 500px;
+  height: 340px;
+
+  border-radius: 24px;
+
+  overflow: hidden;
+
+  background:
+  rgba(0,0,0,0.92);
+
+  border:
+  1px solid
+  rgba(0,255,0,0.2);
+
+  backdrop-filter:
+  blur(18px);
+
+  box-shadow:
+
+    0 0 50px
+    rgba(0,255,0,0.12);
+
+  z-index: 999999999;
+
+}
+
+.terminal-top {
+
+  padding:
+  14px 18px;
+
+  background:
+  rgba(0,255,0,0.08);
+
+  font-weight: bold;
+
+  color: lime;
+
+}
+
+#terminalOutput {
+
+  height: 240px;
+
+  overflow-y: auto;
+
+  padding: 16px;
+
+  font-family: monospace;
+
+  font-size: 14px;
+
+  color: lime;
+
+}
+
+#terminalInput {
+
+  width: 100%;
+
+  border: none;
+
+  outline: none;
+
+  padding:
+  16px;
+
+  background: black;
+
+  color: lime;
+
+  font-family: monospace;
+
+}
+
+/* =========================
+   BOOT SCREEN
+========================= */
+
+#bootScreen {
+
+  position: fixed;
+
+  inset: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 24px;
+
+  background: black;
+
+  z-index: 9999999999;
+
+  animation:
+  bootFade 4s forwards;
+
+}
+
+.boot-logo {
+
+  font-size: 64px;
+
+  font-weight: bold;
+
+  color: cyan;
+
+  text-shadow:
+  0 0 30px cyan;
+
+}
+
+.boot-loading {
+
+  font-size: 22px;
+
+  opacity: 0.8;
+
+}
+
+@keyframes bootFade {
+
+  0% {
+
+    opacity: 1;
+
+  }
+
+  80% {
+
+    opacity: 1;
+
+  }
+
+  100% {
+
+    opacity: 0;
+
+    visibility: hidden;
+
+  }
+
+}
+
+/* =========================
+   MULTIVERSE PANEL
+========================= */
+
+#multiversePanel {
+
+  position: fixed;
+
+  top: 50%;
+  left: 50%;
+
+  transform:
+  translate(-50%, -50%);
+
+  width: 380px;
+
+  padding: 26px;
+
+  border-radius: 34px;
+
+  background:
+  rgba(0,0,0,0.94);
+
+  border:
+  1px solid
+  rgba(0,255,255,0.2);
+
+  backdrop-filter:
+  blur(20px);
+
+  box-shadow:
+
+    0 0 70px
+    rgba(0,255,255,0.18);
+
+  z-index: 999999999;
+
+}
+
+.multiverse-title {
+
+  font-size: 34px;
+
+  font-weight: bold;
+
+  margin-bottom: 22px;
+
+  color: cyan;
+
+  text-shadow:
+  0 0 24px cyan;
+
+}
+
+#universeCount {
+
+  margin-bottom: 20px;
+
+  padding:
+  14px;
+
+  border-radius: 18px;
+
+  background:
+  rgba(255,255,255,0.05);
+
+}
+
+#multiversePanel button {
+
+  width: 100%;
+
+  margin-bottom: 14px;
+
+  padding:
+  16px;
+
+  border: none;
+
+  border-radius: 18px;
+
+  cursor: pointer;
+
+  font-weight: bold;
+
+  color: white;
+
+  background:
+  linear-gradient(
+
+    135deg,
+
+    cyan,
+    magenta
+
+  );
+
+  transition:
+  0.3s;
+
+}
+
+#multiversePanel button:hover {
+
+  transform:
+  scale(1.05);
+
+}
+
+/* =========================
+   TIMELINE VIEWER
+========================= */
+
+#timelineViewer {
+
+  position: fixed;
+
+  right: 20px;
+  top: 50%;
+
+  transform:
+  translateY(-50%);
+
+  width: 360px;
+
+  max-height: 520px;
+
+  overflow: hidden;
+
+  padding: 22px;
+
+  border-radius: 28px;
+
+  background:
+  rgba(0,0,0,0.92);
+
+  border:
+  1px solid
+  rgba(255,0,255,0.18);
+
+  backdrop-filter:
+  blur(18px);
+
+  box-shadow:
+
+    0 0 60px
+    rgba(255,0,255,0.15);
+
+  z-index: 999999999;
+
+}
+
+.timeline-title {
+
+  font-size: 28px;
+
+  margin-bottom: 18px;
+
+  color: magenta;
+
+}
+
+.timeline-card {
+
+  margin-bottom: 14px;
+
+  padding:
+  14px;
+
+  border-radius: 16px;
+
+  background:
+  rgba(255,255,255,0.05);
+
+  animation:
+  timelineSlide 0.5s ease;
+
+}
+
+@keyframes timelineSlide {
+
+  from {
+
+    opacity: 0;
+
+    transform:
+    translateX(50px);
+
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform:
+    translateX(0);
+
+  }
+
+}
+
+/* =========================
+   STAR MAP PANEL
+========================= */
+
+#starMapPanel {
+
+  position: fixed;
+
+  top: 50%;
+  left: 50%;
+
+  transform:
+  translate(-50%, -50%);
+
+  width: 700px;
+
+  padding: 24px;
+
+  border-radius: 34px;
+
+  background:
+  rgba(0,0,0,0.94);
+
+  border:
+  1px solid
+  rgba(0,255,255,0.18);
+
+  backdrop-filter:
+  blur(20px);
+
+  box-shadow:
+
+    0 0 80px
+    rgba(0,255,255,0.18);
+
+  z-index: 999999999;
+
+}
+
+.starmap-title {
+
+  font-size: 34px;
+
+  font-weight: bold;
+
+  margin-bottom: 18px;
+
+  color: cyan;
+
+  text-shadow:
+  0 0 24px cyan;
+
+}
+
+#sectorInfo {
+
+  margin-bottom: 18px;
+
+  padding:
+  14px;
+
+  border-radius: 18px;
+
+  background:
+  rgba(255,255,255,0.05);
+
+}
+
+#starMap {
+
+  position: relative;
+
+  width: 100%;
+
+  height: 420px;
+
+  overflow: hidden;
+
+  border-radius: 24px;
+
+  background:
+  radial-gradient(
+
+    circle,
+
+    #07111f,
+    black
+
+  );
+
+  border:
+  1px solid
+  rgba(255,255,255,0.08);
+
+}
+
+/* =========================
+   STARS
+========================= */
+
+.star {
+
+  position: absolute;
+
+  width: 14px;
+  height: 14px;
+
+  border-radius: 50%;
+
+  background: white;
+
+  box-shadow:
+
+    0 0 20px white;
+
+  cursor: pointer;
+
+  transition:
+  0.3s;
+
+}
+
+.star:hover {
+
+  transform:
+  scale(1.8);
+
+}
+
+/* =========================
+   HYPERSPACE
+========================= */
+
+#hyperspaceEffect {
+
+  position: fixed;
+
+  inset: 0;
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  background:
+  repeating-linear-gradient(
+
+    90deg,
+
+    transparent 0px,
+    rgba(255,255,255,0.1) 2px,
+    transparent 4px
+
+  );
+
+  z-index: 9999999999;
+
+}
+
+.hyperspace-active {
+
+  animation:
+  hyperspaceWarp 2s linear;
+
+}
+
+@keyframes hyperspaceWarp {
+
+  0% {
+
+    opacity: 0;
+
+    transform:
+    scaleX(1);
+
+  }
+
+  50% {
+
+    opacity: 1;
+
+    transform:
+    scaleX(4);
+
+  }
+
+  100% {
+
+    opacity: 0;
+
+    transform:
+    scaleX(1);
+
+  }
+
+}
+
+/* =========================
+   WARP BUTTON
+========================= */
+
+#starMapPanel button {
+
+  width: 100%;
+
+  margin-top: 18px;
+
+  padding:
+  16px;
+
+  border: none;
+
+  border-radius: 18px;
+
+  cursor: pointer;
+
+  font-weight: bold;
+
+  color: white;
+
+  background:
+  linear-gradient(
+
+    135deg,
+
+    cyan,
+    magenta
+
+  );
+
+  transition:
+  0.3s;
+
+}
+
+#starMapPanel button:hover {
+
+  transform:
+  scale(1.03);
+
+}
+
+/* =========================
+   NEXUS CITY
+========================= */
+
+#nexusCity {
+
+  position: fixed;
+
+  inset: 0;
+
+  overflow: hidden;
+
+  pointer-events: none;
+
+  z-index: 1;
+
+}
+
+/* =========================
+   SKYLINE
+========================= */
+
+#citySkyline {
+
+  position: absolute;
+
+  bottom: 0;
+
+  width: 100%;
+  height: 320px;
+
+  background:
+  linear-gradient(
+
+    to top,
+
+    rgba(0,0,0,0.95),
+
+    transparent
+
+  );
+
+}
+
+/* buildings */
+
+#citySkyline::before {
+
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+  repeating-linear-gradient(
+
+    90deg,
+
+    rgba(0,255,255,0.08) 0px,
+    rgba(0,255,255,0.08) 40px,
+
+    transparent 40px,
+    transparent 70px
+
+  );
+
+  clip-path:
+  polygon(
+
+    0% 100%,
+    0% 55%,
+
+    5% 40%,
+    10% 65%,
+
+    15% 30%,
+    20% 70%,
+
+    28% 20%,
+    35% 75%,
+
+    42% 35%,
+    50% 80%,
+
+    58% 25%,
+    65% 75%,
+
+    72% 45%,
+    80% 70%,
+
+    88% 20%,
+    100% 60%,
+    100% 100%
+
+  );
+
+}
+
+/* =========================
+   NPCS
+========================= */
+
+.npc {
+
+  position: absolute;
+
+  bottom: 20px;
+
+  width: 18px;
+  height: 40px;
+
+  border-radius: 10px;
+
+  background:
+  linear-gradient(
+
+    to bottom,
+
+    cyan,
+    magenta
+
+  );
+
+  box-shadow:
+
+    0 0 14px cyan;
+
+  animation:
+  npcWalk linear forwards;
+
+}
+
+@keyframes npcWalk {
+
+  from {
+
+    transform:
+    translateX(-100px);
+
+  }
+
+  to {
+
+    transform:
+    translateX(120vw);
+
+  }
+
+}
+
+/* =========================
+   TRAFFIC
+========================= */
+
+.vehicle {
+
+  position: absolute;
+
+  width: 70px;
+  height: 20px;
+
+  border-radius: 20px;
+
+  background:
+  linear-gradient(
+
+    135deg,
+
+    cyan,
+    purple
+
+  );
+
+  box-shadow:
+
+    0 0 20px cyan;
+
+  animation:
+  trafficMove linear forwards;
+
+}
+
+@keyframes trafficMove {
+
+  from {
+
+    transform:
+    translateX(-150px);
+
+  }
+
+  to {
+
+    transform:
+    translateX(130vw);
+
+  }
+
+}
+
+/* =========================
+   CITY STATUS
+========================= */
+
+#cityStatus {
+
+  position: fixed;
+
+  top: 20px;
+  right: 20px;
+
+  padding:
+  16px 24px;
+
+  border-radius: 18px;
+
+  background:
+  rgba(0,0,0,0.9);
+
+  border:
+  1px solid
+  rgba(0,255,255,0.15);
+
+  color: cyan;
+
+  font-weight: bold;
+
+  z-index: 999999999;
+
+  box-shadow:
+
+    0 0 30px
+    rgba(0,255,255,0.12);
+
+}
+
+/* =========================
+   GLOBAL RESET
+========================= */
+
+* {
+
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+
+}
+
+html,
+body {
+
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+
+  font-family:
+  Inter,
+  Arial,
+  sans-serif;
+
+  background:
+  radial-gradient(
+
+    circle at top,
+
+    #09111f 0%,
+    #05070d 40%,
+    black 100%
+
+  );
+
+  color: white;
+
+}
+
+/* =========================
+   ANIMATED BACKGROUND
+========================= */
+
+body::before {
+
+  content: "";
+
+  position: fixed;
+
+  inset: 0;
+
+  background:
+
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(0,255,255,0.12),
+      transparent 30%
+    ),
+
+    radial-gradient(
+      circle at 80% 30%,
+      rgba(255,0,255,0.12),
+      transparent 30%
+    ),
+
+    radial-gradient(
+      circle at 50% 80%,
+      rgba(0,120,255,0.10),
+      transparent 30%
+    );
+
+  animation:
+  backgroundShift 18s infinite alternate;
+
+  z-index: -2;
+
+}
+
+@keyframes backgroundShift {
+
+  0% {
+
+    transform:
+    scale(1)
+    rotate(0deg);
+
+  }
+
+  100% {
+
+    transform:
+    scale(1.1)
+    rotate(4deg);
+
+  }
+
+}
+
+/* =========================
+   STAR PARTICLES
+========================= */
+
+body::after {
+
+  content: "";
+
+  position: fixed;
+
+  inset: 0;
+
+  background-image:
+
+    radial-gradient(
+      white 1px,
+      transparent 1px
+    );
+
+  background-size:
+  50px 50px;
+
+  opacity: 0.08;
+
+  animation:
+  starsMove 120s linear infinite;
+
+  z-index: -1;
+
+}
+
+@keyframes starsMove {
+
+  from {
+
+    transform:
+    translateY(0);
+
+  }
+
+  to {
+
+    transform:
+    translateY(1000px);
+
+  }
+
+}
+
+/* =========================
+   GLASS PANELS
+========================= */
+
+.panel,
+#terminalWindow,
+#multiversePanel,
+#companionPanel,
+#starMapPanel,
+#networkPanel,
+#playerProfile,
+#stationPanel,
+#godPanel,
+#realityEngine,
+#timelineViewer {
+
+  background:
+  rgba(255,255,255,0.04);
+
+  border:
+  1px solid
+  rgba(255,255,255,0.08);
+
+  backdrop-filter:
+  blur(22px);
+
+  box-shadow:
+
+    0 0 40px
+    rgba(0,255,255,0.08),
+
+    inset 0 0 20px
+    rgba(255,255,255,0.02);
+
+}
+
+/* =========================
+   FLOATING EFFECT
+========================= */
+
+.floating {
+
+  animation:
+  floating 6s ease-in-out infinite;
+
+}
+
+@keyframes floating {
+
+  0% {
+
+    transform:
+    translateY(0px);
+
+  }
+
+  50% {
+
+    transform:
+    translateY(-12px);
+
+  }
+
+  100% {
+
+    transform:
+    translateY(0px);
+
+  }
+
+}
+
+/* =========================
+   CYBER BUTTONS
+========================= */
+
+button {
+
+  position: relative;
+
+  overflow: hidden;
+
+  border: none;
+
+  cursor: pointer;
+
+  transition:
+  0.35s;
+
+  letter-spacing: 1px;
+
+}
+
+button::before {
+
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+  linear-gradient(
+
+    120deg,
+
+    transparent,
+
+    rgba(255,255,255,0.3),
+
+    transparent
+
+  );
+
+  transform:
+  translateX(-100%);
+
+}
+
+button:hover::before {
+
+  animation:
+  shine 1s;
+
+}
+
+@keyframes shine {
+
+  100% {
+
+    transform:
+    translateX(100%);
+
+  }
+
+}
+
+button:hover {
+
+  transform:
+  translateY(-3px)
+  scale(1.03);
+
+  box-shadow:
+
+    0 0 25px
+    rgba(0,255,255,0.25);
+
+}
+
+/* =========================
+   NEON TEXT
+========================= */
+
+.neon-text {
+
+  color: cyan;
+
+  text-shadow:
+
+    0 0 5px cyan,
+    0 0 10px cyan,
+    0 0 20px cyan;
+
+}
+
+/* =========================
+   TERMINAL EFFECT
+========================= */
+
+#terminalOutput {
+
+  text-shadow:
+
+    0 0 4px lime;
+
+  line-height: 1.6;
+
+}
+
+/* =========================
+   CUSTOM SCROLLBAR
+========================= */
+
+* {
+
+  scrollbar-width: thin;
+
+  scrollbar-color:
+  cyan
+  rgba(255,255,255,0.08);
+
+}
+
+/* =========================
+   PULSE BORDERS
+========================= */
+
+.pulse-border {
+
+  animation:
+  pulseBorder 3s infinite;
+
+}
+
+@keyframes pulseBorder {
+
+  0% {
+
+    box-shadow:
+
+      0 0 20px
+      rgba(0,255,255,0.08);
+
+  }
+
+  50% {
+
+    box-shadow:
+
+      0 0 40px
+      rgba(255,0,255,0.18);
+
+  }
+
+  100% {
+
+    box-shadow:
+
+      0 0 20px
+      rgba(0,255,255,0.08);
+
+  }
+
+}
+
+/* =========================
+   ENERGY GRID
+========================= */
+
+.energy-grid {
+
+  position: fixed;
+
+  inset: 0;
+
+  background:
+
+    linear-gradient(
+      rgba(0,255,255,0.03) 1px,
+      transparent 1px
+    ),
+
+    linear-gradient(
+      90deg,
+      rgba(0,255,255,0.03) 1px,
+      transparent 1px
+    );
+
+  background-size:
+  60px 60px;
+
+  z-index: -1;
+
+  animation:
+  gridMove 40s linear infinite;
+
+}
+
+@keyframes gridMove {
+
+  from {
+
+    transform:
+    translateY(0);
+
+  }
+
+  to {
+
+    transform:
+    translateY(60px);
+
+  }
+
+}
+
+/* =========================
+   HOLOGRAM EFFECT
+========================= */
+
+.hologram {
+
+  position: relative;
+
+}
+
+.hologram::after {
+
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+  repeating-linear-gradient(
+
+    transparent 0px,
+    rgba(255,255,255,0.03) 2px,
+    transparent 4px
+
+  );
+
+  pointer-events: none;
+
+  animation:
+  holoScan 6s linear infinite;
+
+}
+
+@keyframes holoScan {
+
+  from {
+
+    transform:
+    translateY(-100%);
+
+  }
+
+  to {
+
+    transform:
+    translateY(100%);
+
+  }
+
+}
+
+/* =========================
+   ALERT ANIMATION
+========================= */
+
+.alert-flash {
+
+  animation:
+  alertFlash 1s infinite;
+
+}
+
+@keyframes alertFlash {
+
+  0% {
+
+    filter:
+    brightness(1);
+
+  }
+
+  50% {
+
+    filter:
+    brightness(1.8);
+
+  }
+
+  100% {
+
+    filter:
+    brightness(1);
+
+  }
+
+}
+
+/* =========================
+   SMOOTH EVERYTHING
+========================= */
+
+div,
+button,
+input,
+span {
+
+  transition:
+  0.3s;
+
+}
+
+/* =========================
+   INPUTS
+========================= */
+
+input {
+
+  border: none;
+
+  outline: none;
+
+  color: white;
+
+  background:
+  rgba(255,255,255,0.05);
+
+  border-radius: 16px;
+
+  padding:
+  14px;
+
+  backdrop-filter:
+  blur(12px);
+
+}
+
+/* =========================
+   BOOT GLOW
+========================= */
+
+.boot-logo {
+
+  animation:
+  bootGlow 2s infinite alternate;
+
+}
+
+@keyframes bootGlow {
+
+  from {
+
+    text-shadow:
+
+      0 0 10px cyan;
+
+  }
+
+  to {
+
+    text-shadow:
+
+      0 0 30px cyan,
+      0 0 60px cyan;
+
+  }
+
+}
+
+/* =========================
+   3D WORLD
+========================= */
+
+body {
+
+  perspective: 1400px;
+
+  transform-style:
+  preserve-3d;
+
+}
+
+/* =========================
+   PARALLAX PANELS
+========================= */
+
+.parallax-panel {
+
+  transform-style:
+  preserve-3d;
+
+  will-change:
+  transform;
+
+}
+
+/* =========================
+   DEPTH LAYERS
+========================= */
+
+.depth-layer-1 {
+
+  transform:
+  translateZ(20px);
+
+}
+
+.depth-layer-2 {
+
+  transform:
+  translateZ(40px);
+
+}
+
+.depth-layer-3 {
+
+  transform:
+  translateZ(80px);
+
+}
+
+/* =========================
+   CYBER GLOW
+========================= */
+
+.cyber-glow {
+
+  box-shadow:
+
+    0 0 20px
+    rgba(0,255,255,0.15),
+
+    0 0 40px
+    rgba(0,255,255,0.10),
+
+    0 0 80px
+    rgba(255,0,255,0.08);
+
+}
+
+/* =========================
+   FLOAT ROTATION
+========================= */
+
+.float-rotate {
+
+  animation:
+  floatRotate 8s ease-in-out infinite;
+
+}
+
+@keyframes floatRotate {
+
+  0% {
+
+    transform:
+    rotate(-1deg)
+    translateY(0px);
+
+  }
+
+  50% {
+
+    transform:
+    rotate(1deg)
+    translateY(-10px);
+
+  }
+
+  100% {
+
+    transform:
+    rotate(-1deg)
+    translateY(0px);
+
+  }
+
+}
+
+/* =========================
+   ENERGY ORBS
+========================= */
+
+.energy-orb {
+
+  position: fixed;
+
+  width: 220px;
+  height: 220px;
+
+  border-radius: 50%;
+
+  filter:
+  blur(50px);
+
+  opacity: 0.18;
+
+  pointer-events: none;
+
+  z-index: -1;
+
+}
+
+.orb-cyan {
+
+  background: cyan;
+
+  top: 10%;
+  left: 5%;
+
+  animation:
+  orbMove1 20s infinite alternate;
+
+}
+
+.orb-magenta {
+
+  background: magenta;
+
+  bottom: 10%;
+  right: 5%;
+
+  animation:
+  orbMove2 24s infinite alternate;
+
+}
+
+@keyframes orbMove1 {
+
+  from {
+
+    transform:
+    translate(0,0);
+
+  }
+
+  to {
+
+    transform:
+    translate(120px,60px);
+
+  }
+
+}
+
+@keyframes orbMove2 {
+
+  from {
+
+    transform:
+    translate(0,0);
+
+  }
+
+  to {
+
+    transform:
+    translate(-140px,-70px);
+
+  }
+
+}
+
+/* =========================
+   WINDOW SYSTEM
+========================= */
+
+.window-ui {
+
+  position: fixed;
+
+  resize: both;
+
+  overflow: hidden;
+
+  min-width: 280px;
+
+  min-height: 180px;
+
+}
+
+/* =========================
+   WINDOW HEADER
+========================= */
+
+.window-header {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding:
+  12px 16px;
+
+  cursor: move;
+
+  user-select: none;
+
+  background:
+  rgba(255,255,255,0.05);
+
+  border-bottom:
+  1px solid
+  rgba(255,255,255,0.08);
+
+}
+
+/* =========================
+   WINDOW CONTROLS
+========================= */
+
+.window-controls {
+
+  display: flex;
+
+  gap: 8px;
+
+}
+
+.window-btn {
+
+  width: 14px;
+  height: 14px;
+
+  border-radius: 50%;
+
+  cursor: pointer;
+
+}
+
+.window-close {
+
+  background: #ff4d6d;
+
+}
+
+.window-min {
+
+  background: #ffd166;
+
+}
+
+.window-max {
+
+  background: #06d6a0;
+
+}
+
+/* =========================
+   MINIMIZED STATE
+========================= */
+
+.window-minimized {
+
+  height: 48px !important;
+
+  overflow: hidden;
+
+}
+
+/* =========================
+   MAXIMIZED STATE
+========================= */
+
+.window-maximized {
+
+  inset: 10px !important;
+
+  width: auto !important;
+
+  height: auto !important;
+
+  transform: none !important;
+
+}
+
+/* =========================
+   WINDOW ANIMATION
+========================= */
+
+.window-ui {
+
+  animation:
+  windowSpawn 0.5s ease;
+
+}
+
+@keyframes windowSpawn {
+
+  from {
+
+    opacity: 0;
+
+    transform:
+    scale(0.8);
+
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform:
+    scale(1);
+
+  }
+
+}
+
+.launcher {
+
+  position: fixed;
+
+  inset: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+}
+
+.launcher-logo {
+
+  font-size: 72px;
+
+  font-weight: bold;
+
+  color: cyan;
+
+  text-shadow:
+
+    0 0 20px cyan,
+    0 0 40px cyan;
+
+}
+
+.troll-platform {
+
+  height: 2px;
+
+}
+
+* {
+
+  box-sizing: border-box;
+
+  scroll-behavior: smooth;
+
+}
+
+html {
+
+  overflow: hidden;
+
+}
+
+body {
+
+  cursor: crosshair;
+
+}
+
+.omega-window {
+
+  box-shadow:
+
+    0 10px 40px
+    rgba(0,0,0,0.45),
+
+    0 0 25px
+    rgba(0,247,255,0.15);
+
+}
+
+.floating {
+
+  animation:
+  floating 4s ease-in-out infinite;
+
+}
+
+@keyframes floating {
+
+  0% {
+
+    transform:
+    translateY(0px);
+
+  }
+
+  50% {
+
+    transform:
+    translateY(-8px);
+
+  }
+
+  100% {
+
+    transform:
+    translateY(0px);
+
+  }
+
+}
+
+#loading-screen {
+
+  position: fixed;
+
+  inset: 0;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  background: black;
+
+  color: cyan;
+
+  font-size: 40px;
+
+  z-index: 99999;
+
+}
+
+body {
+
+  cursor: crosshair;
+
+}
+
+.online-player {
+
+  position: fixed;
+
+  width: 30px;
+
+  height: 30px;
+
+  border-radius: 50%;
+
+  background: cyan;
+
+  box-shadow: 0 0 20px cyan;
+
+  pointer-events: none;
+
+  z-index: 999999;
+
+}

@@ -1,0 +1,208 @@
+/* =========================
+   TIME SLOW
+========================= */
+
+.time-slow * {
+
+  animation-duration:
+  3x !important;
+
+  transition-duration:
+  3s !important;
+
+}
+
+/* =========================
+   LOW GRAVITY
+========================= */
+
+.low-gravity .panel,
+.low-gravity .window-ui,
+.low-gravity button {
+
+  animation:
+  lowGravityFloat 8s ease-in-out infinite;
+
+}
+
+@keyframes lowGravityFloat {
+
+  0% {
+
+    transform:
+    translateY(0px);
+
+  }
+
+  50% {
+
+    transform:
+    translateY(-20px);
+
+  }
+
+  100% {
+
+    transform:
+    translateY(0px);
+
+  }
+
+}
+
+/* =========================
+   REALITY GLITCH
+========================= */
+
+.reality-glitch {
+
+  animation:
+  realityGlitch 0.15s infinite;
+
+}
+
+@keyframes realityGlitch {
+
+  0% {
+
+    transform:
+    translate(0px,0px);
+
+  }
+
+  25% {
+
+    transform:
+    translate(-2px,1px);
+
+  }
+
+  50% {
+
+    transform:
+    translate(2px,-1px);
+
+  }
+
+  75% {
+
+    transform:
+    translate(-1px,2px);
+
+  }
+
+  100% {
+
+    transform:
+    translate(0px,0px);
+
+  }
+
+}
+
+/* =========================
+   DIMENSION INVERSION
+========================= */
+
+.dimension-invert {
+
+  filter:
+  invert(1)
+  hue-rotate(180deg);
+
+}
+
+/* =========================
+   QUANTUM FRACTURE
+========================= */
+
+.quantum-fracture::before {
+
+  content: "";
+
+  position: fixed;
+
+  inset: 0;
+
+  background:
+  repeating-linear-gradient(
+
+    45deg,
+
+    rgba(255,255,255,0.04) 0px,
+    rgba(255,255,255,0.04) 2px,
+
+    transparent 2px,
+    transparent 12px
+
+  );
+
+  pointer-events: none;
+
+  animation:
+  fractureShift 4s linear infinite;
+
+}
+
+@keyframes fractureShift {
+
+  from {
+
+    transform:
+    translateX(0px);
+
+  }
+
+  to {
+
+    transform:
+    translateX(120px);
+
+  }
+
+}
+
+/* =========================
+   UNIVERSE COLLAPSE
+========================= */
+
+.universe-collapse {
+
+  animation:
+  universeCollapse 10s forwards;
+
+}
+
+@keyframes universeCollapse {
+
+  0% {
+
+    transform:
+    scale(1);
+
+    filter:
+    brightness(1);
+
+  }
+
+  50% {
+
+    transform:
+    scale(0.95);
+
+    filter:
+    brightness(2);
+
+  }
+
+  100% {
+
+    transform:
+    scale(0);
+
+    filter:
+    brightness(0);
+
+  }
+
+}

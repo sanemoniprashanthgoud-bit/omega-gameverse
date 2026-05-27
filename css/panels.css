@@ -1,0 +1,114 @@
+.gossip-panel,
+.broadcast-panel,
+.npc-chat,
+.owner-panel,
+.pet-panel,
+.tips-panel,
+.ad-panel {
+
+  margin-top: 35px;
+
+  padding: 30px;
+
+  border-radius: 28px;
+
+  background:
+  rgba(255,255,255,0.04);
+
+  border:
+  1px solid
+  rgba(255,255,255,0.08);
+
+  backdrop-filter:
+  blur(18px);
+
+  box-shadow:
+    0 0 30px
+    rgba(0,255,255,0.08);
+
+  transition:
+  transform 0.3s,
+  box-shadow 0.3s;
+
+}
+
+.gossip-panel:hover,
+.broadcast-panel:hover,
+.npc-chat:hover,
+.owner-panel:hover,
+.pet-panel:hover {
+
+  transform:
+  translateY(-4px);
+
+  box-shadow:
+    0 0 40px
+    rgba(0,255,255,0.18);
+
+}
+
+.broadcast-panel {
+
+  border:
+  1px solid
+  rgba(255,0,0,0.25);
+
+}
+
+.panel {
+
+  background:
+  var(--panel);
+
+  border:
+  1px solid
+  var(--border);
+
+  backdrop-filter:
+  var(--blur);
+
+  border-radius:
+  var(--radius);
+
+  box-shadow:
+
+    0 0 40px
+    rgba(0,255,255,0.08);
+
+}
+
+
+#aiConsciousness {
+
+  position: fixed;
+
+  top: 20px;
+  left: 50%;
+
+  transform:
+  translateX(-50%);
+
+  padding:
+  14px 24px;
+
+  border-radius:
+  20px;
+
+  background:
+  rgba(0,0,0,0.82);
+
+  border:
+  1px solid
+  rgba(255,0,255,0.15);
+
+  backdrop-filter:
+  blur(18px);
+
+  z-index: 999999999;
+
+  font-weight: bold;
+
+  animation:
+  floating 4s infinite;
+
+}

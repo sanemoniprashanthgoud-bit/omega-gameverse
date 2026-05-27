@@ -1,0 +1,52 @@
+body::before {
+
+  content: "";
+
+  position: fixed;
+
+  inset: 0;
+
+  background:
+
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(0,255,255,0.12),
+      transparent 30%
+    ),
+
+    radial-gradient(
+      circle at 80% 30%,
+      rgba(255,0,255,0.12),
+      transparent 30%
+    );
+
+  animation:
+  floating 18s infinite alternate;
+
+  z-index: -2;
+
+}
+
+body::after {
+
+  content: "";
+
+  position: fixed;
+
+  inset: 0;
+
+  background-image:
+
+    radial-gradient(
+      white 1px,
+      transparent 1px
+    );
+
+  background-size:
+  50px 50px;
+
+  opacity: 0.08;
+
+  z-index: -1;
+
+}

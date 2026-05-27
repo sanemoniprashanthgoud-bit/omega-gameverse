@@ -1,0 +1,81 @@
+/* =========================
+   SAVE PANEL
+========================= */
+
+#savePanel {
+
+  position: fixed;
+
+  top: 20px;
+  left: 20px;
+
+  width: 280px;
+
+  padding:
+  20px;
+
+  border-radius:
+  24px;
+
+  background:
+  rgba(0,0,0,0.84);
+
+  border:
+  1px solid
+  rgba(0,255,255,0.14);
+
+  backdrop-filter:
+  blur(18px);
+
+  z-index: 999999999;
+
+  animation:
+  floating 5s infinite;
+
+}
+
+/* =========================
+   SAVE TITLE
+========================= */
+
+#saveTitle {
+
+  font-size: 20px;
+
+  font-weight: bold;
+
+  margin-bottom: 14px;
+
+  color: cyan;
+
+  text-shadow:
+
+    0 0 10px cyan;
+
+}
+
+/* =========================
+   SAVE BUTTONS
+========================= */
+
+.save-btn {
+
+  width: 100%;
+
+  margin-top: 12px;
+
+}
+
+/* =========================
+   SAVE STATUS
+========================= */
+
+#saveStatus {
+
+  margin-top: 14px;
+
+  font-size: 14px;
+
+  opacity: 0.8;
+
+}

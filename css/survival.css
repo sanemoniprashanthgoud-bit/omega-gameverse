@@ -1,0 +1,162 @@
+/* =========================
+   SURVIVAL PANEL
+========================= */
+
+#survivalPanel {
+
+  position: fixed;
+
+  top: 120px;
+  left: 860px;
+
+  width: 420px;
+
+  padding:
+  22px;
+
+  border-radius:
+  26px;
+
+  background:
+  rgba(0,0,0,0.88);
+
+  border:
+  1px solid
+  rgba(0,255,120,0.14);
+
+  backdrop-filter:
+  blur(18px);
+
+  z-index: 999999;
+
+}
+
+/* =========================
+   PLANET VIEW
+========================= */
+
+#planetView {
+
+  position: relative;
+
+  height: 260px;
+
+  border-radius:
+  20px;
+
+  overflow: hidden;
+
+  background:
+  linear-gradient(
+
+    180deg,
+
+    #0b1020,
+    #050505
+
+  );
+
+}
+
+/* =========================
+   PLAYER
+========================= */
+
+#survivor {
+
+  position: absolute;
+
+  width: 42px;
+  height: 42px;
+
+  border-radius: 12px;
+
+  background:
+  linear-gradient(
+    135deg,
+    cyan,
+    magenta
+  );
+
+  left: 40px;
+  bottom: 30px;
+
+}
+
+/* =========================
+   RESOURCES
+========================= */
+
+.resource-node {
+
+  position: absolute;
+
+  width: 34px;
+  height: 34px;
+
+  border-radius: 50%;
+
+  background:
+  gold;
+
+  box-shadow:
+  0 0 18px gold;
+
+}
+
+/* =========================
+   ALIENS
+========================= */
+
+.alien-creature {
+
+  position: absolute;
+
+  width: 48px;
+  height: 48px;
+
+  border-radius: 50%;
+
+  background:
+  radial-gradient(
+    circle,
+    lime,
+    darkgreen
+  );
+
+  box-shadow:
+  0 0 20px lime;
+
+}
+
+/* =========================
+   SURVIVAL STATS
+========================= */
+
+#survivalStats {
+
+  margin-top: 18px;
+
+  display: grid;
+
+  grid-template-columns:
+  repeat(3,1fr);
+
+  gap: 12px;
+
+}
+
+.survival-card {
+
+  padding:
+  12px;
+
+  border-radius:
+  16px;
+
+  background:
+  rgba(255,255,255,0.04);
+
+  text-align: center;
+
+}

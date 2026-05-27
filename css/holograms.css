@@ -1,0 +1,56 @@
+.hologram {
+
+  position: relative;
+
+  overflow: hidden;
+
+}
+
+.hologram::after {
+
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+  repeating-linear-gradient(
+
+    transparent 0px,
+    rgba(255,255,255,0.03) 2px,
+    transparent 4px
+
+  );
+
+}
+
+.hologram {
+
+  position: relative;
+
+  overflow: hidden;
+
+}
+
+.hologram::after {
+
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+  repeating-linear-gradient(
+
+    transparent 0px,
+    rgba(255,255,255,0.03) 2px,
+    transparent 4px
+
+  );
+
+  animation:
+  hologramScan 6s linear infinite;
+
+}

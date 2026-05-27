@@ -1,0 +1,228 @@
+/* =========================
+   PLAYER EFFECTS
+========================= */
+
+.player-boost {
+
+  animation:
+  boostPulse 0.6s infinite;
+
+}
+
+@keyframes boostPulse {
+
+  0% {
+
+    transform:
+    scale(1);
+
+  }
+
+  50% {
+
+    transform:
+    scale(1.12);
+
+  }
+
+  100% {
+
+    transform:
+    scale(1);
+
+  }
+
+}
+
+/* =========================
+   BULLETS
+========================= */
+
+.arcade-bullet {
+
+  position: absolute;
+
+  width: 18px;
+  height: 6px;
+
+  border-radius:
+  999px;
+
+  background:
+  cyan;
+
+  box-shadow:
+
+    0 0 12px cyan;
+
+}
+
+/* =========================
+   EXPLOSIONS
+========================= */
+
+.explosion {
+
+  position: absolute;
+
+  width: 80px;
+  height: 80px;
+
+  border-radius: 50%;
+
+  background:
+  radial-gradient(
+
+    circle,
+
+    yellow,
+    orange,
+    crimson,
+    transparent
+
+  );
+
+  animation:
+  explode 0.5s forwards;
+
+}
+
+@keyframes explode {
+
+  from {
+
+    transform:
+    scale(0.2);
+
+    opacity: 1;
+
+  }
+
+  to {
+
+    transform:
+    scale(2.2);
+
+    opacity: 0;
+
+  }
+
+}
+
+/* =========================
+   COINS
+========================= */
+
+.arcade-coin {
+
+  position: absolute;
+
+  width: 24px;
+  height: 24px;
+
+  border-radius: 50%;
+
+  background:
+  gold;
+
+  box-shadow:
+
+    0 0 16px gold;
+
+  animation:
+  floating 2s infinite;
+
+}
+
+/* =========================
+   POWERUPS
+========================= */
+
+.powerup {
+
+  position: absolute;
+
+  width: 32px;
+  height: 32px;
+
+  border-radius: 12px;
+
+  background:
+  linear-gradient(
+    135deg,
+    lime,
+    cyan
+  );
+
+  animation:
+  floating 1.5s infinite;
+
+}
+
+/* =========================
+   BOSS PHASE
+========================= */
+
+.boss-phase {
+
+  animation:
+  bossRage 0.3s infinite;
+
+}
+
+@keyframes bossRage {
+
+  0% {
+
+    filter:
+    brightness(1);
+
+  }
+
+  50% {
+
+    filter:
+    brightness(1.6);
+
+  }
+
+  100% {
+
+    filter:
+    brightness(1);
+
+  }
+
+}
+
+/* =========================
+   LEVEL PANEL
+========================= */
+
+#gameStats {
+
+  margin-top: 16px;
+
+  display: grid;
+
+  grid-template-columns:
+  repeat(3,1fr);
+
+  gap: 12px;
+
+}
+
+.stat-card {
+
+  padding:
+  12px;
+
+  border-radius:
+  16px;
+
+  background:
+  rgba(255,255,255,0.04);
+
+  text-align: center;
+
+}

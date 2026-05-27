@@ -1,0 +1,88 @@
+#omegaTerminal {
+
+  position: fixed;
+
+  top: 50%;
+
+  left: 50%;
+
+  transform:
+  translate(-50%, -50%);
+
+  width: 700px;
+
+  height: 450px;
+
+  background: #050505;
+
+  border:
+  1px solid cyan;
+
+  border-radius: 20px;
+
+  overflow: hidden;
+
+  display: none;
+
+  flex-direction: column;
+
+  z-index: 99999999;
+
+  box-shadow:
+  0 0 40px cyan;
+
+}
+
+#omegaTerminal.open {
+
+  display: flex;
+
+}
+
+#terminalHeader {
+
+  background: #0d0d0d;
+
+  padding: 15px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  color: cyan;
+
+  font-weight: bold;
+
+}
+
+#terminalOutput {
+
+  flex: 1;
+
+  padding: 15px;
+
+  overflow-y: auto;
+
+  font-family: monospace;
+
+  color: #00ff88;
+
+}
+
+#terminalInput {
+
+  border: none;
+
+  outline: none;
+
+  padding: 15px;
+
+  background: black;
+
+  color: cyan;
+
+  font-family: monospace;
+
+}

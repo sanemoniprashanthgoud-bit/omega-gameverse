@@ -1,0 +1,65 @@
+.achievement-popup {
+
+  position: fixed;
+
+  top: 20px;
+
+  right: -400px;
+
+  width: 320px;
+
+  padding: 18px;
+
+  border-radius: 18px;
+
+  background:
+
+    rgba(10,10,20,0.95);
+
+  border:
+  1px solid cyan;
+
+  box-shadow:
+  0 0 25px cyan;
+
+  color: white;
+
+  transition: 0.5s;
+
+  z-index: 999999999;
+
+}
+
+.achievement-popup.show {
+
+  right: 20px;
+
+}
+
+.ach-title {
+
+  font-size: 14px;
+
+  color: cyan;
+
+  margin-bottom: 10px;
+
+  letter-spacing: 2px;
+
+}
+
+.ach-name {
+
+  font-size: 24px;
+
+  font-weight: bold;
+
+}
+
+.ach-desc {
+
+  margin-top: 8px;
+
+  opacity: 0.8;
+
+}

@@ -1,0 +1,84 @@
+#multiversePanel {
+
+  backdrop-filter:
+  blur(20px);
+
+}
+
+#multiversePanel {
+
+  width: 400px;
+
+  animation:
+  pulseGlow 5s infinite;
+
+}
+
+@keyframes pulseGlow {
+
+  0% {
+
+    box-shadow:
+
+      0 0 15px cyan,
+
+      0 0 30px cyan;
+
+  }
+
+  50% {
+
+    box-shadow:
+
+      0 0 20px magenta,
+
+      0 0 40px magenta;
+
+  }
+
+  100% {
+
+    box-shadow:
+
+      0 0 15px cyan,
+
+      0 0 30px cyan;
+
+  }
+
+}
+
+@keyframes hologramScan {
+
+  from {
+
+    transform:
+    translateY(-100%);
+
+  }
+
+  to {
+
+    transform:
+    translateY(100%);
+
+  }
+
+}
+
+@keyframes floating {
+
+  0% {
+
+    transform:
+    translateY(0px);
+
+  }
+
+  50% {
+
+    transform:
+    translateY(-10px);
+
+  }
+}

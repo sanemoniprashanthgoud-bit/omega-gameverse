@@ -1,0 +1,48 @@
+@media (
+  max-width: 900px
+) {
+
+  #starMapPanel,
+  #multiversePanel,
+  #companionPanel {
+
+    width: 90% !important;
+
+    left: 50% !important;
+
+    transform:
+    translateX(-50%) !important;
+
+  }
+
+}
+
+@media (
+  max-width: 900px
+) {
+
+  #multiversePanel,
+  #starMapPanel,
+  #terminalWindow,
+  #companionPanel {
+
+    width: 92% !important;
+
+    left: 50% !important;
+
+    transform:
+    translateX(-50%) !important;
+
+  }
+
+  #taskbar {
+
+    width: 95%;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+  }
+
+}

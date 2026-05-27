@@ -1,0 +1,34 @@
+.cyber-glow {
+
+  box-shadow:
+
+    0 0 20px
+    rgba(0,255,255,0.2);
+
+}
+
+.cyber-glow {
+
+  box-shadow:
+
+    0 0 20px
+    rgba(0,255,255,0.18),
+
+    0 0 40px
+    rgba(255,0,255,0.10);
+
+}
+
+.blur {
+
+  backdrop-filter:
+  blur(18px);
+
+}
+
+.glass {
+
+  background:
+  rgba(255,255,255,0.04);
+
+}

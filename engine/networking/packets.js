@@ -1,0 +1,21 @@
+export const Packets = {
+
+  PLAYER_MOVE:
+  "PLAYER_MOVE",
+
+  PLAYER_SHOOT:
+  "PLAYER_SHOOT",
+
+  PLAYER_JOIN:
+  "PLAYER_JOIN",
+
+  PLAYER_LEAVE:
+  "PLAYER_LEAVE",
+
+  ENTITY_SYNC:
+  "ENTITY_SYNC",
+
+  CHAT:
+  "CHAT"
+
+};

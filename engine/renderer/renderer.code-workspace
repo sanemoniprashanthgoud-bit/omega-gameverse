@@ -1,0 +1,82 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../rendering"
+		},
+		{
+			"path": "../runtime"
+		},
+		{
+			"path": "../saves"
+		},
+		{
+			"path": "../scripting"
+		},
+		{
+			"path": "../../scripts"
+		},
+		{
+			"path": "../../js/engine/security"
+		},
+		{
+			"path": "../../server"
+		},
+		{
+			"path": "../../studio/shaders"
+		},
+		{
+			"path": "../../games/shadow-hunter"
+		},
+		{
+			"path": "../../games/signal-lost"
+		},
+		{
+			"path": "../../server/auth/matchmaking/world/multiplayer/persistence/social"
+		},
+		{
+			"path": "../../studio"
+		},
+		{
+			"path": "../../system"
+		},
+		{
+			"path": "../../audio/system"
+		},
+		{
+			"path": "../../scripts/systems"
+		},
+		{
+			"path": "../../themes"
+		},
+		{
+			"path": "../../games/time-echo"
+		},
+		{
+			"path": "../tools"
+		},
+		{
+			"path": "../../scripts/ui"
+		},
+		{
+			"path": "../ui"
+		},
+		{
+			"path": "../../studio/visualScripting"
+		},
+		{
+			"path": "../../games/voice-escape"
+		},
+		{
+			"path": "../../wallpapers"
+		},
+		{
+			"path": "../world"
+		},
+		{
+			"path": "../../server/auth/matchmaking/world"
+		}
+	]
+}

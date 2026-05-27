@@ -1,0 +1,142 @@
+#omegaTaskbar {
+
+  position: fixed;
+
+  bottom: 0;
+
+  left: 0;
+
+  width: 100%;
+
+  height: 50px;
+
+  background:
+
+    rgba(0,0,0,0.85);
+
+  backdrop-filter:
+
+    blur(12px);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 0 20px;
+
+  box-sizing: border-box;
+
+  border-top:
+
+    1px solid
+    rgba(255,255,255,0.1);
+
+  z-index: 999999;
+
+  color: white;
+
+  font-family: sans-serif;
+
+}
+
+#omegaStart {
+
+  background:
+
+rgba(10,10,20,0.72);
+
+backdrop-filter:
+blur(18px);
+
+border-top:
+1px solid
+rgba(0,247,255,0.2);
+
+box-shadow:
+0 -5px 30px
+rgba(0,247,255,0.12);
+
+#omegaStart:hover {
+
+  transform: scale(1.08);
+
+}
+}
+
+.task-center {
+
+  opacity: 0.7;
+
+  letter-spacing: 2px;
+
+}
+
+#clock {
+
+  font-weight: bold;
+
+}
+
+#startMenu {
+
+  position: fixed;
+
+  bottom: 60px;
+
+  left: 20px;
+
+  width: 260px;
+
+  background:
+
+    rgba(0,0,0,0.92);
+
+  border:
+
+    1px solid
+    rgba(255,255,255,0.1);
+
+  border-radius: 20px;
+
+  padding: 15px;
+
+  display: none;
+
+  flex-direction: column;
+
+  gap: 10px;
+
+  backdrop-filter: blur(15px);
+
+  z-index: 999999;
+
+}
+
+#startMenu.open {
+
+  display: flex;
+
+}
+
+.start-item {
+
+  padding: 12px;
+
+  border-radius: 12px;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+
+}
+
+.start-item:hover {
+
+  background:
+
+    rgba(255,255,255,0.08);
+
+}
+

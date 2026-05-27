@@ -1,0 +1,204 @@
+* {
+
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+
+}
+
+body {
+
+  overflow: hidden;
+
+  background:
+  radial-gradient(circle,
+  #111827,
+  #020617);
+
+  color: white;
+
+  font-family:
+  Inter,
+  Arial,
+  sans-serif;
+
+}
+
+/* =========================
+   CANVAS
+========================= */
+
+canvas {
+
+  display: block;
+
+  width: 100vw;
+  height: 100vh;
+
+}
+
+/* =========================
+   HUD
+========================= */
+
+.hud {
+
+  position: fixed;
+
+  top: 20px;
+  left: 20px;
+
+  display: flex;
+
+  gap: 20px;
+
+  z-index: 100;
+
+  padding: 14px 20px;
+
+  border-radius: 16px;
+
+  background:
+  rgba(255,255,255,0.06);
+
+  border:
+  1px solid rgba(255,255,255,0.1);
+
+  backdrop-filter: blur(16px);
+
+  box-shadow:
+  0 0 20px rgba(0,255,255,0.15);
+
+}
+
+/* =========================
+   MENUS
+========================= */
+
+.overlay-menu {
+
+  position: fixed;
+
+  inset: 0;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  flex-direction: column;
+
+  background:
+  rgba(0,0,0,0.8);
+
+  z-index: 200;
+
+}
+
+.overlay-menu h1 {
+
+  font-size: 5rem;
+
+  color: cyan;
+
+  text-shadow:
+  0 0 20px cyan;
+
+}
+
+.overlay-menu button {
+
+  margin-top: 20px;
+
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+button {
+
+  border: none;
+
+  padding:
+  14px 30px;
+
+  border-radius: 14px;
+
+  background:
+  linear-gradient(
+  90deg,
+  cyan,
+  #8b5cf6);
+
+  color: black;
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+
+}
+
+button:hover {
+
+  transform:
+  scale(1.08);
+
+  box-shadow:
+  0 0 20px cyan;
+
+}
+
+/* =========================
+   FLOATING MESSAGE
+========================= */
+
+.floating-msg {
+
+  position: fixed;
+
+  top: 40px;
+  right: 40px;
+
+  padding:
+  14px 20px;
+
+  border-radius: 12px;
+
+  background:
+  rgba(0,255,255,0.15);
+
+  border:
+  1px solid cyan;
+
+  backdrop-filter: blur(12px);
+
+  animation:
+  slideIn 0.3s ease;
+
+}
+
+@keyframes slideIn {
+
+  from {
+
+    transform:
+    translateX(100px);
+
+    opacity: 0;
+
+  }
+
+  to {
+
+    transform:
+    translateX(0);
+
+    opacity: 1;
+
+  }
+
+}

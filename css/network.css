@@ -1,0 +1,187 @@
+/* =========================
+   NETWORK PANEL
+========================= */
+
+#networkPanel {
+
+  position: fixed;
+
+  top: 120px;
+  right: 20px;
+
+  width: 340px;
+
+  padding:
+  20px;
+
+  border-radius:
+  24px;
+
+  background:
+  rgba(0,0,0,0.84);
+
+  border:
+  1px solid
+  rgba(0,255,255,0.14);
+
+  backdrop-filter:
+  blur(18px);
+
+  z-index: 999999;
+
+  overflow: hidden;
+
+}
+
+/* =========================
+   TITLE
+========================= */
+
+#networkTitle {
+
+  font-size: 22px;
+
+  font-weight: bold;
+
+  margin-bottom: 16px;
+
+  color: cyan;
+
+  text-shadow:
+
+    0 0 12px cyan;
+
+}
+
+/* =========================
+   ONLINE STATUS
+========================= */
+
+#serverStatus {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 16px;
+
+}
+
+.status-dot {
+
+  width: 12px;
+  height: 12px;
+
+  border-radius: 50%;
+
+  background: lime;
+
+  box-shadow:
+
+    0 0 12px lime;
+
+  animation:
+  pulseGlow 2s infinite;
+
+}
+
+/* =========================
+   PLAYER LIST
+========================= */
+
+#onlinePlayers {
+
+  max-height: 220px;
+
+  overflow-y: auto;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+
+}
+
+.player-card {
+
+  padding:
+  12px;
+
+  border-radius:
+  16px;
+
+  background:
+  rgba(255,255,255,0.04);
+
+  border:
+  1px solid
+  rgba(255,255,255,0.05);
+
+  transition:
+  0.3s;
+
+}
+
+.player-card:hover {
+
+  transform:
+  translateX(4px);
+
+  background:
+  rgba(0,255,255,0.08);
+
+}
+
+/* =========================
+   GLOBAL CHAT
+========================= */
+
+#globalChat {
+
+  margin-top: 18px;
+
+  height: 140px;
+
+  overflow-y: auto;
+
+  padding:
+  12px;
+
+  border-radius:
+  16px;
+
+  background:
+  rgba(255,255,255,0.03);
+
+}
+
+.chat-message {
+
+  margin-bottom: 10px;
+
+  line-height: 1.5;
+
+}
+
+/* =========================
+   LEADERBOARD
+========================= */
+
+#leaderboard {
+
+  margin-top: 18px;
+
+}
+
+.leader-entry {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  margin-bottom: 8px;
+
+}
