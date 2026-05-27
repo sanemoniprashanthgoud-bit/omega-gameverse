@@ -9701,3 +9701,38 @@ body{
   color:white;
 
 }
+
+.menu{
+
+  display:none;
+
+  flex-direction:column;
+
+  gap:10px;
+
+  padding:30px;
+
+}
+
+.menu.active{
+
+  display:flex;
+
+}
+
+button{
+
+  padding:20px;
+
+  font-size:20px;
+
+  background:#111;
+
+  color:cyan;
+
+  border:
+  2px solid cyan;
+
+  cursor:pointer;
+
+}

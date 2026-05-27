@@ -3025,115 +3025,46 @@ class="panel window active">
 
 </div>
 
-<body>
+<div id="mainMenu" class="menu active">
 
-<div class="sidebar">
-
-  <h2>ΩMEGA</h2>
-
-  <button onclick="openPanel('gamesPanel')">
+  <button onclick="showMenu('gamesMenu')">
     🎮 Games
   </button>
 
-  <button onclick="openPanel('aiPanel')">
+  <button onclick="showMenu('aiMenu')">
     🤖 AI
   </button>
 
-  <button onclick="openPanel('networkPanel')">
-    🌍 Network
+</div>
+
+<div id="gamesMenu" class="menu">
+
+  <button>
+    ΩARCADE
   </button>
 
-  <button onclick="openPanel('musicPanel')">
-    🎵 Music
+  <button>
+    CHAOS MODE
   </button>
 
-  <button onclick="openPanel('settingsPanel')">
-    ⚙ Settings
+  <button onclick="showMenu('mainMenu')">
+    ⬅ Back
   </button>
 
 </div>
 
-<div class="desktop">
+<div id="aiMenu" class="menu">
 
-  <div id="gamesPanel"
-  class="panel window active">
+  <button>
+    AI CORE
+  </button>
 
-    <div class="window-header">
-      🎮 Games
-    </div>
+  <button>
+    SENTIENCE
+  </button>
 
-    <div class="window-content">
-
-      <h1>ΩARCADE</h1>
-
-      <p>Welcome to GAMEVERSE X 😈</p>
-
-    </div>
-
-  </div>
-
-  <div id="aiPanel"
-  class="panel window">
-
-    <div class="window-header">
-      🤖 AI Core
-    </div>
-
-    <div class="window-content">
-
-      AI SYSTEM ONLINE
-
-    </div>
-
-  </div>
-
-  <div id="networkPanel"
-  class="panel window">
-
-    <div class="window-header">
-      🌍 Network
-    </div>
-
-    <div class="window-content">
-
-      SERVER STATUS: ONLINE
-
-    </div>
-
-  </div>
-
-  <div id="musicPanel"
-  class="panel window">
-
-    <div class="window-header">
-      🎵 Music
-    </div>
-
-    <div class="window-content">
-
-      CYBER DREAMS.mp3
-
-    </div>
-
-  </div>
-
-  <div id="settingsPanel"
-  class="panel window">
-
-    <div class="window-header">
-      ⚙ Settings
-    </div>
-
-    <div class="window-content">
-
-      SETTINGS PANEL
-
-    </div>
-
-  </div>
+  <button onclick="showMenu('mainMenu')">
+    ⬅ Back
+  </button>
 
 </div>
-
-<script src="script.js"></script>
-
-</body>
