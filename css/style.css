@@ -1,0 +1,134 @@
+body{
+
+  margin:0;
+
+  background:black;
+
+  color:white;
+
+  font-family:Arial;
+
+  overflow:hidden;
+
+  display:flex;
+
+  height:100vh;
+
+}
+
+.sidebar{
+
+  width:220px;
+
+  background:#111;
+
+  border-right:
+  2px solid cyan;
+
+  padding:20px;
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:10px;
+
+}
+
+.sidebar h2{
+
+  color:cyan;
+
+}
+
+.sidebar button{
+
+  padding:12px;
+
+  background:#1a1a1a;
+
+  border:none;
+
+  color:cyan;
+
+  cursor:pointer;
+
+  font-size:16px;
+
+  transition:0.2s;
+
+}
+
+.sidebar button:hover{
+
+  background:cyan;
+
+  color:black;
+
+}
+
+.desktop{
+
+  position:relative;
+
+  flex:1;
+
+  overflow:hidden;
+
+}
+
+.panel{
+
+  display:none;
+
+}
+
+.panel.active{
+
+  display:block;
+
+}
+
+.window{
+
+  position:absolute;
+
+  top:80px;
+
+  left:260px;
+
+  width:600px;
+
+  background:#111;
+
+  border:
+  2px solid cyan;
+
+  border-radius:12px;
+
+  overflow:hidden;
+
+  box-shadow:
+  0 0 20px cyan;
+
+}
+
+.window-header{
+
+  background:cyan;
+
+  color:black;
+
+  padding:12px;
+
+  cursor:move;
+
+  font-weight:bold;
+
+}
+
+.window-content{
+
+  padding:20px;
+
+}

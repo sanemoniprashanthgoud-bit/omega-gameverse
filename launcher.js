@@ -16360,3 +16360,205 @@ data: {
   }
 
 }
+
+let playerX = 100;
+let playerY = 100;
+
+document.addEventListener("keydown", e => {
+
+  if(e.key === "w") playerY -= 10;
+  if(e.key === "s") playerY += 10;
+  if(e.key === "a") playerX -= 10;
+  if(e.key === "d") playerX += 10;
+
+  const player =
+    document.querySelector(".omega-player");
+
+  player.style.left = playerX + "px";
+  player.style.top = playerY + "px";
+
+});
+
+function openPanel(id){
+
+  document
+    .querySelectorAll(".panel")
+    .forEach(p => p.style.display = "none");
+
+  document
+    .getElementById(id)
+    .style.display = "block";
+
+}
+
+function openPanel(panelId){
+
+  document
+    .querySelectorAll(".panel")
+    .forEach(panel => {
+
+      panel.classList.remove("active");
+
+    });
+
+  document
+    .getElementById(panelId)
+    .classList.add("active");
+
+}
+
+document
+.querySelectorAll(".window")
+.forEach(makeDraggable);
+
+function makeDraggable(windowEl){
+
+  const header =
+  windowEl.querySelector(
+    ".window-header"
+  );
+
+  let offsetX = 0;
+  let offsetY = 0;
+  let dragging = false;
+
+  header.addEventListener(
+
+    "mousedown",
+
+    e => {
+
+      dragging = true;
+
+      offsetX =
+      e.clientX -
+      windowEl.offsetLeft;
+
+      offsetY =
+      e.clientY -
+      windowEl.offsetTop;
+
+    }
+
+  );
+
+  document.addEventListener(
+
+    "mousemove",
+
+    e => {
+
+      if(!dragging) return;
+
+      windowEl.style.left =
+      (e.clientX - offsetX)
+      + "px";
+
+      windowEl.style.top =
+      (e.clientY - offsetY)
+      + "px";
+
+    }
+
+  );
+
+  document.addEventListener(
+
+    "mouseup",
+
+    () => {
+
+      dragging = false;
+
+    }
+
+  );
+
+}
+
+function openPanel(panelId){
+
+  document
+    .querySelectorAll(".panel")
+    .forEach(panel => {
+
+      panel.classList.remove(
+        "active"
+      );
+
+    });
+
+  document
+    .getElementById(panelId)
+    .classList.add("active");
+
+}
+
+document
+.querySelectorAll(".window")
+.forEach(makeDraggable);
+
+function makeDraggable(windowEl){
+
+  const header =
+  windowEl.querySelector(
+    ".window-header"
+  );
+
+  let offsetX = 0;
+  let offsetY = 0;
+  let dragging = false;
+
+  header.addEventListener(
+
+    "mousedown",
+
+    e => {
+
+      dragging = true;
+
+      offsetX =
+      e.clientX -
+      windowEl.offsetLeft;
+
+      offsetY =
+      e.clientY -
+      windowEl.offsetTop;
+
+    }
+
+  );
+
+  document.addEventListener(
+
+    "mousemove",
+
+    e => {
+
+      if(!dragging) return;
+
+      windowEl.style.left =
+      (e.clientX - offsetX)
+      + "px";
+
+      windowEl.style.top =
+      (e.clientY - offsetY)
+      + "px";
+
+    }
+
+  );
+
+  document.addEventListener(
+
+    "mouseup",
+
+    () => {
+
+      dragging = false;
+
+    }
+
+  );
+
+}

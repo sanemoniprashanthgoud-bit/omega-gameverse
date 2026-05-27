@@ -1,4 +1,6 @@
-const socket = io();
+const socket = io(
+  "https://omega-gameverse.onrender.com"
+);
 
 const players = {};
 

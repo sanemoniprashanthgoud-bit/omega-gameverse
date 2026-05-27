@@ -9566,3 +9566,138 @@ body {
   z-index: 999999;
 
 }
+
+.panel{
+  display:none;
+}
+
+.panel.active{
+  display:block;
+}
+
+body{
+
+  margin:0;
+
+  display:flex;
+
+  height:100vh;
+
+  background:black;
+
+  color:white;
+
+  font-family:Arial;
+
+}
+
+.sidebar{
+
+  width:220px;
+
+  background:#111;
+
+  padding:20px;
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:10px;
+
+  border-right:
+  2px solid cyan;
+
+}
+
+.sidebar button{
+
+  padding:12px;
+
+  background:#1a1a1a;
+
+  color:cyan;
+
+  border:none;
+
+  cursor:pointer;
+
+  font-size:16px;
+
+}
+
+.sidebar button:hover{
+
+  background:cyan;
+
+  color:black;
+
+}
+
+.main-content{
+
+  flex:1;
+
+  padding:20px;
+
+  overflow:auto;
+
+}
+
+.panel{
+
+  display:none;
+
+}
+
+.panel.active{
+
+  display:block;
+
+}
+
+.window{
+
+  position:absolute;
+
+  top:100px;
+
+  left:300px;
+
+  width:600px;
+
+  background:#111;
+
+  border:
+  2px solid cyan;
+
+  border-radius:12px;
+
+  box-shadow:
+  0 0 20px cyan;
+
+  overflow:hidden;
+
+}
+
+.window-header{
+
+  background:cyan;
+
+  color:black;
+
+  padding:12px;
+
+  cursor:move;
+
+  font-weight:bold;
+
+}
+
+.window-content{
+
+  padding:20px;
+
+  color:white;
+
+}
